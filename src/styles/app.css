@@ -1,0 +1,22 @@
+@import "./_tailwind.css";
+@import "./_reset.css";
+
+:root {
+	/* layout */
+	--viewport-padding: 2rem;
+	/* font */
+	--font-family: system-ui, sans-serif;
+	/* colors */
+	--bg-primary: #13151a;
+	--text-primary: #fff;
+}
+
+html {
+	font-family: var(--font-family);
+	color: var(--text-primary);
+	background-color: var(--bg-primary);
+}
+
+body {
+	padding: var(--viewport-padding);
+}
