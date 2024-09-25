@@ -1,4 +1,6 @@
 @import "tailwindcss";
 
 /* config here */
-:root {}
+@theme {
+  --default-transition-duration: 300ms;
+}

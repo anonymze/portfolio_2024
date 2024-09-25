@@ -1,33 +1,39 @@
 ---
-import Accessories from "./_components/Accessories";
 import { navs } from "./_navbar";
+import Accessories from "./_components/Accessories";
 ---
 
 <header>
-	<nav>
-		<menu>
-			<li><a href="/">Yann Metier</a></li>
-			{navs.map((nav) => {
-				return <li><a href={nav.url}>{nav.label}</a></li>
-			})}
+  <nav>
+    <menu>
+      <li><a href="/">Yann Metier</a></li>
+      {
+        navs.map((nav) => {
+          return (
+            <li>
+              <a href={nav.url}>{nav.label}</a>
+            </li>
+          );
+        })
+      }
 
-			<div class="ml-auto">
-				<Accessories client:idle  />
-			</div>
-		</menu>
-	</nav>
-	</header>
+      <div class="ml-auto">
+        <Accessories client:idle />
+      </div>
+    </menu>
+  </nav>
+</header>
 
-	<style>
-		header {
-			height : 5rem;
+<style>
+  header {
+    height: 5rem;
 
-			nav {
-				
-				menu, menu div {
-					display: flex;
-					column-gap: 2rem;
-				}
-			}
-		}
-	</style>
+    nav {
+      menu,
+      menu div {
+        display: flex;
+        column-gap: 2rem;
+      }
+    }
+  }
+</style>

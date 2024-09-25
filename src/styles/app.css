@@ -2,21 +2,49 @@
 @import "./_reset.css";
 
 :root {
-	/* layout */
-	--viewport-padding: 2rem;
-	/* font */
-	--font-family: system-ui, sans-serif;
-	/* colors */
-	--bg-primary: #13151a;
-	--text-primary: #fff;
+  /* layout */
+  --viewport-padding: 2rem;
+  /* font */
+  --font-family: system-ui, sans-serif;
+  /* colors */
+  color-scheme: light dark;
+  --bg-primary-dark: #13151a;
+  --bg-primary-light: #fff;
+
+  --text-primary-dark: #13151a;
+  --text-primary-light: #fff;
+
+  --bg-primary: light-dark(var(--bg-primary-light), var(--bg-primary-dark));
+  --text-primary: light-dark(
+    var(--text-primary-dark),
+    var(--text-primary-light)
+  );
+}
+
+[data-theme] {
+  @apply transition-colors;
+}
+
+[data-theme="dark"] {
+  --bg-primary: var(--bg-primary-dark);
+  --text-primary: var(--text-primary-light);
+}
+
+[data-theme="light"] {
+  --bg-primary: var(--bg-primary-light);
+  --text-primary: var(--text-primary-dark);
 }
 
 html {
-	font-family: var(--font-family);
-	color: var(--text-primary);
-	background-color: var(--bg-primary);
+  font-family: var(--font-family);
 }
 
 body {
-	padding: var(--viewport-padding);
+  padding: var(--viewport-padding);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+}
+
+button {
+  cursor: pointer;
 }
