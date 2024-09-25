@@ -2,5 +2,5 @@
 
 /* config here */
 @theme {
-  --default-transition-duration: 250ms;
+  --default-transition-duration: 500ms;
 }

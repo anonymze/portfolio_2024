@@ -1,3 +1,5 @@
+import type { Theme } from "@/types/theme";
+
 interface Nav {
   id: number;
   url: string;
@@ -7,12 +9,10 @@ interface Nav {
 
 interface Accessory {
   id: number;
-  icon: string;
+  icon: SVGIcons;
   label: string;
   on_click: () => void;
 }
-
-type Theme = "light" | "dark" | null;
 
 export const navs: Array<Nav> = [
   {
@@ -32,10 +32,16 @@ export const navs: Array<Nav> = [
 export const accessories: Array<Accessory> = [
   {
     id: 1,
-    label: "switch_light",
-    icon: "/icons/light.svg",
+    label: "Email contact",
+    icon: "mail",
+    on_click: () => {},
+  },
+  {
+    id: 2,
+    label: "Switch theme",
+    icon: "dark",
     on_click: () => {
-      const fixed_theme = document.body.getAttribute("data-theme") as Theme;
+      const fixed_theme = document.body.getAttribute("data-theme") as Theme | null;
 
       if (!fixed_theme) {
         const natural_theme = window.matchMedia("(prefers-color-scheme: dark)");
@@ -52,17 +58,4 @@ export const accessories: Array<Accessory> = [
         : document.body.setAttribute("data-theme", "dark");
     },
   },
-  {
-    id: 2,
-    label: "mail",
-    icon: "/icons/light.svg",
-    on_click: () => {},
-  },
-  {
-    id: 3,
-    label: "mail",
-    icon: "/icons/light.svg",
-    on_click: () => {},
-  },
-
 ];

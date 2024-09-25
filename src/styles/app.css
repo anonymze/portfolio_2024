@@ -15,17 +15,16 @@
   --text-primary-light: #fff;
 
   --bg-primary: light-dark(var(--bg-primary-light), var(--bg-primary-dark));
-  --text-primary: light-dark(
-    var(--text-primary-dark),
-    var(--text-primary-light)
-  );
+  --text-primary: light-dark(var(--text-primary-dark),
+      var(--text-primary-light));
   /* animations */
-  --transition-spring : cubic-bezier(0, 0.78, 0.19, 1.05);
+  --transition-spring: cubic-bezier(0, 0.78, 0.19, 1.05);
 }
 
 [data-theme] {
   @apply transition-colors;
 }
+
 
 [data-theme="dark"] {
   --bg-primary: var(--bg-primary-dark);
@@ -43,9 +42,11 @@ html {
 
 body {
   padding: var(--viewport-padding);
-  color: var(--text-primary);
   background-color: var(--bg-primary);
+  color: var(--text-primary);
 }
+
+
 
 button {
   cursor: pointer;
