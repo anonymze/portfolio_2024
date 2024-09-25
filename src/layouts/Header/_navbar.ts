@@ -12,7 +12,8 @@ interface Accessory {
   on_click: () => void;
 }
 
-//
+type Theme = "light" | "dark" | null;
+
 export const navs: Array<Nav> = [
   {
     id: 1,
@@ -28,14 +29,13 @@ export const navs: Array<Nav> = [
   },
 ];
 
-//
 export const accessories: Array<Accessory> = [
   {
     id: 1,
     label: "switch_light",
-    icon: "",
+    icon: "/icons/light.svg",
     on_click: () => {
-      const fixed_theme = document.body.getAttribute("data-theme");
+      const fixed_theme = document.body.getAttribute("data-theme") as Theme;
 
       if (!fixed_theme) {
         const natural_theme = window.matchMedia("(prefers-color-scheme: dark)");
@@ -55,7 +55,14 @@ export const accessories: Array<Accessory> = [
   {
     id: 2,
     label: "mail",
-    icon: "",
+    icon: "/icons/light.svg",
     on_click: () => {},
   },
+  {
+    id: 3,
+    label: "mail",
+    icon: "/icons/light.svg",
+    on_click: () => {},
+  },
+
 ];

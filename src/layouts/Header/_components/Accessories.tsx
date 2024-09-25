@@ -6,8 +6,8 @@ const Accessories = () => {
     <>
       {accessories.map((accessory) => {
         return (
-          <li key={accessory.id}>
-            <button onClick={accessory.on_click}>{accessory.label}</button>
+          <li key={accessory.id} className="accessories">
+            <button onClick={accessory.on_click}><img className="size-6" src={accessory.icon} /></button>
           </li>
         );
       })}

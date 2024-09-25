@@ -6,7 +6,7 @@ import Accessories from "./_components/Accessories";
 <header>
   <nav>
     <menu>
-      <li><a href="/">Yann Metier</a></li>
+      <li id="home-logo"><a href="/">Yann Metier</a></li>
       {
         navs.map((nav) => {
           return (
@@ -32,8 +32,17 @@ import Accessories from "./_components/Accessories";
       menu,
       menu div {
         display: flex;
-        column-gap: 2rem;
+				align-items: center;
+        column-gap: 1rem;
       }
     }
+
+		menu li :is(button, a) {
+			padding: 0.7rem;
+		}
+
+		#home-logo {
+			margin-right: 1.5rem;
+		}
   }
 </style>

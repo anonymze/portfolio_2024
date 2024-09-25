@@ -19,6 +19,8 @@
     var(--text-primary-dark),
     var(--text-primary-light)
   );
+  /* animations */
+  --transition-spring : cubic-bezier(0, 0.78, 0.19, 1.05);
 }
 
 [data-theme] {
