@@ -1,8 +1,6 @@
 .fading-in {
 	--transition-delay: 600ms;
 
-	transform: translateY(0);
-	opacity: 1;
 	transition:
 		opacity 1.5s var(--transition-spring),
 		transform 1.5s var(--transition-spring);
@@ -10,6 +8,7 @@
 	transition-delay: calc(var(--transition-delay) * ((var(--transition-delay-count, 1) / 10) * 2 + 1));
 }
 
+/* will start the element to these values then will transition to their base / initial values  */
 @starting-style {
 	.fading-in {
 		transform: translateY(-1rem);

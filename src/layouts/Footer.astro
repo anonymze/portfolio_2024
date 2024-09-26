@@ -3,7 +3,10 @@ import MailSVG from "@assets/icons/mail.svg?raw";
 import LinkedinSVG from "@assets/icons/linkedin.svg?raw";
 
 const id_current_year = "current-year";
+const id_email_contact = "emai-contact";
+
 const static_year = new Date().getFullYear();
+const email = import.meta.env.PUBLIC_EMAIL;
 ---
 
 <footer class="grid grid-cols-6 grid-rows-3">
@@ -20,13 +23,14 @@ const static_year = new Date().getFullYear();
 		</p>
 
 		<div class="col-start-1 col-span-2 flex justify-start items-start gap-x-4 sm:col-start-5 sm:justify-end">
-			<button class="fading-in" set:html={MailSVG} />
+			<button id={id_email_contact} class="fading-in" set:html={MailSVG} />
 			<a class="fading-in" target="_blank" href={import.meta.env.PUBLIC_LINKEDIN_URL} set:html={LinkedinSVG} />
 		</div>
 </footer>
 
-<script define:vars={{ id_current_year }}>
+<script is:inline define:vars={{ id_current_year, id_email_contact, email }}>
 	document.getElementById(id_current_year).textContent = new Date().getFullYear();
+	document.getElementById(id_email_contact).addEventListener('click', () => window.navigator.clipboard.writeText(email));
 </script>
 
 <style>

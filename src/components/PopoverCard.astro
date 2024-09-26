@@ -1,0 +1,47 @@
+---
+type Props =
+	| {
+			message: string;
+			toTop: true;
+			toBottom?: false;
+	  }
+	| {
+			message: string;
+			toBottom: true;
+			toTop?: false;
+	  };
+
+const { message, toTop } = Astro.props;
+const position = toTop ? "12rem" : "2rem";
+const unique_id = crypto.randomUUID();
+---
+
+<button popovertarget={unique_id}>Open Popover</button>
+<div popover id={unique_id}>{message}</div>
+
+<style define:vars={{ position }}>
+	@starting-style {
+		[popover] {
+			top: 0;
+			opacity: 0;
+		}
+	}
+
+	[popover] {
+		position: absolute;
+		top: var(--position);
+		overflow-y: auto;
+		overflow-x: hidden;
+		width: 14rem;
+		max-height: 6rem;
+		padding: 0.5rem;
+		text-align: center;
+		color: var(--color-dark);
+		background-color: var(--color-light);
+		border-radius: 8px;
+
+		transition:
+			opacity var(--default-transition-duration) var(--transition-spring),
+			top var(--default-transition-duration) var(--transition-spring);
+	}
+</style>

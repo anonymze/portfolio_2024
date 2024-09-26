@@ -8,5 +8,5 @@
   --color-primary: var(--text-primary);
   --color-secondary: var(--text-secondary);
 
-  --default-transition-duration: 500ms;
+  --default-transition-duration: 300ms;
 }

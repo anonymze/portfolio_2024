@@ -35,7 +35,7 @@ export const accessories: Array<Accessory> = [
     label: "Email contact",
     icon: "mail",
     on_click: () => {
-      console.log(import.meta.env);
+      window.navigator.clipboard.writeText(import.meta.env.PUBLIC_EMAIL);
     },
   },
   {
