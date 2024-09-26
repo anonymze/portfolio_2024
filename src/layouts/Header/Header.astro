@@ -1,12 +1,18 @@
 ---
 import { navs } from "./_navbar";
 import Accessories from "./_components/Accessories";
+import MagicSVG from "@assets/icons/magic.svg?raw";
 ---
 
 <header>
 	<nav>
 		<menu>
-			<li id="home-logo"><a href="/"><span class="text-secondary font-extrabold text-lg">Yann Metier</span></a></li>
+			<li class="mr-6">
+				<a href="/"
+					><span class="text-secondary font-extrabold text-lg whitespace-nowrap"
+						>Yann Metier <Fragment set:html={MagicSVG} />
+					</span></a>
+			</li>
 			{
 				navs.map((nav) => {
 					return (
@@ -43,10 +49,6 @@ import Accessories from "./_components/Accessories";
 
 		menu li :is(button, a) {
 			padding: 0.7rem;
-		}
-
-		#home-logo {
-			margin-right: 1.5rem;
 		}
 	}
 </style>

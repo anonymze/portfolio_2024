@@ -1,4 +1,4 @@
-.accessories {
+.fading-in {
 	--transition-delay: 600ms;
 
 	transform: translateY(0);
@@ -7,11 +7,11 @@
 		opacity 1.5s var(--transition-spring),
 		transform 1.5s var(--transition-spring);
 	/* we get the counter from the style in the component (not the prettiest way i think to do it), but did not want to calculate with javascript */
-	transition-delay: calc(var(--transition-delay) * ((var(--transition-delay-count) / 10) * 2 + 1));
+	transition-delay: calc(var(--transition-delay) * ((var(--transition-delay-count, 1) / 10) * 2 + 1));
 }
 
 @starting-style {
-	.accessories {
+	.fading-in {
 		transform: translateY(-1rem);
 		opacity: 0;
 	}

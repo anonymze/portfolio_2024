@@ -1,6 +1,5 @@
 import { accessories } from "../_navbar";
 import { LazySvg } from "@/components/LazySvg";
-import "./Accessories.css";
 
 const Accessories = () => {
   return (
@@ -9,7 +8,7 @@ const Accessories = () => {
         return (
           <li
             key={accessory.id}
-            className="accessories"
+            className="fading-in"
             style={{ ["--transition-delay-count" as string]: idx + 1 }}
           >
             <button aria-label={accessory.label} onClick={accessory.on_click}>

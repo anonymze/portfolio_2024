@@ -43,7 +43,9 @@ export const accessories: Array<Accessory> = [
     label: "Switch theme",
     icon: "dark",
     on_click: () => {
-      const fixed_theme = document.body.getAttribute("data-theme") as Theme | null;
+      const fixed_theme = document.body.getAttribute(
+        "data-theme",
+      ) as Theme | null;
 
       if (!fixed_theme) {
         const natural_theme = window.matchMedia("(prefers-color-scheme: dark)");
@@ -59,5 +61,11 @@ export const accessories: Array<Accessory> = [
         ? document.body.setAttribute("data-theme", "light")
         : document.body.setAttribute("data-theme", "dark");
     },
+  },
+  {
+    id: 3,
+    label: "Switch language",
+    icon: "flag-en",
+    on_click: () => {},
   },
 ];

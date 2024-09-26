@@ -1,0 +1,50 @@
+---
+import MailSVG from "@assets/icons/mail.svg?raw";
+import LinkedinSVG from "@assets/icons/linkedin.svg?raw";
+
+const id_current_year = "current-year";
+const static_year = new Date().getFullYear();
+---
+
+<footer class="grid grid-cols-6 grid-rows-3">
+		<p class="col-span-6 text-sm sm:col-span-3">
+			Do you wish to contact me directly ? Click on the mail icon to add my email address to your clipboard.
+		</p>
+
+		<p class="col-span-6 self-end">© <span id={id_current_year}>{static_year}</span> All rights reserved to Yann Metier.</p>
+
+		<p class="col-span-6 flex gap-x-5 sm:col-span-4">
+			<a class="page" href="/terms-of-use">Terms of use</a><a class="page" href="/privacy-policy"
+				>Privacy policy</a
+			>
+		</p>
+
+		<div class="col-start-1 col-span-2 flex justify-start items-start gap-x-4 sm:col-start-5 sm:justify-end">
+			<button class="fading-in" set:html={MailSVG} />
+			<a class="fading-in" target="_blank" href={import.meta.env.PUBLIC_LINKEDIN_URL} set:html={LinkedinSVG} />
+		</div>
+</footer>
+
+<script define:vars={{ id_current_year }}>
+	document.getElementById(id_current_year).textContent = new Date().getFullYear();
+</script>
+
+<style>
+	footer {
+		width: 100%;
+		max-width: var(--max-width-layout);
+		margin-inline: auto;
+		font-size: 0.7rem;
+		margin-top: 5rem;
+
+		a {
+			text-decoration: underline;
+			text-underline-offset: 3px;
+		}
+
+		a:not(.page),
+		button {
+			padding-inline: 0.8rem;
+		}
+	}
+</style>

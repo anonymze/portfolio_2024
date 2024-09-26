@@ -1,5 +1,6 @@
 @import "./_tailwind.css";
 @import "./_reset.css";
+@import "./_animations.css";
 
 :root {
   /* layout */
@@ -54,3 +55,4 @@ h1 {
   margin-bottom: 3rem;
   font-weight: 600;
 }
+

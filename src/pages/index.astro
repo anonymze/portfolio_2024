@@ -4,7 +4,7 @@ import LocationSVG from "@assets/icons/location.svg?raw";
 ---
 
 <Layout title="Welcome home">
-	<div class="presentation sm:px-6 sm:my-20">
+	<div class="presentation sm:px-6 my-6 sm:my-10 lg:my-16">
 		<h1>Hello folks ! <span class="text-secondary font-bold">I'm Yann.</span></h1>
 
 		<p>Welcome to my world. I am a web developer since 2020.</p>
@@ -14,7 +14,16 @@ import LocationSVG from "@assets/icons/location.svg?raw";
 			my projects and what my main competences are. <br />
 		</p>
 
-		<p>By the way i am french and i am living near Toulouse in France. <a href={import.meta.env.PUBLIC_PINNED_LOCATION} aria-label="Open a page with my pinned location" class="inline-block" target="_blank" set:html={LocationSVG}><a/></p>
+		<p>
+			By the way i am french and i am living near Toulouse in France.
+			<a
+				href={import.meta.env.PUBLIC_PINNED_LOCATION}
+				aria-label="Open a page with my pinned location"
+				class="inline-block align-sub"
+				target="_blank"
+				set:html={LocationSVG}
+			/>
+		</p>
 	</div>
 </Layout>
 
