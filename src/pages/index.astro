@@ -1,5 +1,33 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import LocationSVG from "@assets/icons/location.svg?raw";
 ---
 
-<Layout title="Welcome" />
+<Layout title="Welcome home">
+	<div class="presentation sm:px-6 sm:my-20">
+		<h1>Hello folks ! <span class="text-secondary font-bold">I'm Yann.</span></h1>
+
+		<p>Welcome to my world. I am a web developer since 2020.</p>
+		<p>
+			Here i will try to describe myself, explain what drives me, and why i want to be a very good software
+			enginer. The road is not short but i'm going fast and safe (of course). So i will present to you some of
+			my projects and what my main competences are. <br />
+		</p>
+
+		<p>By the way i am french and i am living near Toulouse in France. <a href={import.meta.env.PUBLIC_PINNED_LOCATION} aria-label="Open a page with my pinned location" class="inline-block" target="_blank" set:html={LocationSVG}><a/></p>
+	</div>
+</Layout>
+
+<style>
+	.presentation {
+		width: 100%;
+		max-width: calc(var(--max-width-layout) * 0.9);
+		margin-inline: auto;
+
+		p {
+			margin-bottom: 1.25rem;
+			font-size: 1.25rem;
+			max-width: calc(var(--max-width-layout) * 0.55);
+		}
+	}
+</style>

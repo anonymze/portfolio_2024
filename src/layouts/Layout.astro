@@ -5,7 +5,7 @@ import Footer from "./Footer.astro";
 import "../styles/app.css";
 
 interface Props {
-  title: string;
+	title: string;
 }
 
 const { title } = Astro.props;
@@ -13,20 +13,22 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="description"
-      content="Welcome to my world, my portfolio. Here i will try to describe myself, explain what drives me, and why i want to be a very good developper. The road is not short but i'm going fast and safe (of course). I will present to you some of my projects and what my main competences are."
-    />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Portfolio Yann | {title}</title>
-  </head>
-  <body>
-    <Header />
-    <slot />
-    <Footer />
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="description"
+			content="Welcome to my world, my portfolio. Here i will try to describe myself, explain what drives me, and why i want to be a very good developper. The road is not short but i'm going fast and safe (of course). I will present to you some of my projects and what my main competences are."
+		/>
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Portfolio Yann | {title}</title>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<slot />
+		</main>
+		<Footer />
+	</body>
 </html>

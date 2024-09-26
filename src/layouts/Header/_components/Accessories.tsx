@@ -5,9 +5,13 @@ import "./Accessories.css";
 const Accessories = () => {
   return (
     <>
-      {accessories.map((accessory) => {
+      {accessories.map((accessory, idx) => {
         return (
-          <li key={accessory.id} className="accessories">
+          <li
+            key={accessory.id}
+            className="accessories"
+            style={{ ["--transition-delay-count" as string]: idx + 1 }}
+          >
             <button aria-label={accessory.label} onClick={accessory.on_click}>
               <LazySvg name={accessory.icon} />
             </button>

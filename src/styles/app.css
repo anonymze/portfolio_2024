@@ -4,19 +4,18 @@
 :root {
   /* layout */
   --viewport-padding: 2rem;
+  --max-width-layout: 70rem;
   /* font */
-  --font-family: system-ui, sans-serif;
+  --font-family: "Wotfard", system-ui, sans-serif;
   /* colors */
   color-scheme: light dark;
-  --bg-primary-dark: #13151a;
-  --bg-primary-light: #fff;
+  --color-light: oklch(100% 0 0);
+  --color-dark: oklch(19.58% 0.011 268.14);
+  --color-secondary: oklch(67.42% 0.2206140337135045 10.391266089312532);
 
-  --text-primary-dark: #13151a;
-  --text-primary-light: #fff;
-
-  --bg-primary: light-dark(var(--bg-primary-light), var(--bg-primary-dark));
-  --text-primary: light-dark(var(--text-primary-dark),
-      var(--text-primary-light));
+  --bg-primary: light-dark(var(--color-light), var(--color-dark));
+  --text-primary: light-dark(var(--color-dark),
+      var(--color-light));
   /* animations */
   --transition-spring: cubic-bezier(0, 0.78, 0.19, 1.05);
 }
@@ -27,13 +26,13 @@
 
 
 [data-theme="dark"] {
-  --bg-primary: var(--bg-primary-dark);
-  --text-primary: var(--text-primary-light);
+  --bg-primary: var(--color-dark);
+  --text-primary: var(--color-light);
 }
 
 [data-theme="light"] {
-  --bg-primary: var(--bg-primary-light);
-  --text-primary: var(--text-primary-dark);
+  --bg-primary: var(--color-light);
+  --text-primary: var(--color-dark);
 }
 
 html {
@@ -46,8 +45,12 @@ body {
   color: var(--text-primary);
 }
 
-
-
 button {
   cursor: pointer;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 3rem;
+  font-weight: 600;
 }

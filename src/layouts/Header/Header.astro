@@ -4,38 +4,42 @@ import Accessories from "./_components/Accessories";
 ---
 
 <header>
-  <nav>
-    <menu>
-      <li id="home-logo"><a href="/">Yann Metier</a></li>
-      {
-        navs.map((nav) => {
-          return (
-            <li>
-              <a href={nav.url}>{nav.label}</a>
-            </li>
-          );
-        })
-      }
+	<nav>
+		<menu>
+			<li id="home-logo"><a href="/"><span class="text-secondary font-extrabold text-lg">Yann Metier</span></a></li>
+			{
+				navs.map((nav) => {
+					return (
+						<li>
+							<a href={nav.url}>{nav.label}</a>
+						</li>
+					);
+				})
+			}
 
-      <div class="ml-auto">
-        <Accessories client:idle />
-      </div>
-    </menu>
-  </nav>
+			<div class="ml-auto">
+				<Accessories client:idle />
+			</div>
+		</menu>
+	</nav>
 </header>
 
 <style>
-  header {
-    height: 5rem;
+	header {
+		height: 5rem;
 
-    nav {
-      menu,
-      menu div {
-        display: flex;
+		nav {
+			width: 100%;
+			max-width: var(--max-width-layout);
+			margin-inline: auto;
+
+			menu,
+			menu div {
+				display: flex;
 				align-items: center;
-        column-gap: 1rem;
-      }
-    }
+				column-gap: 1rem;
+			}
+		}
 
 		menu li :is(button, a) {
 			padding: 0.7rem;
@@ -44,5 +48,5 @@ import Accessories from "./_components/Accessories";
 		#home-logo {
 			margin-right: 1.5rem;
 		}
-  }
+	}
 </style>

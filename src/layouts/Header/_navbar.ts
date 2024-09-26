@@ -34,7 +34,9 @@ export const accessories: Array<Accessory> = [
     id: 1,
     label: "Email contact",
     icon: "mail",
-    on_click: () => {},
+    on_click: () => {
+      console.log(import.meta.env);
+    },
   },
   {
     id: 2,
