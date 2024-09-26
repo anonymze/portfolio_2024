@@ -1,7 +1,7 @@
 ---
 import Header from "./Header/Header.astro";
 import Footer from "./Footer.astro";
-
+import ArrowUpSVG from "@assets/icons/arrow-up.svg?raw";
 import "../styles/app.css";
 
 interface Props {
@@ -9,6 +9,7 @@ interface Props {
 }
 
 const { title } = Astro.props;
+const scroll_top_id = "scroll-to-top";
 ---
 
 <!doctype html>
@@ -28,7 +29,68 @@ const { title } = Astro.props;
 		<Header />
 		<main>
 			<slot />
+
+			<button id={scroll_top_id} set:html={ArrowUpSVG} />
+		</main>
+		<main>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi nihil dolor, tenetur esse excepturi atque
+			iste quo corporis quia eum, sed laudantium magnam, ducimus vitae porro beatae in aspernatur expedita!
+			Delectus qui consectetur rem suscipit, eligendi optio. Perferendis atque cupiditate impedit error maxime
+			nam dolores dicta praesentium incidunt suscipit iusto hic, unde eveniet consectetur adipisci dolorem
+			expedita quidem aperiam voluptates! Iste corporis adipisci ut soluta odit eum autem neque consequatur
+			voluptatum delectus quod suscipit nesciunt, commodi eligendi obcaecati recusandae sunt possimus quaerat?
+			Commodi praesentium neque id consequatur explicabo soluta hic. Exercitationem fugit fugiat temporibus
+			earum magni adipisci impedit, perspiciatis facilis. Iure quod commodi corporis blanditiis sapiente non
+			sed est deleniti cum dignissimos. Tempore omnis eveniet qui suscipit nisi distinctio amet. Dolores
+			exercitationem illum laudantium veritatis soluta dolor eum reiciendis perferendis rerum quis optio magni
+			modi magnam quos quas itaque quidem, nobis repudiandae alias! Pariatur, laboriosam assumenda. Doloremque
+			at esse repudiandae! Totam rerum explicabo sapiente eius a, accusantium qui rem laudantium molestiae
+			debitis minus tempora odio. Quaerat facere, pariatur alias aperiam explicabo at voluptatum fugiat
+			officia sit error consequatur inventore labore!
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<script define:vars={{ scroll_top_id }}>
+	document.getElementById(scroll_top_id).addEventListener("click", () => window.scrollTo(0, 0));
+</script>
+
+<style>
+	main {
+		position: relative;
+
+		#scroll-to-top {
+			position: fixed;
+			right: 2rem;
+
+			/* accessible zone for the on click */
+			padding-top: 2rem;
+
+			svg {
+				width: 2.4rem;
+				height: 2.4rem;
+				
+				animation-name: alternate;
+				animation-duration: 1s;
+				animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+				animation-iteration-count: infinite;
+			}
+		}
+	}
+
+	@keyframes alternate {
+		0% {
+			transform: translateY(0);
+			opacity: 1;
+		}
+		50% {
+			transform: translateY(-2rem);
+			opacity: 0;
+		}
+		100% {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
+</style>
