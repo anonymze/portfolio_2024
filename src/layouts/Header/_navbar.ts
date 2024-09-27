@@ -1,4 +1,5 @@
 import type { Theme } from "@/types/theme";
+import { setTheme } from "@/utils/theme_browser";
 
 interface Nav {
   id: number;
@@ -42,25 +43,7 @@ export const accessories: Array<Accessory> = [
     id: 2,
     label: "Switch theme",
     icon: "dark",
-    on_click: () => {
-      const fixed_theme = document.body.getAttribute(
-        "data-theme",
-      ) as Theme | null;
-
-      if (!fixed_theme) {
-        const natural_theme = window.matchMedia("(prefers-color-scheme: dark)");
-
-        natural_theme.matches
-          ? document.body.setAttribute("data-theme", "light")
-          : document.body.setAttribute("data-theme", "dark");
-
-        return;
-      }
-
-      fixed_theme === "dark"
-        ? document.body.setAttribute("data-theme", "light")
-        : document.body.setAttribute("data-theme", "dark");
-    },
+    on_click: () => setTheme("data-theme"),
   },
   {
     id: 3,
