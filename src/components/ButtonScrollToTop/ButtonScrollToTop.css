@@ -1,0 +1,40 @@
+	main {
+		position: relative;
+
+		#scroll-to-top {
+			position: fixed;
+			right: 2rem;
+			z-index: 1;
+
+			/* accessible zone for the on click */
+			padding-top: 2rem;
+
+			svg {
+				width: 2.4rem;
+				height: 2.4rem;
+
+				animation-name: alternate;
+				animation-duration: 1s;
+				animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+				animation-iteration-count: infinite;
+			}
+		}
+	}
+
+
+	@keyframes alternate {
+		0% {
+			transform: translateY(0);
+			opacity: 1;
+		}
+
+		50% {
+			transform: translateY(-2rem);
+			opacity: 0;
+		}
+
+		100% {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}

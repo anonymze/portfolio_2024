@@ -1,7 +1,8 @@
 ---
 import Header from "./Header/Header.astro";
 import Footer from "./Footer.astro";
-import ArrowUpSVG from "@assets/icons/arrow-up.svg?raw";
+import ButtonScrollToTop from "@/components/ButtonScrollToTop/ButtonScrollToTop";
+
 import "../styles/app.css";
 
 interface Props {
@@ -9,7 +10,6 @@ interface Props {
 }
 
 const { title } = Astro.props;
-const scroll_top_id = "scroll-to-top";
 ---
 
 <!doctype html>
@@ -30,9 +30,9 @@ const scroll_top_id = "scroll-to-top";
 		<main>
 			<slot />
 
-			<button id={scroll_top_id} set:html={ArrowUpSVG} />
+			<ButtonScrollToTop client:idle />
 		</main>
-		<main>
+		<p>
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi nihil dolor, tenetur esse excepturi atque
 			iste quo corporis quia eum, sed laudantium magnam, ducimus vitae porro beatae in aspernatur expedita!
 			Delectus qui consectetur rem suscipit, eligendi optio. Perferendis atque cupiditate impedit error maxime
@@ -47,50 +47,7 @@ const scroll_top_id = "scroll-to-top";
 			at esse repudiandae! Totam rerum explicabo sapiente eius a, accusantium qui rem laudantium molestiae
 			debitis minus tempora odio. Quaerat facere, pariatur alias aperiam explicabo at voluptatum fugiat
 			officia sit error consequatur inventore labore!
-		</main>
+		</p>
 		<Footer />
 	</body>
 </html>
-
-<script define:vars={{ scroll_top_id }}>
-	document.getElementById(scroll_top_id).addEventListener("click", () => window.scrollTo(0, 0));
-</script>
-
-<style>
-	main {
-		position: relative;
-
-		#scroll-to-top {
-			position: fixed;
-			right: 2rem;
-
-			/* accessible zone for the on click */
-			padding-top: 2rem;
-
-			svg {
-				width: 2.4rem;
-				height: 2.4rem;
-				
-				animation-name: alternate;
-				animation-duration: 1s;
-				animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-				animation-iteration-count: infinite;
-			}
-		}
-	}
-
-	@keyframes alternate {
-		0% {
-			transform: translateY(0);
-			opacity: 1;
-		}
-		50% {
-			transform: translateY(-2rem);
-			opacity: 0;
-		}
-		100% {
-			transform: translateY(0);
-			opacity: 1;
-		}
-	}
-</style>
