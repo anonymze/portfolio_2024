@@ -12,10 +12,10 @@
 			height: var(--size);
 
 			svg {
-				@apply transition-opacity;
-
 				width: var(--size);
 				height: var(--size);
+
+				transition: opacity calc(var(--default-transition-duration) * 3);
 
 				animation-name: show;
 				animation-duration: 1s;

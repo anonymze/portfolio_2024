@@ -5,6 +5,9 @@ import ButtonScrollToTop from "@/components/ButtonScrollToTop/ButtonScrollToTop"
 import { storage_name_fix } from "@utils/client/theme";
 
 import "../styles/app.css";
+import { getPreferedLocale } from "@/utils/server/language";
+import { getKeysTypedObject } from "@/helper";
+import { i18n } from "@/i18n/translations";
 
 interface Props {
 	title: string;
@@ -12,10 +15,11 @@ interface Props {
 
 const { title } = Astro.props;
 const theme = Astro.cookies.get(storage_name_fix);
+const language = getPreferedLocale(Astro.request.headers, getKeysTypedObject(i18n));
 ---
 
 <!doctype html>
-<html lang="fr">
+<html lang={language}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta

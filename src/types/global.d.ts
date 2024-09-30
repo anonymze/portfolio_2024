@@ -10,4 +10,4 @@ declare module '*.svg?react' {
 	export default content;
 }
 
-type SVGIcons = "dark" | "light" | "mail" | "linkedin" | "location" | "flag-en" | "flag-fr" | "magic";
+type SVGIcons = "dark" | "light" | "mail" | "linkedin" | "location" | "flag-en" | "flag-fr" | "magic" | "hat-popover";

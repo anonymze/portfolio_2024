@@ -19,7 +19,7 @@
   --bg-primary: light-dark(var(--color-light) var(--color-dark));
 
   /* animations / transitions */
-  --default-transition-duration: 400ms;
+  --default-transition-duration: 600ms;
   --tw-duration: var(--default-transition-duration);
   --transition-spring: cubic-bezier(0, 0.78, 0.19, 1.05);
 

@@ -1,4 +1,6 @@
 ---
+import HatPopoverSVG from "@assets/icons/hat-popover.svg?raw";
+
 type Props =
 	| {
 			message: string;
@@ -12,13 +14,15 @@ type Props =
 	  };
 
 const { message, toTop } = Astro.props;
-const position = toTop ? "-3rem" : "2.7rem";
+const position = toTop ? "-3.5rem" : "3.5rem";
 const unique_id = crypto.randomUUID();
 ---
 
 <button popovertarget={unique_id}><slot /></button>
 <div popover id={unique_id}></div>
-<div class="fading-in">{message}</div>
+<div class="fading-in" set:html={HatPopoverSVG}>
+	{message}
+</div>
 
 <style define:vars={{ position }}>
 	/* TODO hack because overlay: none is not really well implemented on browsers */
@@ -31,18 +35,29 @@ const unique_id = crypto.randomUUID();
 		display: none;
 		width: 14rem;
 		height: auto;
-		padding: 0.7rem;
+		padding: 0.6rem;
 		text-align: center;
 		border-radius: 8px;
 		background-color: var(--text-primary);
 		color: var(--bg-primary);
 		transition:
-			opacity var(--default-transition-duration) var(--transition-spring),
-			transform var(--default-transition-duration) var(--transition-spring);
+			opacity var(--default-transition-duration) ease-out,
+			transform calc(var(--default-transition-duration) * 5) var(--transition-spring);
 
 		@starting-style {
 			opacity: 0;
 			transform: translate(-50%, -1rem);
+		}
+
+		svg {
+			position: absolute;
+			top: -0.8rem;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 32.4rem;
+			height: 2.4rem;
+			text-align: center;
+			color: var(--text-primary);
 		}
 	}
 
