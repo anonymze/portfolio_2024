@@ -4,6 +4,7 @@
 		#scroll-to-top {
 			--size: 2.4rem;
 			position: sticky;
+			bottom: 2rem;
 			z-index: 1;
 
 			display: block;
@@ -19,8 +20,10 @@
 
 				animation-name: show;
 				animation-duration: 1s;
+				animation-fill-mode: backwards;
 				animation-timeline: scroll(root y);
-				animation-fill-mode: forwards;
+				animation-range: entry 25%;
+	
 
 				@starting-style {
 					opacity: 0;
@@ -30,11 +33,11 @@
 	}
 
 	@keyframes show {
-		0% {
+		from {
 			display: none;
 		}
 
-		30% {
-			display: none;
+		to {
+			display: block;
 		}
 	}
