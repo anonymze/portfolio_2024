@@ -2,6 +2,7 @@
 import Header from "./Header/Header.astro";
 import Footer from "./Footer.astro";
 import ButtonScrollToTop from "@/components/ButtonScrollToTop/ButtonScrollToTop";
+import { storage_name_fix } from "@utils/client/theme";
 
 import "../styles/app.css";
 
@@ -10,6 +11,7 @@ interface Props {
 }
 
 const { title } = Astro.props;
+const theme = Astro.cookies.get(storage_name_fix);
 ---
 
 <!doctype html>
@@ -25,29 +27,35 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>Portfolio Yann | {title}</title>
 	</head>
-	<body>
+	<body data-theme={theme?.value}>
 		<Header />
+
+
+
+
+
 		<main>
 			<slot />
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi nihil dolor, tenetur esse excepturi
+				atque iste quo corporis quia eum, sed laudantium magnam, ducimus vitae porro beatae in aspernatur
+				expedita! Delectus qui consectetur rem suscipit, eligendi optio. Perferendis atque cupiditate impedit
+				error maxime nam dolores dicta praesentium incidunt suscipit iusto hic, unde eveniet consectetur
+				adipisci dolorem expedita quidem aperiam voluptates! Iste corporis adipisci ut soluta odit eum autem
+				neque consequatur voluptatum delectus quod suscipit nesciunt, commodi eligendi obcaecati recusandae
+				sunt possimus quaerat? Commodi praesentium neque id consequatur explicabo soluta hic. Exercitationem
+				fugit fugiat temporibus earum magni adipisci impedit, perspiciatis facilis. Iure quod commodi corporis
+				blanditiis sapiente non sed est deleniti cum dignissimos. Tempore omnis eveniet qui suscipit nisi
+				distinctio amet. Dolores exercitationem illum laudantium veritatis soluta dolor eum reiciendis
+				perferendis rerum quis optio magni modi magnam quos quas itaque quidem, nobis repudiandae alias!
+				Pariatur, laboriosam assumenda. Doloremque at esse repudiandae! Totam rerum explicabo sapiente eius a,
+				accusantium qui rem laudantium molestiae debitis minus tempora odio. Quaerat facere, pariatur alias
+				aperiam explicabo at voluptatum fugiat officia sit error consequatur inventore labore!
+			</p>
 
 			<ButtonScrollToTop client:idle />
 		</main>
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi nihil dolor, tenetur esse excepturi atque
-			iste quo corporis quia eum, sed laudantium magnam, ducimus vitae porro beatae in aspernatur expedita!
-			Delectus qui consectetur rem suscipit, eligendi optio. Perferendis atque cupiditate impedit error maxime
-			nam dolores dicta praesentium incidunt suscipit iusto hic, unde eveniet consectetur adipisci dolorem
-			expedita quidem aperiam voluptates! Iste corporis adipisci ut soluta odit eum autem neque consequatur
-			voluptatum delectus quod suscipit nesciunt, commodi eligendi obcaecati recusandae sunt possimus quaerat?
-			Commodi praesentium neque id consequatur explicabo soluta hic. Exercitationem fugit fugiat temporibus
-			earum magni adipisci impedit, perspiciatis facilis. Iure quod commodi corporis blanditiis sapiente non
-			sed est deleniti cum dignissimos. Tempore omnis eveniet qui suscipit nisi distinctio amet. Dolores
-			exercitationem illum laudantium veritatis soluta dolor eum reiciendis perferendis rerum quis optio magni
-			modi magnam quos quas itaque quidem, nobis repudiandae alias! Pariatur, laboriosam assumenda. Doloremque
-			at esse repudiandae! Totam rerum explicabo sapiente eius a, accusantium qui rem laudantium molestiae
-			debitis minus tempora odio. Quaerat facere, pariatur alias aperiam explicabo at voluptatum fugiat
-			officia sit error consequatur inventore labore!
-		</p>
+
 		<Footer />
 	</body>
 </html>

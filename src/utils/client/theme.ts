@@ -1,13 +1,16 @@
 import type { Theme } from "@/types/theme";
+import { getCookie } from "./cookies";
 
 type AttributeName = `data-${string}`;
 
-const storage_name_fix = "theme";
+export const storage_name_fix = "theme";
 
-export const setTheme = (
-  attribute_theme: AttributeName,
-  storage_name?: string,
-) => {
+/**
+ *
+ * @param attribute_theme the data attribute name set on the tag element
+ * @param storage_name the data storage name set on the browser
+ */
+export const setTheme = (attribute_theme: AttributeName): Theme => {
   const fixed_theme = document.body.getAttribute(
     attribute_theme,
   ) as Theme | null;
@@ -24,25 +27,27 @@ export const setTheme = (
       : document.body.setAttribute(attribute_theme, "dark");
   }
 
-  window.sessionStorage.setItem(
-    storage_name ?? storage_name_fix,
-    document.body.getAttribute(attribute_theme)!,
-  );
+  const theme = document.body.getAttribute(attribute_theme)! as Theme;
+
+  // 7 days
+  window.document.cookie = `${storage_name_fix}=${theme};max-age=${60 * 60 * 24 * 7}`;
+
+  return theme;
 };
 
-export const getTheme = (
-  attribute_theme: AttributeName,
-  storage_name?: string,
-): Theme => {
+/**
+ *
+ * @param attribute_theme the data attribute name set on the tag element
+ * @param storage_name the data storage name set on the browser
+ */
+export const getTheme = (attribute_theme: AttributeName): Theme => {
   const fixed_theme = document.body.getAttribute(
     attribute_theme,
   ) as Theme | null;
 
   if (fixed_theme) return fixed_theme;
 
-  const storage_theme = window.sessionStorage.getItem(
-    storage_name ?? storage_name_fix,
-  ) as Theme | null;
+  const storage_theme = getCookie(storage_name_fix) as Theme | null;
 
   if (storage_theme) return storage_theme;
 

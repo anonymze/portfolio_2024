@@ -1,12 +1,28 @@
 @import "tailwindcss";
 
-/* config here */
-@theme {
-  --bg-primary: var(--bg-primary);
-  --bg-secondary: var(--bg-secondary);
-  
-  --color-primary: var(--text-primary);
-  --color-secondary: var(--text-secondary);
+:root {
+  color-scheme: light dark;
+}
 
-  --default-transition-duration: 300ms;
+@theme {
+  /* layout */
+  --viewport-padding: 2rem;
+  --max-width-layout: 70rem;
+
+  /* colors */
+  --color-light: oklch(100% 0 0);
+  --color-dark: oklch(19.58% 0.011 268.14);
+  --color-primary: oklch(67.42% 0.2206140337135045 10.391266089312532);
+  --color-secondary: oklch(67.42% 0.2206140337135045 10.391266089312532);
+
+  --text-primary: light-dark(var(--color-dark) var(--color-light));
+  --bg-primary: light-dark(var(--color-light) var(--color-dark));
+
+  /* animations / transitions */
+  --default-transition-duration: 400ms;
+  --tw-duration: var(--default-transition-duration);
+  --transition-spring: cubic-bezier(0, 0.78, 0.19, 1.05);
+
+  /* font */
+  --defaut-font-family: "Wotfard", system-ui, sans-serif;
 }

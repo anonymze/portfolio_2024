@@ -9,6 +9,7 @@ const ButtonScrollToTop: React.FC<Props> = () => {
   return (
     <button
       id="scroll-to-top"
+      aria-hidden="true" tabIndex={-1}
       aria-label="Scroll to the beginning of the page"
       onClick={() => window.scrollTo(0, 0)}
     >

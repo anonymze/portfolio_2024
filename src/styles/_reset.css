@@ -41,6 +41,16 @@ p {
   text-wrap: pretty;
 }
 
+button {
+  /* Cursor pointer by default */
+  cursor: pointer;
+}
+
+a {
+  /* Better control over links */
+  display: inline-block;
+}
+
 input,
 button,
 textarea,

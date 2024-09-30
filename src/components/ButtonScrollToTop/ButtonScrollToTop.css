@@ -2,39 +2,39 @@
 		position: relative;
 
 		#scroll-to-top {
-			position: fixed;
-			right: 2rem;
+			--size: 2.4rem;
+			position: sticky;
 			z-index: 1;
 
-			/* accessible zone for the on click */
-			padding-top: 2rem;
+			display: block;
+			width: fit-content;
+			margin-left: auto;
+			height: var(--size);
 
 			svg {
-				width: 2.4rem;
-				height: 2.4rem;
+				@apply transition-opacity;
 
-				animation-name: alternate;
+				width: var(--size);
+				height: var(--size);
+
+				animation-name: show;
 				animation-duration: 1s;
-				animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-				animation-iteration-count: infinite;
+				animation-timeline: scroll(root y);
+				animation-fill-mode: forwards;
+
+				@starting-style {
+					opacity: 0;
+				}
 			}
 		}
 	}
 
-
-	@keyframes alternate {
+	@keyframes show {
 		0% {
-			transform: translateY(0);
-			opacity: 1;
+			display: none;
 		}
 
-		50% {
-			transform: translateY(-2rem);
-			opacity: 0;
-		}
-
-		100% {
-			transform: translateY(0);
-			opacity: 1;
+		30% {
+			display: none;
 		}
 	}

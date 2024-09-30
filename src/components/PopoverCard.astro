@@ -2,48 +2,51 @@
 type Props =
 	| {
 			message: string;
-			toTop: true;
+			toTop?: true;
 			toBottom?: false;
 	  }
 	| {
 			message: string;
-			toBottom: true;
+			toBottom?: true;
 			toTop?: false;
 	  };
 
 const { message, toTop } = Astro.props;
-const position = toTop ? "18rem" : "18rem";
+const position = toTop ? "-3rem" : "2.7rem";
 const unique_id = crypto.randomUUID();
 ---
 
-<button popovertarget={unique_id}>Open Popover</button>
-<div popover id={unique_id}>{message}</div>
+<button popovertarget={unique_id}><slot /></button>
+<div popover id={unique_id}></div>
+<div class="fading-in">{message}</div>
 
 <style define:vars={{ position }}>
-	[popover] {
+	/* TODO hack because overlay: none is not really well implemented on browsers */
+	[popover] + div {
 		position: absolute;
 		top: var(--position);
-		overflow-y: auto;
-		overflow-x: hidden;
+		left: 50%;
+		transform: translate(-50%);
+		z-index: 2;
+		display: none;
 		width: 14rem;
-		max-height: 6rem;
-		padding: 0.5rem;
+		height: auto;
+		padding: 0.7rem;
 		text-align: center;
-		color: var(--color-dark);
-		background-color: var(--color-light);
 		border-radius: 8px;
-	}
-
-	[popover]:popover-open {
+		background-color: var(--text-primary);
+		color: var(--bg-primary);
 		transition:
 			opacity var(--default-transition-duration) var(--transition-spring),
 			transform var(--default-transition-duration) var(--transition-spring);
+
+		@starting-style {
+			opacity: 0;
+			transform: translate(-50%, -1rem);
+		}
 	}
 
-	@starting-style {
-		[popover]:popover-open {
-			transform: translateY(-2rem);
-			opacity: 0;
-		}
+	[popover]:popover-open + div {
+		display: block;
 	}
 </style>
