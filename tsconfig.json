@@ -9,6 +9,9 @@
       "@assets/*": ["src/assets/*"],
       "@components/*": ["src/components/*"],
       "@utils/*": ["src/utils/*"],
+      "@i18n/*": ["src/i18n/*"],
+      "@types/*": ["src/types/*"],
+      "@styles/*": ["src/styles/*"],
     }
   }
 }

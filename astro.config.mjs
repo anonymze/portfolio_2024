@@ -13,5 +13,13 @@ export default defineConfig({
   },
   vite: {
     plugins: [svgr()]
+  },
+  i18n: {
+    defaultLocale: "fr",
+    locales: ["fr", "en"],
+    routing:  {
+      prefixDefaultLocale: false,
+      // redirectToDefaultLocale: false
+    }
   }
 });

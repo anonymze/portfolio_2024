@@ -1,17 +1,20 @@
 ---
 import { navs } from "./_nav_links";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { switchRouteLocale } from "@/utils/server/locale";
 import Accessories from "./_components/Accessories";
 import MagicSVG from "@assets/icons/magic.svg?raw";
 import MailSVG from "@assets/icons/mail.svg?raw";
-
 import PopoverCard from "@/components/PopoverCard.astro";
+
+const route_switch_locale = switchRouteLocale(Astro.url.pathname, Astro.currentLocale!);
 ---
 
 <header>
 	<nav>
 		<menu>
 			<li class="mr-6">
-				<a href="/"
+				<a href={getRelativeLocaleUrl(Astro.currentLocale!, "")}
 					><span class="text-secondary font-extrabold text-lg whitespace-nowrap"
 						>Yann Metier <Fragment set:html={MagicSVG} />
 					</span></a
@@ -21,15 +24,21 @@ import PopoverCard from "@/components/PopoverCard.astro";
 				navs.map((nav) => {
 					return (
 						<li>
-							<a href={nav.url}>{nav.label}</a>
+							<a href={getRelativeLocaleUrl(Astro.currentLocale!, nav.url)}>
+								{nav.label}
+							</a>
 						</li>
 					);
 				})
 			}
 
 			<div class="ml-auto">
-				<Accessories client:only="react">
-					<PopoverCard slot={"email"} message="Email copied to clipboard !" set:html={MailSVG} />
+				<Accessories
+					route_switch_locale={route_switch_locale}
+					locale={Astro.currentLocale!}
+					client:only="react"
+				>
+					<PopoverCard slot={"email_component"} message="Email copied to clipboard !" set:html={MailSVG} />
 				</Accessories>
 			</div>
 		</menu>
@@ -57,6 +66,7 @@ import PopoverCard from "@/components/PopoverCard.astro";
 
 			button,
 			a {
+				display: block;
 				padding: 0.7rem;
 			}
 		}

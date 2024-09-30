@@ -3,8 +3,7 @@ import MailSVG from "@assets/icons/mail.svg?raw";
 import LinkedinSVG from "@assets/icons/linkedin.svg?raw";
 
 const id_email_contact = "emai-contact";
-
-const current_year = new Date().getFullYear();
+const id_current_year = "current-year";
 const email = import.meta.env.PUBLIC_EMAIL;
 ---
 
@@ -13,7 +12,7 @@ const email = import.meta.env.PUBLIC_EMAIL;
 			Do you wish to contact me directly ? Click on the mail icon to add my email address to your clipboard.
 		</p>
 
-		<p class="col-span-6 self-end">© <span>{current_year}</span> All rights reserved Yann Metier.</p>
+		<p class="col-span-6 self-end">© <span id={id_current_year}>2000</span> All rights reserved Yann Metier.</p>
 
 		<p class="col-span-6 flex gap-x-5 sm:col-span-4">
 			<a class="page" href="/terms-of-use">Terms of use</a><a class="page" href="/privacy-policy"
@@ -27,8 +26,10 @@ const email = import.meta.env.PUBLIC_EMAIL;
 		</div>
 </footer>
 
-<script is:inline define:vars={{ id_email_contact, email }}>
+<script is:inline define:vars={{ id_email_contact, email, id_current_year }}>
 	document.getElementById(id_email_contact).addEventListener('click', () => window.navigator.clipboard.writeText(email));
+	// in case website is SSG we set the date in js for every refresh
+	document.getElementById(id_current_year).textContent = new Date().getFullYear();
 </script>
 
 <style>
