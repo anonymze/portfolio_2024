@@ -14,14 +14,15 @@
   --defaut-font-family: "Wotfard", system-ui, sans-serif;
   --text-xs: clamp(0.64rem, 0.05vi + 0.63rem, 0.67rem);
   --text-sm: clamp(0.8rem, 0.17vi + 0.76rem, 0.89rem);
-  --text-md: clamp(1rem, 0.34vi + 0.91rem, 1.19rem);
+  --text-base: clamp(1rem, 0.34vi + 0.91rem, 1.1rem);
+  --text-md: clamp(1.1rem, 0.61vi + 1.1rem, 1.3rem);
   --text-lg: clamp(1.56rem, 1vi + 1.31rem, 2.11rem);
   --text-xl: clamp(2.44rem, 2.38vi + 1.85rem, 3.4rem);
   --text-2xl: clamp(3.4rem, 4.18vi + 2.4rem, 4rem);
 
   /* colors */
   --color-light: oklch(100% 0 0);
-  --color-dark: oklch(19.58% 0.011 268.14);
+  --color-dark: oklch(16.76% 0.007 258.37);
   --color-gray: oklch(47.48% 0 0);
   --color-primary: oklch(67.42% 0.2206140337135045 10.391266089312532);
   --color-secondary: oklch(67.42% 0.2206140337135045 10.391266089312532);

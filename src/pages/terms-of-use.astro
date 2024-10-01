@@ -13,10 +13,21 @@ const locale = Astro.currentLocale as I18n;
 		<p class="mb-10 italic text-center">Last Updated: October 1, 2024</p>
 
 		<article>
-			The following terms of use (“Terms”) govern your access to and use of the websites
-			courses.joshwcomeau.com, css-for-js.dev, joyofreact.com, and joshwcomeau.com (collectively, the
-			“Websites”), operated and owned by Josh W Comeau (12864924 Canada Inc.) (collectively, “Josh W Comeau”,
-			“we”, “us” or “our”).
+			<p>
+				The following terms of use (“Terms”) govern your access to and use of the websites
+				courses.joshwcomeau.com, css-for-js.dev, joyofreact.com, and joshwcomeau.com (collectively, the
+				“Websites”), operated and owned by Josh W Comeau (12864924 Canada Inc.) (collectively, “Josh W
+				Comeau”, “we”, “us” or “our”).
+			</p>
+		</article>
+
+		<article>
+			<p>
+				The following terms of use (“Terms”) govern your access to and use of the websites
+				courses.joshwcomeau.com, css-for-js.dev, joyofreact.com, and joshwcomeau.com (collectively, the
+				“Websites”), operated and owned by Josh W Comeau (12864924 Canada Inc.) (collectively, “Josh W
+				Comeau”, “we”, “us” or “our”).
+			</p>
 		</article>
 	</section>
 </Layout>
@@ -24,13 +35,20 @@ const locale = Astro.currentLocale as I18n;
 <style>
 	section {
 		max-width: var(--max-sm-width-layout);
-		margin: 0 auto;
+		margin-inline: auto;
 
 		h1 {
 			margin-top: 4rem;
 			line-height: var(--text-xl);
 			text-align: center;
 			font-size: var(--text-xl);
+		}
+
+		article {
+			margin-bottom: 1.2rem;
+			p {
+				font-size: var(--text-sm);
+			}
 		}
 	}
 </style>
