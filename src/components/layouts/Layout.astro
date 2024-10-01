@@ -6,6 +6,8 @@ import { storage_theme_name_fix } from "@utils/client/theme";
 import { getPreferedLocale } from "@/utils/server/locale";
 
 import "@/styles/app.css";
+import { i18n } from "@/i18n/translations";
+import type { I18n } from "@/types/i18n";
 
 interface Props {
 	title: string;
@@ -14,8 +16,7 @@ interface Props {
 const { title } = Astro.props;
 const theme = Astro.cookies.get(storage_theme_name_fix);
 
-const locale = getPreferedLocale(Astro.cookies, Astro.preferredLocale);
-console.log(locale);
+const locale = Astro.currentLocale as I18n;
 ---
 
 <!doctype html>
@@ -24,7 +25,7 @@ console.log(locale);
 		<meta charset="UTF-8" />
 		<meta
 			name="description"
-			content="Welcome to my world, my portfolio. Here i will try to describe myself, explain what drives me, and why i want to be a very good developper. The road is not short but i'm going fast and safe (of course). I will present to you some of my projects and what my main competences are."
+			content={i18n[locale]("WELCOME_TO_MY_WORLD")}
 		/>
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />

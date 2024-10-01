@@ -52,7 +52,7 @@ export const setPreferredTheme = (attribute_theme: AttributeName): Theme => {
   const theme = document.body.getAttribute(attribute_theme)! as Theme;
 
   // 7 days
-  window.document.cookie = `${storage_theme_name_fix}=${theme};max-age=${60 * 60 * 24 * 7}`;
+  window.document.cookie = `${storage_theme_name_fix}=${theme};max-age=${60 * 60 * 24 * 7};path=/`;
 
   return theme;
 };

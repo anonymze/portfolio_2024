@@ -1,33 +1,36 @@
 ---
 import MailSVG from "@assets/icons/mail.svg?raw";
 import LinkedinSVG from "@assets/icons/linkedin.svg?raw";
+import { i18n } from "@/i18n/translations";
+import type { I18n } from "@/types/i18n";
+import PopoverCard from "../PopoverCard.astro";
 
-const id_email_contact = "emai-contact";
+const id_email_contact = "email-contact";
 const id_current_year = "current-year";
 const email = import.meta.env.PUBLIC_EMAIL;
+const locale = Astro.currentLocale as I18n;
 ---
 
 <footer class="grid grid-cols-6 grid-rows-3">
 		<p class="col-span-6 text-sm sm:col-span-3">
-			Do you wish to contact me directly ? Click on the mail icon to add my email address to your clipboard.
+			{i18n[locale]("MAIL_ME")}
 		</p>
 
-		<p class="col-span-6 self-end">© <span id={id_current_year}>2000</span> All rights reserved Yann Metier.</p>
+		<p class="col-span-6 self-end">© <span id={id_current_year}>2000</span> {i18n[locale]('ALL_RIGHTS_RESERVED')} Yann Metier.</p>
 
 		<p class="col-span-6 flex gap-x-5 sm:col-span-4">
-			<a class="page" href="/terms-of-use">Terms of use</a><a class="page" href="/privacy-policy"
-				>Privacy policy</a
+			<a class="page" href="/terms-of-use">{i18n[locale]("TERMS_CONDITIONS")}</a><a class="page" href="/privacy-policy"
+				>{i18n[locale]("PRIVACY_POLICY")}</a
 			>
 		</p>
 
 		<div class="col-start-1 col-span-2 flex justify-start items-start gap-x-4 sm:col-start-5 sm:justify-end">
-			<button id={id_email_contact} class="fading-in" set:html={MailSVG} />
+			<PopoverCard toBottom message={i18n[locale]("EMAIL_COPIED")} set:html={MailSVG} />
 			<a class="fading-in" target="_blank" href={import.meta.env.PUBLIC_LINKEDIN_URL} set:html={LinkedinSVG} />
 		</div>
 </footer>
 
 <script is:inline define:vars={{ id_email_contact, email, id_current_year }}>
-	document.getElementById(id_email_contact).addEventListener('click', () => window.navigator.clipboard.writeText(email));
 	// in case website is SSG we set the date in js for every refresh
 	document.getElementById(id_current_year).textContent = new Date().getFullYear();
 </script>

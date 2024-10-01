@@ -47,11 +47,12 @@ const Accessories: React.FC<AstroProps> = ({
             <button
               aria-label={"Switch theme"}
               onClick={() => {
+                console.log('ici');
                 const theme = setPreferredTheme("data-theme");
                 setIconTheme(theme);
               }}
             >
-              {iconTheme === "dark" ? <DarkIcon /> : <LightIcon />}
+              {iconTheme === "dark" ? <LightIcon /> : <DarkIcon />}
             </button>
           </li>
         );
@@ -62,14 +63,13 @@ const Accessories: React.FC<AstroProps> = ({
           <li
             className="fading-in"
             style={{ ["--transition-delay-count" as string]: 2 }}
-            onClick={() => {}}
           >
             <a
               aria-label={"Switch language"}
               href={route_switch_locale}
               hrefLang={locale}
             >
-              {locale === I18n["FR"] ? <FlagFrSVG /> : <FlagEnSVG />}
+              {locale === I18n["FR"] ? <FlagEnSVG /> : <FlagFrSVG />}
             </a>
           </li>
         );

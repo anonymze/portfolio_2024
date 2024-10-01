@@ -13,23 +13,35 @@ type Props =
 			toTop?: false;
 	  };
 
-const { message, toTop } = Astro.props;
-const position = toTop ? "-3.5rem" : "3.5rem";
+const { message, toBottom } = Astro.props;
 const unique_id = crypto.randomUUID();
+const email = import.meta.env.PUBLIC_EMAIL;
 ---
 
-<button popovertarget={unique_id}><slot /></button>
-<div popover id={unique_id}></div>
-<div class="fading-in" set:html={HatPopoverSVG}>
-	{message}
-</div>
+<button popovertarget={unique_id}
+	><slot />
+	<div popover id={unique_id}></div>
+	<div class:list={["fading-in", toBottom ? "to-bottom" : "to-top"]} set:html={HatPopoverSVG}>
+		{message}
+	</div>
+</button>
 
-<style define:vars={{ position }}>
+<script is:inline define:vars={{ unique_id, email }}>
+	document.querySelector("[popovertarget='" + `${unique_id}` + "']").addEventListener("click", () => {
+		window.navigator.clipboard.writeText(email);
+	});
+</script>
+
+<style>
+	[popovertarget] {
+		position: relative;
+	}
+
 	/* TODO hack because overlay: none is not really well implemented on browsers */
 	[popover] + div {
 		position: absolute;
-		top: var(--position);
 		left: 50%;
+		top: 3.2rem;
 		transform: translate(-50%);
 		z-index: 2;
 		display: none;
@@ -51,13 +63,25 @@ const unique_id = crypto.randomUUID();
 
 		svg {
 			position: absolute;
-			top: -0.8rem;
 			left: 50%;
-			transform: translateX(-50%);
+			transform: translate(-50%);
+			top: -0.8rem;
 			width: 2.4rem;
 			height: 2.4rem;
 			text-align: center;
 			color: var(--text-primary);
+		}
+
+		&.to-bottom {
+			top: -4rem;
+			@starting-style {
+				opacity: 0;
+				transform: translate(-50%, 1rem);
+			}
+			svg {
+				top: 0.8rem;
+				transform: rotate(180deg) translate(50%);
+			}
 		}
 	}
 

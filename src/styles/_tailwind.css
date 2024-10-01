@@ -15,8 +15,8 @@
   --color-primary: oklch(67.42% 0.2206140337135045 10.391266089312532);
   --color-secondary: oklch(67.42% 0.2206140337135045 10.391266089312532);
 
-  --text-primary: light-dark(var(--color-dark) var(--color-light));
-  --bg-primary: light-dark(var(--color-light) var(--color-dark));
+  --text-primary: light-dark(var(--color-dark), var(--color-light));
+  --bg-primary: light-dark(var(--color-light), var(--color-dark));
 
   /* animations / transitions */
   --default-transition-duration: 600ms;

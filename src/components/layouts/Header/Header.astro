@@ -6,8 +6,10 @@ import Accessories from "./_components/Accessories";
 import MagicSVG from "@assets/icons/magic.svg?raw";
 import MailSVG from "@assets/icons/mail.svg?raw";
 import PopoverCard from "@/components/PopoverCard.astro";
+import type { I18n } from "@/types/i18n";
 
 const route_switch_locale = switchRouteLocale(Astro.url.pathname, Astro.currentLocale!);
+const locale = Astro.currentLocale as I18n;
 ---
 
 <header>
@@ -21,12 +23,10 @@ const route_switch_locale = switchRouteLocale(Astro.url.pathname, Astro.currentL
 				>
 			</li>
 			{
-				navs.map((nav) => {
+				navs(locale).map((nav) => {
 					return (
 						<li>
-							<a href={getRelativeLocaleUrl(Astro.currentLocale!, nav.url)}>
-								{nav.label}
-							</a>
+							<a href={getRelativeLocaleUrl(Astro.currentLocale!, nav.url)}>{nav.label}</a>
 						</li>
 					);
 				})

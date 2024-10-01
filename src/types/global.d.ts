@@ -11,3 +11,4 @@ declare module '*.svg?react' {
 }
 
 type SVGIcons = "dark" | "light" | "mail" | "linkedin" | "location" | "flag-en" | "flag-fr" | "magic" | "hat-popover";
+

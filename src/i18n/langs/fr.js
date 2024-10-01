@@ -13,6 +13,7 @@ export default {
 	ADD_OTHER_MEDIA: "Ajouter d'autres médias",
 	ADMINISTRATOR: "Administrateur",
 	ADVANCED: "Avancée",
+	ALL_RIGHTS_RESERVED: "Tous droits réservés",
 	API_KEY: "Clé API",
   ARTICLE: "Article",
   ARTICLE_ADDED: "Article ajouté",
@@ -45,6 +46,7 @@ export default {
 	DROP_FILE: "Déposer un fichier",
   EDIT: "Modifier",
 	EMAIL: "Email",
+	EMAIL_COPIED: "Email copied to clipboard !",
 	ENABLE: "Activer",
 	ENTER_EMAIL_PASSWORD: "Entrer un email et un mot de passe",
 	ENTER_VERIFICATION_CODE: "Entrer le code de vérification reçu",
@@ -53,6 +55,7 @@ export default {
 	EVENT_BEGINNING_ARTICLE: "Début de l'événement de l'article",
 	EVENT_END: "Fin de l'événement",
 	EVENT_END_ARTICLE: "Fin de l'événement de l'article",
+	EXTRA: "Extra",
 	GENERATE: "Générer",
 	GITHUB_CONNECTION: "Connexion avec Github",
 	GO_NEXT_PAGE: "Aller à la page suivante",
@@ -67,6 +70,7 @@ export default {
 	LOADING: "Chargement",
   MANDATORY_FIELDS: "Champs obligatoires",
 	LEGEND: "Légende",
+  MAIL_ME: "Vous souhaitez me contacter directement ? Cliquez sur l'icône mail pour ajouter mon adresse e-mail à votre presse-papiers.",
   MEDIA: "Média",
   MEDIA_ADDED: "Média ajouté",
 	MEDIA_ASSOCIATED: "Médias associés",
@@ -110,7 +114,8 @@ export default {
 	PRIVACY_POLICY_CONTENT_7: "Droit de Retrait : Vous pouvez retirer votre accord en supprimant votre compte",
 	PRIVACY_POLICY_TITLE:
 		"En utilisant notre système de gestion de contenu (SGC), vous vous engagez à accepter et à respecter les conditions d'utilisation suivantes :",
-	PUBLIC_CLIENT: "Client public",
+	PROJECTS: "Projets",
+		PUBLIC_CLIENT: "Client public",
 	RETURN_HOME: "Retourner à la page d'accueil",
 	ROLE: "Rôle",
 	SAVE: "Enregistrer",
@@ -151,7 +156,7 @@ export default {
 	USERS: "Utilisateurs",
 	UUID: "UUID",
 	VALIDATE_CODE: "Valider le code",
-	WELCOME_TO_YOUR_WORLD:
-		"Bienvenue dans votre monde. Ici vous pourrez créer à votre guise et sans limite. Découvrez la simplicité d'un gestionnaire de contenu affiné pour vous.",
+	WELCOME_TO_MY_WORLD:
+		"Bienvenue dans mon monde, mon portfolio. Ici, je vais essayer de me décrire, d'expliquer ce qui me motive, et pourquoi je veux devenir un très bon développeur. La route n'est pas courte mais je vais vite et en toute sécurité (bien sûr). Je vous présenterai quelques-uns de mes projets et mes principales compétences.",
 		YOUR_PROFILE: "Ton profil",
 };
