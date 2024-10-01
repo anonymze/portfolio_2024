@@ -6,8 +6,8 @@ import type { I18n } from "@/types/i18n";
 import PopoverCard from "../PopoverCard.astro";
 
 const id_email_contact = "email-contact";
-const id_current_year = "current-year";
 const email = import.meta.env.PUBLIC_EMAIL;
+const id_current_year = "current-year";
 const locale = Astro.currentLocale as I18n;
 ---
 
@@ -25,7 +25,7 @@ const locale = Astro.currentLocale as I18n;
 		</p>
 
 		<div class="col-start-1 col-span-2 flex justify-start items-start gap-x-4 sm:col-start-5 sm:justify-end">
-			<PopoverCard toBottom message={i18n[locale]("EMAIL_COPIED")} set:html={MailSVG} />
+			<PopoverCard toTop message={i18n[locale]("EMAIL_COPIED")} set:html={MailSVG} />
 			<a class="fading-in" target="_blank" href={import.meta.env.PUBLIC_LINKEDIN_URL} set:html={LinkedinSVG} />
 		</div>
 </footer>

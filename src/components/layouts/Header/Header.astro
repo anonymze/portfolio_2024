@@ -1,14 +1,10 @@
 ---
 import { navs } from "./_nav_links";
 import { getRelativeLocaleUrl } from "astro:i18n";
-import { switchRouteLocale } from "@/utils/server/locale";
-import Accessories from "./_components/Accessories";
+import Accessories from "./_components/Accessories.astro";
 import MagicSVG from "@assets/icons/magic.svg?raw";
-import MailSVG from "@assets/icons/mail.svg?raw";
-import PopoverCard from "@/components/PopoverCard.astro";
 import type { I18n } from "@/types/i18n";
 
-const route_switch_locale = switchRouteLocale(Astro.url.pathname, Astro.currentLocale!);
 const locale = Astro.currentLocale as I18n;
 ---
 
@@ -33,13 +29,7 @@ const locale = Astro.currentLocale as I18n;
 			}
 
 			<div class="ml-auto">
-				<Accessories
-					route_switch_locale={route_switch_locale}
-					locale={Astro.currentLocale!}
-					client:only="react"
-				>
-					<PopoverCard slot={"email_component"} message="Email copied to clipboard !" set:html={MailSVG} />
-				</Accessories>
+				<Accessories />
 			</div>
 		</menu>
 	</nav>

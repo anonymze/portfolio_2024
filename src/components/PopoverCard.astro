@@ -27,8 +27,8 @@ const email = import.meta.env.PUBLIC_EMAIL;
 </button>
 
 <script is:inline define:vars={{ unique_id, email }}>
-	document.querySelector("[popovertarget='" + `${unique_id}` + "']").addEventListener("click", () => {
-		window.navigator.clipboard.writeText(email);
+	document.querySelector("[popovertarget='" + `${unique_id}` + "']").addEventListener("click", async () => {
+		await window.navigator.clipboard.writeText(email);
 	});
 </script>
 
@@ -72,7 +72,7 @@ const email = import.meta.env.PUBLIC_EMAIL;
 			color: var(--text-primary);
 		}
 
-		&.to-bottom {
+		&.to-top {
 			top: -4rem;
 			@starting-style {
 				opacity: 0;
