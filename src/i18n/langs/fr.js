@@ -70,7 +70,7 @@ export default {
 	LOADING: "Chargement",
   MANDATORY_FIELDS: "Champs obligatoires",
 	LEGEND: "Légende",
-  MAIL_ME: "Vous souhaitez me contacter directement ? Cliquez sur l'icône mail pour ajouter mon adresse e-mail à votre presse-papiers.",
+  MAIL_ME: "Vous souhaitez me contacter directement ? Cliquez sur l'icône mail pour ajouter mon adresse email à votre clipboard.",
   MEDIA: "Média",
   MEDIA_ADDED: "Média ajouté",
 	MEDIA_ASSOCIATED: "Médias associés",

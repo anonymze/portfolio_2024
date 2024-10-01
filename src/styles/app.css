@@ -7,19 +7,20 @@
   @apply transition-colors;
 }
 
-[data-theme="dark"] {
+html:has([data-theme="dark"]) {
   --text-primary: var(--color-light);
   --bg-primary: var(--color-dark);
 }
 
-[data-theme="light"] {
+html:has([data-theme="light"]) {
   --text-primary: var(--color-dark);
   --bg-primary: var(--color-light);
 }
 
 html {
   font-family: var(--default-font-family);
-  font-size: var(--text-md);
+  scrollbar-color: var(--color-gray) var(--bg-primary);
+  transition: scrollbar-color var(--default-transition-duration) var(--tw-ease);
 }
 
 body {
@@ -30,7 +31,7 @@ body {
 
 h1 {
   margin-bottom: 3rem;
-  font-size: var(--text-2xl);
   line-height: var(--text-2xl);
-  font-weight: 600;
+  font-size: var(--text-2xl);
+  font-weight: 700;
 }

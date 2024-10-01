@@ -1,5 +1,36 @@
 ---
+import { i18n } from "@/i18n/translations";
+import type { I18n } from "@/types/i18n";
 import Layout from "@components/layouts/Layout.astro";
+
+const locale = Astro.currentLocale as I18n;
 ---
 
-<Layout title="Welcome home"></Layout>
+<Layout title={i18n[locale]("TERMS_CONDITIONS")}>
+	<section>
+		<h1>{i18n[locale]("TERMS_CONDITIONS")}</h1>
+
+		<p class="mb-10 italic text-center">Last Updated: October 1, 2024</p>
+
+		<article>
+			The following terms of use (“Terms”) govern your access to and use of the websites
+			courses.joshwcomeau.com, css-for-js.dev, joyofreact.com, and joshwcomeau.com (collectively, the
+			“Websites”), operated and owned by Josh W Comeau (12864924 Canada Inc.) (collectively, “Josh W Comeau”,
+			“we”, “us” or “our”).
+		</article>
+	</section>
+</Layout>
+
+<style>
+	section {
+		max-width: var(--max-sm-width-layout);
+		margin: 0 auto;
+
+		h1 {
+			margin-top: 4rem;
+			line-height: var(--text-xl);
+			text-align: center;
+			font-size: var(--text-xl);
+		}
+	}
+</style>

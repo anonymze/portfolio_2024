@@ -8,6 +8,7 @@
   /* layout */
   --viewport-padding: 2rem;
   --max-width-layout: 70rem;
+  --max-sm-width-layout: 40rem;
 
   /* fonts */
   --defaut-font-family: "Wotfard", system-ui, sans-serif;
@@ -21,6 +22,7 @@
   /* colors */
   --color-light: oklch(100% 0 0);
   --color-dark: oklch(19.58% 0.011 268.14);
+  --color-gray: oklch(47.48% 0 0);
   --color-primary: oklch(67.42% 0.2206140337135045 10.391266089312532);
   --color-secondary: oklch(67.42% 0.2206140337135045 10.391266089312532);
 
@@ -31,4 +33,5 @@
   --default-transition-duration: 600ms;
   --tw-duration: var(--default-transition-duration);
   --transition-spring: cubic-bezier(0, 0.78, 0.19, 1.05);
+  --tw-ease: cubic-bezier(0.4, 0, 0.2, 1);
 }

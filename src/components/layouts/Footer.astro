@@ -24,9 +24,9 @@ const locale = Astro.currentLocale as I18n;
 			>
 		</p>
 
-		<div class="col-start-1 col-span-2 flex justify-start items-start gap-x-4 sm:col-start-5 sm:justify-end">
+		<div class="col-start-1 col-span-2 flex justify-start items-start gap-x-4 sm:col-start-5 sm:justify-end fading-in">
 			<PopoverCard toTop message={i18n[locale]("EMAIL_COPIED")} set:html={MailSVG} />
-			<a class="fading-in" target="_blank" href={import.meta.env.PUBLIC_LINKEDIN_URL} set:html={LinkedinSVG} />
+			<a target="_blank" href={import.meta.env.PUBLIC_LINKEDIN_URL} set:html={LinkedinSVG} />
 		</div>
 </footer>
 
