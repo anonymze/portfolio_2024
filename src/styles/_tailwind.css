@@ -9,6 +9,15 @@
   --viewport-padding: 2rem;
   --max-width-layout: 70rem;
 
+  /* fonts */
+  --defaut-font-family: "Wotfard", system-ui, sans-serif;
+  --text-xs: clamp(0.64rem, 0.05vi + 0.63rem, 0.67rem);
+  --text-sm: clamp(0.8rem, 0.17vi + 0.76rem, 0.89rem);
+  --text-md: clamp(1rem, 0.34vi + 0.91rem, 1.19rem);
+  --text-lg: clamp(1.56rem, 1vi + 1.31rem, 2.11rem);
+  --text-xl: clamp(2.44rem, 2.38vi + 1.85rem, 3.4rem);
+  --text-2xl: clamp(3.4rem, 4.18vi + 2.4rem, 4rem);
+
   /* colors */
   --color-light: oklch(100% 0 0);
   --color-dark: oklch(19.58% 0.011 268.14);
@@ -22,7 +31,4 @@
   --default-transition-duration: 600ms;
   --tw-duration: var(--default-transition-duration);
   --transition-spring: cubic-bezier(0, 0.78, 0.19, 1.05);
-
-  /* font */
-  --defaut-font-family: "Wotfard", system-ui, sans-serif;
 }

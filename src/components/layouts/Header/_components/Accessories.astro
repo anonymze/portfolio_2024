@@ -19,30 +19,30 @@ const route_switch_locale = switchRouteLocale(Astro.url.pathname, Astro.currentL
 
 <li class="fading-in" style="--transition-delay-count: 1;">
 	<button aria-label="Switch theme" id="theme-toggle" set:html={DarkIcon} />
-
-	<li class="fading-in" style="--transition-delay-count: 2;">
-		<a
-			aria-label="Switch language"
-			href={route_switch_locale}
-			href-lang={locale}
-			set:html={locale === I18n["FR"] ? FlagEnSVG : FlagFrSVG}
-		/>
-	</li>
-
-	<script>
-		import { getPreferredTheme, setPreferredTheme } from "@/utils/client/theme";
-		import DarkIcon from "@assets/icons/dark.svg?raw";
-		import LightIcon from "@assets/icons/light.svg?raw";
-
-		const button_theme_toggle = document.getElementById("theme-toggle")!;
-
-		button_theme_toggle.innerHTML = getPreferredTheme("data-theme") === "dark" ? DarkIcon : LightIcon;
-
-		const toggleTheme = () => {
-			const theme = setPreferredTheme("data-theme");
-			button_theme_toggle.innerHTML = theme === "dark" ? DarkIcon : LightIcon;
-		};
-
-		button_theme_toggle.addEventListener("click", toggleTheme);
-	</script>
 </li>
+
+<li class="fading-in" style="--transition-delay-count: 2;">
+	<a
+		aria-label="Switch language"
+		href={route_switch_locale}
+		href-lang={locale}
+		set:html={locale === I18n["FR"] ? FlagEnSVG : FlagFrSVG}
+	/>
+</li>
+
+<script>
+	import { getPreferredTheme, setPreferredTheme } from "@/utils/client/theme";
+	import DarkIcon from "@assets/icons/dark.svg?raw";
+	import LightIcon from "@assets/icons/light.svg?raw";
+
+	const button_theme_toggle = document.getElementById("theme-toggle")!;
+
+	button_theme_toggle.innerHTML = getPreferredTheme("data-theme") === "dark" ? DarkIcon : LightIcon;
+
+	const toggleTheme = () => {
+		const theme = setPreferredTheme("data-theme");
+		button_theme_toggle.innerHTML = theme === "dark" ? DarkIcon : LightIcon;
+	};
+
+	button_theme_toggle.addEventListener("click", toggleTheme);
+</script>
