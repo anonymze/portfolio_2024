@@ -8,16 +8,29 @@ interface Props {
 	image_width?: number;
 	url_project?: string;
 	message_badge?: string;
+	fading_order?: number;
 }
 
-const { title, image, image_width, url_project, message_badge } = Astro.props;
-const cursor = url_project ? "pointer": "default";
+const { title, image, image_width, url_project, message_badge, fading_order } = Astro.props;
+const cursor = url_project ? "pointer" : "default";
 const figure_id = crypto.randomUUID();
 ---
 
-<article class="project-card" tabindex="0" id={figure_id}>
+<article
+	class:list={["project-card", { "fading-in": fading_order || false }]}
+	style={fading_order ? `--transition-delay-count: ${fading_order}` : undefined}
+	tabindex="0"
+	id={figure_id}
+>
 	<figure style={`max-width: ${image_width}px`}>
-		<Image class="h-36 sm:h-44 "  src={image} format="webp" width={image_width ?? image.width} densities={[2, 4]} alt="PROJECT" />
+		<Image
+			class="h-36 sm:h-44"
+			src={image}
+			format="webp"
+			width={image_width ?? image.width}
+			densities={[2, 4]}
+			alt="PROJECT"
+		/>
 
 		<figcaption>
 			<h3>
@@ -34,7 +47,7 @@ const figure_id = crypto.randomUUID();
 	}
 </script>
 
-<style is:global define:vars={{cursor}}>
+<style is:global define:vars={{ cursor }}>
 	.project-card {
 		cursor: var(--cursor);
 
