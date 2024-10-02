@@ -15,9 +15,9 @@ const cursor = url_project ? "pointer": "default";
 const figure_id = crypto.randomUUID();
 ---
 
-<article tabindex="0" id={figure_id}>
-	<figure>
-		<Image src={image} format="webp" width={image_width ?? image.width} densities={[2, 4]} alt="PROJECT" />
+<article class="project-card" tabindex="0" id={figure_id}>
+	<figure style={`max-width: ${image_width}px`}>
+		<Image class="h-36 sm:h-44 "  src={image} format="webp" width={image_width ?? image.width} densities={[2, 4]} alt="PROJECT" />
 
 		<figcaption>
 			<h3>
@@ -34,8 +34,8 @@ const figure_id = crypto.randomUUID();
 	}
 </script>
 
-<style define:vars={{cursor}}>
-	article {
+<style is:global define:vars={{cursor}}>
+	.project-card {
 		cursor: var(--cursor);
 
 		figure {
@@ -47,19 +47,22 @@ const figure_id = crypto.randomUUID();
 			transition: background-color calc(var(--default-transition-duration) / 2);
 
 			img {
-				height: 14rem;
 				object-fit: cover;
 				border-radius: var(--border-radius);
 				border-bottom: 2px solid var(--color-secondary);
 			}
 
 			figcaption {
-				padding: 1.3rem;
+				padding: 1.2rem;
 			}
 
 			&:hover {
 				background-color: var(--color-dark-gray);
 			}
 		}
+	}
+
+	[data-theme="light"] .project-card figure:hover {
+		background-color: var(--color-light-gray);
 	}
 </style>

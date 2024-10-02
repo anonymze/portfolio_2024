@@ -3,7 +3,7 @@
 @import "./_fonts.css";
 @import "./_animations.css";
 
-[data-theme] div {
+[data-theme] {
   @apply transition-colors;
 }
 
