@@ -3,7 +3,7 @@
 @import "./_fonts.css";
 @import "./_animations.css";
 
-[data-theme] {
+[data-theme] div {
   @apply transition-colors;
 }
 
@@ -39,6 +39,12 @@ h1 {
 h2 {
   line-height: var(--text-lg);
   font-size: var(--text-lg);
+  font-weight: 600;
+}
+
+h3 {
+  line-height: var(--text-md);
+  font-size: var(--text-md);
   font-weight: 600;
 }
 

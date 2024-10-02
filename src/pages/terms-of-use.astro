@@ -1,32 +1,61 @@
 ---
-import { i18n } from "@/i18n/translations";
-import type { I18n } from "@/types/i18n";
 import Layout from "@components/layouts/Layout.astro";
-
-const locale = Astro.currentLocale as I18n;
 ---
 
-<Layout title={i18n[locale]("TERMS_CONDITIONS")}>
+<Layout title="Conditions générales">
 	<section>
-		<h1>{i18n[locale]("TERMS_CONDITIONS")}</h1>
+		<h1>Conditions générales</h1>
 
 		<p class="mb-10 italic text-center">Last Updated: October 1, 2024</p>
 
 		<article>
 			<p>
-				The following terms of use (“Terms”) govern your access to and use of the websites
-				courses.joshwcomeau.com, css-for-js.dev, joyofreact.com, and joshwcomeau.com (collectively, the
-				“Websites”), operated and owned by Josh W Comeau (12864924 Canada Inc.) (collectively, “Josh W
-				Comeau”, “we”, “us” or “our”).
+				En utilisant ce site, vous reconnaissez avoir lu, compris et accepté d'être lié par ces conditions
+				d'utilisation ainsi que par notre Politique de Confidentialité.
 			</p>
 		</article>
 
 		<article>
 			<p>
-				The following terms of use (“Terms”) govern your access to and use of the websites
-				courses.joshwcomeau.com, css-for-js.dev, joyofreact.com, and joshwcomeau.com (collectively, the
-				“Websites”), operated and owned by Josh W Comeau (12864924 Canada Inc.) (collectively, “Josh W
-				Comeau”, “we”, “us” or “our”).
+				Le contenu de ce site est fourni à titre d'information générale uniquement et est susceptible d'être
+				modifié sans préavis. Bien que je m'efforce de maintenir les informations à jour et correctes, je ne
+				fais aucune déclaration ni garantie, expresse ou implicite, quant à l'exhaustivité, l'exactitude, la
+				fiabilité, la pertinence ou la disponibilité du site ou des informations, produits, services ou
+				graphiques associés contenus sur le site.
+			</p>
+		</article>
+
+		<article>
+			<p>
+				Ce site utilise des cookies pour améliorer votre expérience de navigation. Les cookies sont de petits
+				fichiers stockés sur votre appareil qui m'aident à me souvenir des informations concernant votre
+				visite. Les cookies utilisés sur ce site sont principalement "banals" et incluent des cookies
+				fonctionnels qui améliorent l'utilisabilité du site sans suivre vos informations personnelles. En
+				continuant d'utiliser ce site, vous consentez à l'utilisation de cookies selon ce qui est décrit dans
+				ma Politique de Confidentialité.
+			</p>
+		</article>
+
+		<article>
+			<p>
+				Tout le contenu de ce site, y compris mais sans s'y limiter, le texte, les graphiques, les logos, les
+				images et les logiciels, est la propriété de Yann Metier ou est utilisé avec permission. L'utilisation
+				non autorisée de ce contenu est strictement interdite.
+			</p>
+		</article>
+
+		<article>
+			<p>
+				Ce site peut contenir des liens vers des sites tiers qui ne sont pas contrôlés ou maintenus par moi. Je
+				ne suis pas responsable du contenu ou des pratiques de ces sites et n'endosse pas leur contenu. Votre
+				utilisation de tout site tiers se fait à vos propres risques.
+			</p>
+		</article>
+		<article>
+			<p>
+				Je me réserve le droit de modifier ces conditions d'utilisation à tout moment. Les modifications
+				entreront en vigueur immédiatement après leur publication sur le site. Votre utilisation continue du
+				site suite à toute modification constitue votre acceptation des conditions d'utilisation révisées.
 			</p>
 		</article>
 	</section>

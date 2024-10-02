@@ -4,7 +4,7 @@ import LocationSVG from "@assets/icons/location.svg?raw";
 ---
 
 <Layout title="Welcome home">
-	<div class="presentation sm:px-6 my-6 sm:my-10 lg:my-16">
+	<section class="presentation sm:px-6 my-6 sm:my-10 lg:my-16">
 		<h1>Hello folks ! <span class="text-secondary font-bold">I'm Yann.</span></h1>
 
 		<p>Welcome to my world. I am a web developer since 2020.</p>
@@ -24,7 +24,7 @@ import LocationSVG from "@assets/icons/location.svg?raw";
 				set:html={LocationSVG}
 			/>
 		</p>
-	</div>
+	</section>
 </Layout>
 
 <style>
@@ -33,9 +33,14 @@ import LocationSVG from "@assets/icons/location.svg?raw";
 		max-width: calc(var(--max-width-layout) * 0.9);
 		margin-inline: auto;
 
+		h1 {
+			line-height: var(--text-2xl);
+			font-size: var(--text-2xl);
+		}
+
 		p {
 			margin-bottom: 1.25rem;
-			font-size: 1.25rem;
+			font-size: var(--text-md);
 			max-width: calc(var(--max-width-layout) * 0.55);
 		}
 	}

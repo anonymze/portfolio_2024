@@ -2,4 +2,95 @@
 import Layout from "@components/layouts/Layout.astro";
 ---
 
-<Layout title="Welcome home"></Layout>
+<Layout title="Privacy policy">
+	<section>
+		<h1>Privacy policy</h1>
+
+		<p class="mb-10 italic text-center">Last Updated: October 1, 2024</p>
+
+		<article>
+			<p>
+				By using this site, you consent to the collection and use of your information as described in this
+				policy.
+			</p>
+		</article>
+
+		<article>
+			<p>I may collect personal information from you when you:</p>
+
+			<ul>
+				<li>Fill out forms on the site</li>
+				<li>Contact me via email</li>
+			</ul>
+
+			<p>The types of personal information that may be collected include:</p>
+
+			<ul>
+				<li>Name</li>
+				<li>Email address</li>
+				<li>Any other information you choose to provide</li>
+			</ul>
+		</article>
+
+		<article>
+			<p>
+				This site uses cookies to enhance user experience. Cookies are small files stored on your device that
+				help remember information regarding your visit. These may include session cookies (which expire when
+				you close your browser) and persistent cookies (which remain on your device until expiration or
+				deletion). You can choose to disable cookies by adjusting your browser settings. Please note that
+				disabling cookies may affect the functionality of some portions of the site.
+			</p>
+		</article>
+		<article>
+			<p>
+				I am committed to protecting your personal information. I take reasonable measures to secure your data
+				and prevent unauthorized access. However, no method of transmission over the Internet or method of
+				electronic storage is completely secure. Therefore, I cannot guarantee the absolute security of your
+				information.
+			</p>
+		</article>
+		<article>
+			<p>
+				I do not sell, trade, or otherwise transfer your personal information to outside parties without prior
+				notice. This does not include website hosting partners and other parties who assist me in operating my
+				site, provided those parties agree to keep this information confidential.
+			</p>
+		</article>
+		<article>
+			<p>
+				I reserve the right to modify this privacy policy at any time. Any changes will be posted on this page
+				with a new update date. I encourage you to review this policy regularly to stay informed about
+				changes.
+			</p>
+		</article>
+	</section>
+</Layout>
+
+<style>
+	section {
+		max-width: var(--max-sm-width-layout);
+		margin-inline: auto;
+
+		h1 {
+			margin-top: 4rem;
+			text-align: center;
+		}
+
+		article {
+			margin-bottom: 1.2rem;
+			p,
+			li {
+				font-size: var(--text-sm);
+			}
+
+			ul {
+				padding-left: 2rem;
+				list-style-type: disc;
+
+				li {
+					margin-block: 1rem;
+				}
+			}
+		}
+	}
+</style>

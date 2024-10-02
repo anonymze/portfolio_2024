@@ -1,0 +1,65 @@
+---
+import { Image } from "astro:assets";
+import Badge from "./Badge.astro";
+
+interface Props {
+	title: string;
+	image: ImageMetadata;
+	image_width?: number;
+	url_project?: string;
+	message_badge?: string;
+}
+
+const { title, image, image_width, url_project, message_badge } = Astro.props;
+const cursor = url_project ? "pointer": "default";
+const figure_id = crypto.randomUUID();
+---
+
+<article tabindex="0" id={figure_id}>
+	<figure>
+		<Image src={image} format="webp" width={image_width ?? image.width} densities={[2, 4]} alt="PROJECT" />
+
+		<figcaption>
+			<h3>
+				{title}
+				{message_badge ? <Badge message={message_badge} /> : null}
+			</h3>
+		</figcaption>
+	</figure>
+</article>
+
+<script is:inline define:vars={{ url_project, figure_id }}>
+	if (url_project) {
+		document.getElementById(figure_id).addEventListener("click", () => window.open(url_project));
+	}
+</script>
+
+<style define:vars={{cursor}}>
+	article {
+		cursor: var(--cursor);
+
+		figure {
+			--border-radius: 20px;
+
+			width: fit-content;
+			border-radius: var(--border-radius);
+			border: 2px solid var(--color-dark-gray);
+			transition: background-color calc(var(--default-transition-duration) / 2);
+
+			img {
+				height: 14rem;
+				object-fit: cover;
+				border-radius: var(--border-radius);
+				border-bottom: 2px solid var(--color-secondary);
+			}
+
+			figcaption {
+				padding: 1.3rem;
+			}
+
+			&:hover {
+				background-color: var(--color-dark-gray);
+			}
+		}
+	}
+</style>

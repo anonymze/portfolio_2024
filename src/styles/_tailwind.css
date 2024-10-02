@@ -24,8 +24,10 @@
   --color-light: oklch(100% 0 0);
   --color-dark: oklch(16.76% 0.007 258.37);
   --color-gray: oklch(47.48% 0 0);
-  --color-primary: oklch(67.42% 0.2206140337135045 10.391266089312532);
+  --color-dark-gray: oklch(29.79% 0.004 286.18);
+  --color-primary: #fff;
   --color-secondary: oklch(67.42% 0.2206140337135045 10.391266089312532);
+  --color-tertiary: oklch(72.06% 0.144 269.04);
 
   --text-primary: light-dark(var(--color-dark), var(--color-light));
   --bg-primary: light-dark(var(--color-light), var(--color-dark));

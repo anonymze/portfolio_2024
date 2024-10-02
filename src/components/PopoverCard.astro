@@ -5,12 +5,12 @@ type Props =
 	| {
 			message: string;
 			toTop?: true;
-			toBottom?: false;
+			toBottom?: never;
 	  }
 	| {
 			message: string;
 			toBottom?: true;
-			toTop?: false;
+			toTop?: never;
 	  };
 
 const { message, toBottom } = Astro.props;
@@ -45,7 +45,7 @@ const email = import.meta.env.PUBLIC_EMAIL;
 		transform: translate(-50%);
 		z-index: 2;
 		display: none;
-		width: 14rem;
+		width: max-content;
 		height: auto;
 		padding: 0.5rem;
 		border-radius: 8px;

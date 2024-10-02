@@ -1,5 +1,24 @@
 ---
+import ProjectCard from "@/components/ProjectCard.astro";
 import Layout from "@components/layouts/Layout.astro";
 ---
 
-<Layout title="Projects" />
+<Layout title="Projects">
+	<section>
+		<h1>Engineering, <span class="text-secondary">Conception</span>, Design</h1>
+		<article>
+			<ProjectCard />
+		</article>
+	</section>
+</Layout>
+
+<style>
+	section {
+		h1 {
+			max-width: var(--max-sm-width-layout);
+			margin-block: 5rem;
+			margin-inline: auto;
+			text-align: center;
+		}
+	}
+</style>

@@ -2,8 +2,9 @@
 import MailSVG from "@assets/icons/mail.svg?raw";
 import LinkedinSVG from "@assets/icons/linkedin.svg?raw";
 import { i18n } from "@/i18n/translations";
-import type { I18n } from "@/types/i18n";
 import PopoverCard from "../PopoverCard.astro";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import type { I18n } from "@/types/i18n";
 
 const id_email_contact = "email-contact";
 const email = import.meta.env.PUBLIC_EMAIL;
@@ -19,7 +20,7 @@ const locale = Astro.currentLocale as I18n;
 		<p class="col-span-6 self-end">© <span id={id_current_year}>2000</span> {i18n[locale]('ALL_RIGHTS_RESERVED')} Yann Metier.</p>
 
 		<p class="col-span-6 flex gap-x-5 sm:col-span-4">
-			<a class="page" href="/terms-of-use">{i18n[locale]("TERMS_CONDITIONS")}</a><a class="page" href="/privacy-policy"
+			<a class="page" href={getRelativeLocaleUrl(Astro.currentLocale!, "/terms-of-use")}>{i18n[locale]("TERMS_CONDITIONS")}</a><a class="page" href={getRelativeLocaleUrl(Astro.currentLocale!, "/privacy-policy")}
 				>{i18n[locale]("PRIVACY_POLICY")}</a
 			>
 		</p>
