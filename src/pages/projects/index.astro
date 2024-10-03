@@ -1,0 +1,51 @@
+---
+import ProjectCard from "@/components/ProjectCard.astro";
+import Layout from "@components/layouts/Layout.astro";
+import cards from "./_cards";
+---
+
+<Layout title="Projets">
+	<h1>Ingénierie, <span class="text-secondary">Conception</span>, Design</h1>
+
+	{
+		cards.map((section) => {
+			return (
+				<section>
+					<h2 set:html={section[0]} />
+					<div class="flex flex-wrap gap-6 justify-center sm:justify-start">
+						{section[1].map((card) => {
+							return (
+								<ProjectCard
+									fading_from={card.fading_from}
+									fading_order={card.fading_order}
+									image={card.image}
+									image_width={card.image_width}
+									title={card.title}
+									url_project={card.url_project}
+									message_badge={card.message_badge}
+								/>
+							);
+						})}
+					</div>
+				</section>
+			);
+		})
+	}
+</Layout>
+
+<style>
+	h1 {
+		max-width: var(--max-sm-width-layout);
+		margin-block: 5rem;
+		margin-inline: auto;
+		text-align: center;
+	}
+	section {
+		margin-bottom: 1rem;
+
+		h2 {
+			margin-top: 3rem;
+			margin-bottom: 1.5rem;
+		}
+	}
+</style>

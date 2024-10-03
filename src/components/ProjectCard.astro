@@ -9,15 +9,25 @@ interface Props {
 	url_project?: string;
 	message_badge?: string;
 	fading_order?: number;
+	fading_from?: "left" | "right";
 }
 
-const { title, image, image_width, url_project, message_badge, fading_order } = Astro.props;
+export interface ProjectCardI extends Props {}
+
+const { title, image, image_width, url_project, message_badge, fading_order, fading_from } = Astro.props;
 const cursor = url_project ? "pointer" : "default";
 const figure_id = crypto.randomUUID();
 ---
 
 <article
-	class:list={["project-card", { "fading-in": fading_order || false }]}
+	class:list={[
+		"project-card",
+		{
+			"fading-in": fading_order ?? false,
+			"from-left": fading_from === "left",
+			"from-right": fading_from === "right",
+		},
+	]}
 	style={fading_order ? `--transition-delay-count: ${fading_order}` : undefined}
 	tabindex="0"
 	id={figure_id}
@@ -67,6 +77,10 @@ const figure_id = crypto.randomUUID();
 
 			figcaption {
 				padding: 1.2rem;
+
+				h3 {
+					display: inline-block;
+				}
 			}
 
 			&:hover {

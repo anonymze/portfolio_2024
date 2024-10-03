@@ -4,14 +4,15 @@ import LocationSVG from "@assets/icons/location.svg?raw";
 ---
 
 <Layout title="Welcome home">
-	<section class="presentation sm:px-6 my-6 sm:my-10 lg:my-16">
+	<section class="presentation sm:px-6 my-6 sm:my-12 lg:my-20">
 		<h1>Bonjour ! <span class="text-secondary font-bold">Je suis Yann.</span></h1>
 
 		<p>Bienvenue dans mon univers. Je suis un développeur depuis 2020.</p>
 		<p>
-			Ici, je vais essayer de me décrire, d'expliquer ce qui me motive et pourquoi je veux devenir un très bon concepteur développeur web.
-			La route n'est pas courte mais je vais vite et en toute sécurité (bien sûr). Je vais donc vous présenter quelques-uns de
-			mes projets et quelles sont mes principales compétences.<br />
+			Ici, je vais essayer de me décrire, d'expliquer ce qui me motive et pourquoi je veux devenir un très bon
+			concepteur développeur web. La route n'est pas courte mais je vais vite et en toute sécurité (bien sûr).
+			Je vais donc vous présenter quelques-uns de mes projets et quelles sont mes principales compétences.<br
+			/>
 		</p>
 
 		<p>
@@ -24,6 +25,15 @@ import LocationSVG from "@assets/icons/location.svg?raw";
 				set:html={LocationSVG}
 			/>
 		</p>
+	</section>
+
+	<section class="frameworks gap-8 sm:gap-16">
+		<div class="fading-in" style="--transition-delay-count: 1"><span id="angular-icon"></span></div>
+		<div class="fading-in" style="--transition-delay-count: 2"><span id="ionic-icon"></span></div>
+		<div class="fading-in" style="--transition-delay-count: 3"><span id="nextjs-icon"></span></div>
+		<div class="fading-in" style="--transition-delay-count: 4"><span id="react-icon"></span></div>
+		<div class="fading-in" style="--transition-delay-count: 5"><span id="typescript-icon"></span></div>
+		<div class="fading-in" style="--transition-delay-count: 6"><span id="zig-icon"></span></div>
 	</section>
 </Layout>
 
@@ -42,6 +52,56 @@ import LocationSVG from "@assets/icons/location.svg?raw";
 			margin-bottom: 1.25rem;
 			font-size: var(--text-md);
 			max-width: calc(var(--max-width-layout) * 0.55);
+		}
+	}
+
+	.frameworks {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		margin-block: 7rem;
+
+		& div span {
+			position: relative;
+			display: block;
+			width: 4rem;
+			aspect-ratio: 1/1;
+			background-size: 100%;
+			background-repeat: no-repeat;
+
+			&::after {
+				content: "";
+				position: absolute;
+				top: 0;
+				z-index: -1;
+				width: 100%;
+				height: 100%;
+				background: inherit;
+				filter: blur(0.8rem);
+			}
+
+			&#angular-icon {
+				background-image: url("../assets/icons/angular.svg");
+			}
+			&#ionic-icon {
+				background-image: url("../assets/icons/ionic.svg");
+			}
+			&#react-icon {
+				background-image: url("../assets/icons/react.svg");
+			}
+
+			&#nextjs-icon {
+				background-image: url("../assets/icons/nextjs.svg");
+			}
+
+			&#typescript-icon {
+				background-image: url("../assets/icons/typescript.svg");
+			}
+
+			&#zig-icon {
+				background-image: url("../assets/icons/zig.svg");
+			}
 		}
 	}
 </style>
