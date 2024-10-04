@@ -27,6 +27,10 @@ body {
   padding: var(--viewport-padding);
   color: var(--text-primary);
   background-color: var(--bg-primary);
+
+  main {
+    position: relative;
+  }
 }
 
 h1 {

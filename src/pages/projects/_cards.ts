@@ -5,11 +5,15 @@ import Gemme from "@assets/images/gemme.png";
 import Aurora from "@assets/images/aurora.png";
 import Rfid from "@assets/images/rfid.png";
 import ReactNative from "@assets/images/react-native.png";
+import { i18n } from "@/i18n/translations";
 import type { ProjectCardI } from "@/components/ProjectCard.astro";
+import type { I18n } from "@/types/i18n";
 
-const cards: Array<[string, Array<ProjectCardI>]> = [
+const cards: (locale: I18n) => Array<[string, Array<ProjectCardI>]> = (
+  locale,
+) => [
   [
-    "Front end <span class='text-secondary'>-</span> Mobile",
+    i18n[locale]("TITLE_CARD_FRONT_END"),
     [
       {
         fading_order: 3,
@@ -24,7 +28,7 @@ const cards: Array<[string, Array<ProjectCardI>]> = [
         fading_from: "left",
         image: Gemme,
         image_width: 380,
-        title: "Gemme • Ionic - React",
+        title:     i18n[locale]("TITLE_CARD_GEMME"),
         url_project: "https://apps.apple.com/fr/app/gemme/id1641074687",
       },
       {
@@ -32,7 +36,7 @@ const cards: Array<[string, Array<ProjectCardI>]> = [
         fading_from: "left",
         image: RescueOcean,
         image_width: 450,
-        title: "Rescue Ocean • Ionic - Angular",
+        title:     i18n[locale]("TITLE_CARD_RESCUE"),
         url_project: "https://projectrescueocean.org/",
       },
       {
@@ -40,21 +44,21 @@ const cards: Array<[string, Array<ProjectCardI>]> = [
         fading_from: "right",
         image: ReactNative,
         image_width: 300,
-        title: "Fraud detection • Expo - React native",
+        title:     i18n[locale]("TITLE_CARD_FRAUD"),
         message_badge: "In progress",
       },
     ],
   ],
 
   [
-    "Full<span class='text-secondary'>-</span>stack",
+    i18n[locale]("TITLE_CARD_FULLS_TACK"),
     [
       {
         fading_from: "left",
         fading_order: 1,
         image: Billaudot,
         image_width: 500,
-        title: "Billaudot e-commerce • Thelia - Symfony - React",
+        title: "E-commerce musical • Thelia - Symfony - React",
         url_project: "https://www.billaudot.com/",
       },
 
@@ -72,7 +76,7 @@ const cards: Array<[string, Array<ProjectCardI>]> = [
         fading_from: "right",
         image: Zig,
         image_width: 300,
-        title: "Parser transport video • Zig - Typescript",
+        title: "Parser transport video (.ts) • Zig",
         url_project: "https://github.com/anonymze/zig_parser_m3u8",
       },
 

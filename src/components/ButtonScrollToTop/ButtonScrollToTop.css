@@ -1,43 +1,45 @@
-	main {
-		position: relative;
+main {
+	position: relative;
 
-		#scroll-to-top {
-			--size: 2.4rem;
-			position: sticky;
-			bottom: 2rem;
-			z-index: 1;
+	#scroll-to-top {
+		--size: 2.4rem;
+		position: sticky;
+		bottom: 2rem;
+		z-index: 1;
 
-			display: block;
-			width: fit-content;
-			margin-left: auto;
+		display: block;
+		width: fit-content;
+		margin-left: auto;
+		/* prevent layout shift when element is display none */
+		height: var(--size);
+
+		svg {
+			width: var(--size);
 			height: var(--size);
 
-			svg {
-				width: var(--size);
-				height: var(--size);
+			transition: opacity calc(var(--default-transition-duration) * 3);
 
-				transition: opacity calc(var(--default-transition-duration) * 3);
+			animation-name: show;
+			/* firefox requires this to apply the animation */
+			animation-duration: 1ms;
+			animation-fill-mode: backwards;
+			animation-timeline: scroll(root y);
+			animation-range: entry 30%;
 
-				animation-name: show;
-				animation-duration: 1s;
-				animation-fill-mode: backwards;
-				animation-timeline: scroll(root y);
-				animation-range: entry 25%;
-	
 
-				@starting-style {
-					opacity: 0;
-				}
+			@starting-style {
+				opacity: 0;
 			}
 		}
 	}
+}
 
-	@keyframes show {
-		from {
-			display: none;
-		}
-
-		to {
-			display: block;
-		}
+@keyframes show {
+	from {
+		display: none;
 	}
+
+	to {
+		display: block;
+	}
+}

@@ -4,26 +4,36 @@ import LocationSVG from "@assets/icons/location.svg?raw";
 ---
 
 <Layout title="Welcome home">
-	<section class="presentation sm:px-6 my-6 sm:my-10 lg:my-16">
-		<h1>Hello folks ! <span class="text-secondary font-bold">I'm Yann.</span></h1>
+	<section class="presentation sm:px-6 my-6 sm:my-12 lg:my-20">
+		<h1>Bonjour ! <span class="text-secondary font-bold">Je suis Yann.</span></h1>
 
-		<p>Welcome to my world. I am a web developer since 2020.</p>
+		<p>Bienvenue dans mon univers. Je suis un développeur depuis 2020.</p>
 		<p>
-			Here i will try to describe myself, explain what drives me, and why i want to be a very good software
-			enginer. The road is not short but i'm going fast and safe (of course). So i will present to you some of
-			my projects and what my main competences are. <br />
+			Ici, je vais essayer de me décrire, d'expliquer ce qui me motive et pourquoi je veux devenir un très bon
+			concepteur développeur web. La route n'est pas courte mais je vais vite et en toute sécurité (bien sûr).
+			Je vais donc vous présenter quelques-uns de mes projets et quelles sont mes principales compétences.<br
+			/>
 		</p>
 
 		<p>
-			By the way i am french and i am living near Toulouse in France.
+			Ah et je suis Français et je vis à Toulouse.
 			<a
 				href={import.meta.env.PUBLIC_PINNED_LOCATION}
-				aria-label="Open a page with my pinned location"
+				aria-label="Open a paghtope with my pinned location"
 				class="inline-block align-sub"
 				target="_blank"
 				set:html={LocationSVG}
 			/>
 		</p>
+	</section>
+
+	<section class="frameworks gap-8 lg:gap-20 md:gap-16 sm:gap-12">
+		<div aria-label="Angular" class="fading-in" style="--transition-delay-count: 1"><span id="angular-icon"></span></div>
+		<div aria-label="Ionic" class="fading-in" style="--transition-delay-count: 2"><span id="ionic-icon"></span></div>
+		<div aria-label="Nextjs" class="fading-in" style="--transition-delay-count: 3"><span id="nextjs-icon"></span></div>
+		<div aria-label="React" class="fading-in" style="--transition-delay-count: 4"><span id="react-icon"></span></div>
+		<div aria-label="Typescript" class="fading-in" style="--transition-delay-count: 5"><span id="typescript-icon"></span></div>
+		<div aria-label="Zig" class="fading-in" style="--transition-delay-count: 6"><span id="zig-icon"></span></div>
 	</section>
 </Layout>
 
@@ -42,6 +52,56 @@ import LocationSVG from "@assets/icons/location.svg?raw";
 			margin-bottom: 1.25rem;
 			font-size: var(--text-md);
 			max-width: calc(var(--max-width-layout) * 0.55);
+		}
+	}
+
+	.frameworks {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		margin-block: 7rem;
+
+		& div span {
+			position: relative;
+			display: block;
+			width: 4rem;
+			aspect-ratio: 1/1;
+			background-size: 100%;
+			background-repeat: no-repeat;
+
+			&::after {
+				content: "";
+				position: absolute;
+				top: 0;
+				z-index: -1;
+				width: 100%;
+				height: 100%;
+				background: inherit;
+				filter: blur(0.8rem);
+			}
+
+			&#angular-icon {
+				background-image: url("../../assets/icons/angular.svg");
+			}
+			&#ionic-icon {
+				background-image: url("../../assets/icons/ionic.svg");
+			}
+			&#react-icon {
+				background-image: url("../../assets/icons/react.svg");
+			}
+
+			&#nextjs-icon {
+				background-image: url("../../assets/icons/nextjs.svg");
+			}
+
+			&#typescript-icon {
+				background-image: url("../../assets/icons/typescript.svg");
+			}
+
+			&#zig-icon {
+				background-image: url("../../assets/icons/zig.svg");
+			}
 		}
 	}
 </style>
