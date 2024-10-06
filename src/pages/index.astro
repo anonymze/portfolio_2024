@@ -20,7 +20,7 @@ import LocationSVG from "@assets/icons/location.svg?raw";
 			<a
 				href={import.meta.env.PUBLIC_PINNED_LOCATION}
 				aria-label="Open a paghtope with my pinned location"
-				class="inline-block align-sub"
+				class="inline-block align-sub px-4"
 				target="_blank"
 				set:html={LocationSVG}
 			/>
@@ -28,14 +28,30 @@ import LocationSVG from "@assets/icons/location.svg?raw";
 	</section>
 
 	<section class="frameworks gap-8 lg:gap-20 md:gap-16 sm:gap-12">
-		<div aria-label="Angular" class="fading-in" style="--transition-delay-count: 1"><span id="angular-icon"></span></div>
-		<div aria-label="Ionic" class="fading-in" style="--transition-delay-count: 2"><span id="ionic-icon"></span></div>
-		<div aria-label="Nextjs" class="fading-in" style="--transition-delay-count: 3"><span id="nextjs-icon"></span></div>
-		<div aria-label="React" class="fading-in" style="--transition-delay-count: 4"><span id="react-icon"></span></div>
-		<div aria-label="Typescript" class="fading-in" style="--transition-delay-count: 5"><span id="typescript-icon"></span></div>
-		<div aria-label="Zig" class="fading-in" style="--transition-delay-count: 6"><span id="zig-icon"></span></div>
+		<div aria-label="Angular" class="fading-in" style="--transition-delay-count: 1">
+			<span id="angular-icon"></span>
+		</div>
+		<div aria-label="Ionic" class="fading-in" style="--transition-delay-count: 2">
+			<span id="ionic-icon"></span>
+		</div>
+		<div aria-label="Nextjs" class="fading-in" style="--transition-delay-count: 3">
+			<span id="nextjs-icon"></span>
+		</div>
+		<div aria-label="React" class="fading-in" style="--transition-delay-count: 4">
+			<span id="react-icon"></span>
+		</div>
+		<div aria-label="Typescript" class="fading-in" style="--transition-delay-count: 5">
+			<span id="typescript-icon"></span>
+		</div>
+		<div aria-label="Zig" class="fading-in" style="--transition-delay-count: 6">
+			<span id="zig-icon"></span>
+		</div>
 	</section>
 </Layout>
+
+<script>
+	console.log(window);
+</script>
 
 <style>
 	.presentation {

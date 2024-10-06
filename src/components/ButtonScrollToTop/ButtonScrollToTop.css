@@ -13,6 +13,11 @@ main {
 		/* prevent layout shift when element is display none */
 		height: var(--size);
 
+		/* we hide it if not supported */
+		@supports not (animation-timeline: scroll()) {
+			display: none;
+		}
+
 		svg {
 			width: var(--size);
 			height: var(--size);
