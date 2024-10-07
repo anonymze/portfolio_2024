@@ -21,7 +21,7 @@ const cards: (locale: I18n) => Array<[string, Array<ProjectCardI>]> = (
         image: Rfid,
         image_width: 250,
         title: "RFID • Ionic - Angular",
-        url_project: "/projects/rfid",
+        url_project: "projects/rfid",
       },
       {
         fading_order: 2,
@@ -29,7 +29,7 @@ const cards: (locale: I18n) => Array<[string, Array<ProjectCardI>]> = (
         image: Gemme,
         image_width: 380,
         title: i18n[locale]("TITLE_CARD_GEMME"),
-        url_project: "/projects/gemme",
+        url_project: "projects/gemme",
       },
       {
         fading_order: 4,
@@ -37,7 +37,7 @@ const cards: (locale: I18n) => Array<[string, Array<ProjectCardI>]> = (
         image: RescueOcean,
         image_width: 450,
         title:     i18n[locale]("TITLE_CARD_RESCUE"),
-        url_project: "/projects/rescue-ocean",
+        url_project: "projects/rescue-ocean",
       },
       {
         fading_order: 1,
@@ -46,7 +46,7 @@ const cards: (locale: I18n) => Array<[string, Array<ProjectCardI>]> = (
         image_width: 300,
         title: i18n[locale]("TITLE_CARD_FRAUD"),
         message_badge: "In progress",
-        url_project: "/projects/fraud-detection",
+        url_project: "projects/fraud-detection",
       },
     ],
   ],
@@ -60,7 +60,7 @@ const cards: (locale: I18n) => Array<[string, Array<ProjectCardI>]> = (
         image: Billaudot,
         image_width: 500,
         title: "E-commerce musical • Thelia - Symfony - React",
-        url_project: "/projects/billaudot",
+        url_project: "projects/billaudot",
       },
 
       {
@@ -69,7 +69,7 @@ const cards: (locale: I18n) => Array<[string, Array<ProjectCardI>]> = (
         image: Aurora,
         image_width: 500,
         title: "Aurora • Symfony - React",
-        url_project: "/projects/aurora",
+        url_project: "projects/aurora",
       },
 
       {
@@ -78,7 +78,7 @@ const cards: (locale: I18n) => Array<[string, Array<ProjectCardI>]> = (
         image: Zig,
         image_width: 300,
         title: "Parser transport video (.ts) • Zig",
-        url_project: "/projects/parser-ts",
+        url_project: "projects/parser-ts",
       },
 
       {
@@ -88,7 +88,7 @@ const cards: (locale: I18n) => Array<[string, Array<ProjectCardI>]> = (
         image_width: 300,
         title: "Infer SVG types • Zig - Typescript",
         message_badge: "In progress",
-        url_project: "/projects/infer-svg-types",
+        url_project: "projects/infer-svg-types",
       },
     ],
   ],
