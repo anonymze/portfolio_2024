@@ -16,11 +16,11 @@ export const navs: (locale: I18n) => Array<Nav> = (locale) => {
       label: i18n[locale]("PROJECTS"),
       icon: null,
     },
-    {
-      id: 2,
-      url: "/extra",
-      label: i18n[locale]("EXTRA"),
-      icon: null,
-    },
+    // {
+    //   id: 2,
+    //   url: "/extra",
+    //   label: i18n[locale]("EXTRA"),
+    //   icon: null,
+    // },
   ];
 };

@@ -1,4 +1,4 @@
-import Billaudot from "@assets/images/billaudot.png";
+import Billaudot from "@assets/images/billaudot/card.png";
 import Zig from "@assets/images/zig.png";
 import RescueOcean from "@assets/images/rescue-ocean.png";
 import Gemme from "@assets/images/gemme.png";
@@ -21,7 +21,7 @@ const cards: (locale: I18n) => Array<[string, Array<ProjectCardI>]> = (
         image: Rfid,
         image_width: 250,
         title: "RFID • Ionic - Angular",
-        url_project: "https://apps.apple.com/fr/app/gemme/id1641074687",
+        url_project: "/projects/rfid",
       },
       {
         fading_order: 2,
@@ -29,7 +29,7 @@ const cards: (locale: I18n) => Array<[string, Array<ProjectCardI>]> = (
         image: Gemme,
         image_width: 380,
         title:     i18n[locale]("TITLE_CARD_GEMME"),
-        url_project: "https://apps.apple.com/fr/app/gemme/id1641074687",
+        url_project: "/projects/gemme",
       },
       {
         fading_order: 4,
@@ -37,15 +37,16 @@ const cards: (locale: I18n) => Array<[string, Array<ProjectCardI>]> = (
         image: RescueOcean,
         image_width: 450,
         title:     i18n[locale]("TITLE_CARD_RESCUE"),
-        url_project: "https://projectrescueocean.org/",
+        url_project: "/projects/rescue-ocean",
       },
       {
         fading_order: 1,
         fading_from: "right",
         image: ReactNative,
         image_width: 300,
-        title:     i18n[locale]("TITLE_CARD_FRAUD"),
+        title: i18n[locale]("TITLE_CARD_FRAUD"),
         message_badge: "In progress",
+        url_project: "/projects/fraud-detection",
       },
     ],
   ],
@@ -59,7 +60,7 @@ const cards: (locale: I18n) => Array<[string, Array<ProjectCardI>]> = (
         image: Billaudot,
         image_width: 500,
         title: "E-commerce musical • Thelia - Symfony - React",
-        url_project: "https://www.billaudot.com/",
+        url_project: "/projects/billaudot",
       },
 
       {
@@ -68,7 +69,7 @@ const cards: (locale: I18n) => Array<[string, Array<ProjectCardI>]> = (
         image: Aurora,
         image_width: 500,
         title: "Aurora • Thelia - Symfony - React",
-        url_project: "https://www.auvergnerhonealpes-entreprises.fr/",
+        url_project: "/projects/aurora",
       },
 
       {
@@ -77,7 +78,7 @@ const cards: (locale: I18n) => Array<[string, Array<ProjectCardI>]> = (
         image: Zig,
         image_width: 300,
         title: "Parser transport video (.ts) • Zig",
-        url_project: "https://github.com/anonymze/zig_parser_m3u8",
+        url_project: "/projects/parser-ts",
       },
 
       {
@@ -87,6 +88,7 @@ const cards: (locale: I18n) => Array<[string, Array<ProjectCardI>]> = (
         image_width: 300,
         title: "Infer SVG types • Zig - Typescript",
         message_badge: "In progress",
+        url_project: "/projects/infer-svg-types",
       },
     ],
   ],

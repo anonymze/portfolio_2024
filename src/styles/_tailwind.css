@@ -8,6 +8,7 @@
   /* layout */
   --viewport-padding: 2rem;
   --max-width-layout: 70rem;
+  --max-md-width-layout: 50rem;
   --max-sm-width-layout: 40rem;
 
   /* fonts */
@@ -26,7 +27,7 @@
   --color-gray: oklch(47.48% 0 0);
   --color-light-gray: oklch(0.95 0 0);
   --color-dark-gray: oklch(29.79% 0.004 286.18);
-  --color-primary: #fff;
+  /* --color-primary: #fff; */
   --color-secondary: oklch(67.42% 0.2206140337135045 10.391266089312532);
   --color-tertiary: oklch(72.06% 0.144 269.04);
 

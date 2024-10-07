@@ -1,0 +1,112 @@
+---
+import Badge from "./Badge.astro";
+import { i18n } from "@/i18n/translations";
+import ArrowTopRightSVG from "@assets/icons/arrow-top-right.svg?raw";
+import Image from "astro/components/Image.astro";
+import type { ImageMetadata } from "astro";
+import type { I18n } from "@/types/i18n";
+
+interface Props {
+	title: string;
+	messages: Array<string>;
+	badges: Array<{
+		message: string;
+	}>;
+	images?: Array<ImageMetadata>;
+	url?: string;
+}
+
+const { title, messages, badges, url, images } = Astro.props;
+const locale = Astro.currentLocale as I18n;
+---
+
+<section class="py-10 px-5 sm:py-24 sm:px-12">
+	<div class="w-full sm:w-[70%]">
+		<div class="flex items-start justify-between">
+			<h1>{title}<span class="text-secondary">.</span></h1>
+			{
+				url && (
+					<a
+						target="_blank"
+						href={url}
+						title={i18n[locale]("OPEN_WEBSITE") + " " + title}
+						set:html={ArrowTopRightSVG}
+					/>
+				)
+			}
+		</div>
+
+		{
+			messages.map((message) => {
+				return <p>{message}</p>;
+			})
+		}
+
+		<div class="flex gap-2 flex-wrap">
+			{
+				badges.map((badge) => {
+					return <Badge class:list={"text-sm uppercase"} message={badge.message} />;
+				})
+			}
+		</div>
+	</div>
+</section>
+
+{
+	!images?.length ? (
+		<p class="text-center italic font-bold">
+			Je n'ai pas d'images à vous montrer car le contenu de l'application est condifendtiel.
+		</p>
+	) : (
+		<ul class=" p-4 sm:p-12 lg:p-16">
+			{images.map((image) => {
+				return (
+					<li>
+						<Image src={image} alt="Website" />
+					</li>
+				);
+			})}
+		</ul>
+	)
+}
+
+<style>
+	section {
+		max-width: var(--max-md-width-layout);
+		margin: 4rem auto;
+		background-color: color-mix(in oklch, var(--bg-primary) 95%, #555555);
+
+		h1 {
+			font-size: var(--text-2xl);
+		}
+
+		p {
+			margin-bottom: 2rem;
+			font-size: var(--text-md);
+		}
+
+		a {
+			padding: 0.4rem;
+			border: 1px solid var(--text-primary);
+			border-radius: 5px;
+
+			svg {
+				transition: transform 0.2s;
+			}
+
+			&:hover {
+				svg {
+					transform: rotate(-15deg);
+				}
+			}
+		}
+	}
+
+	ul {
+			background-color: color-mix(in oklch, var(--bg-primary) 95%, #555555);
+
+			li:not(:last-of-type) {
+				margin-bottom: 2rem;
+			}
+		}
+</style>
