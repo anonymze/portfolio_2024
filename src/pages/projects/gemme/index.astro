@@ -1,0 +1,42 @@
+---
+import ProjectDetailedCard from "@/components/ProjectDetailedCard.astro";
+import Layout from "@components/layouts/Layout.astro";
+
+import GemmePresentation from "@assets/images/gemme/presentation.png";
+import GemmeRegister from "@assets/images/gemme/register.png";
+import GemmeMap from "@assets/images/gemme/map.png";
+import GemmeCourses from "@assets/images/gemme/courses.png";
+---
+
+<Layout title="Parcours randonnées">
+	<ProjectDetailedCard
+		title="Parcours randonnées"
+		url="https://apps.apple.com/fr/app/gemme/id1641074687"
+		images={[GemmePresentation, GemmeCourses, GemmeRegister, GemmeMap]}
+		badges={[
+			{
+				message: "React",
+			},
+			{
+				message: "Ionic",
+			},
+			{
+				message: "Stores mobiles",
+			},
+			{
+				message: "Mapbox",
+			},
+			{
+				message: "Délai court",
+			},
+			{
+				message: "Autonomie",
+			},
+		]}
+		messages={[
+			"Une application mobile qui a demandée une production en peu de temps. D'abord créé avec Flutter par une autre entreprise, nous avons repris le flambeau et j'ai decidé de tout refaire en React Ionic en 2 semaines top chrono. Ce choix a été imposé par moi car si quelqu'un devait reprendre la technologie, personne ne savait faire du Flutter en interne.",
+			"C'est une simple application qui propose des parcours de randonées sur une carte Mapbox, sur laquelle tu dois passer par des points de passage pour valider ta course. Un classement par temps est en place sur chaque parcours.",
+			"J'étais seul à travailler sur l'application mobile."
+		]}
+	/>
+</Layout>

@@ -1,0 +1,32 @@
+---
+import ProjectDetailedCard from "@/components/ProjectDetailedCard.astro";
+import Layout from "@components/layouts/Layout.astro";
+---
+
+<Layout title="RFID">
+	<ProjectDetailedCard
+		title="RFID"
+		badges={[
+			{
+				message: "Angular",
+			},
+			{
+				message: "Ionic",
+			},
+			{
+				message: "Mobiles stores",
+			},
+			{
+				message: "API carrier",
+			},
+			{
+				message: "Autonomy",
+			},
+		]}
+		messages={[
+			"This project has been several years in the making. It all started with a barcode scanning application to manage internal parcel delivery for a company. After its success, we decided to work on a brand new application, this time using RFID tags (which offer more possibilities than a simple barcode).",
+			"The application itself manages over 1000 departures / arrivals per day. All carrier service documentation has been 'deciphered' to incorporate the largest known carriers in France (Colissimo, Chronopost, DPD...).",
+			"I was the only one working on the mobile application."
+		]}
+	/>
+</Layout>

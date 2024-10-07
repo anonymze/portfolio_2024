@@ -1,0 +1,29 @@
+---
+import ProjectDetailedCard from "@/components/ProjectDetailedCard.astro";
+import Layout from "@components/layouts/Layout.astro";
+---
+
+<Layout title="Infer SVG types">
+	<ProjectDetailedCard
+		title="Infer SVG types"
+		badges={[
+			{
+				message: "Script",
+			},
+			{
+				message: "Zig",
+			},
+			{
+				message: "Bundler",
+			},
+			{
+				message: "Typescript",
+			},
+		]}
+		messages={[
+			"Sometimes you need to retrieve an SVG icon dynamically from one of your favorite JS frameworks. Typically you'll pass the icon name to your component so that your bundler behind it can retrieve it dynamically. With this bit of scripting I'd like to incorporate into a bundler, the icon names will be automatically typed in relation to the file name in Typescript.",
+			"	He will be framework agnostic.",
+		]}
+		in_progress={true}
+	/>
+</Layout>

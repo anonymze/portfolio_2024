@@ -1,0 +1,35 @@
+---
+import ProjectDetailedCard from "@/components/ProjectDetailedCard.astro";
+import Layout from "@components/layouts/Layout.astro";
+
+import RescueOcean from "@assets/images/rescue-ocean/rescue-ocean.png";
+---
+
+<Layout title="Waste collection">
+	<ProjectDetailedCard
+		title="Waste collection"
+		url="https://projectrescueocean.org/"
+		images={[RescueOcean]}
+		badges={[
+			{
+				message: "Angular",
+			},
+			{
+				message: "Ionic",
+			},
+			{
+				message: "Mobiles stores",
+			},
+			{
+				message: "Autonomy",
+			},
+			{
+				message: "I18n",
+			},
+		]}
+		messages={[
+			"My first autonomous mobile application. It's a simple application for declaring your beachside litter.",
+			"For my first mobile application, getting it on the Google and Apple stores was the most complex part. There are a whole series of steps and checks before your project goes online.",
+		]}
+	/>
+</Layout>

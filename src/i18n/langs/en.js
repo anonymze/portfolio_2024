@@ -65,7 +65,7 @@ export default {
   GO_PREVIOUS_PAGE: "Go to the previous page",
   GOOGLE_CONNECTION: "Connect with Google",
   GUEST: "Guest",
-  IMAGES_CONFIDENTIAL: "I don't have any images to show you as the content of the application is condifendtial.",
+  IMAGES_CONFIDENTIAL: "I don't have any images to show you, because either the content of the application is confidential or there isn't any.",
   IS_ACTIVE: "Is active",
   KEY: "Key",
   LANG: "Language",
@@ -120,6 +120,7 @@ export default {
     "Right of Withdrawal: You can withdraw your consent by deleting your account",
   PRIVACY_POLICY_TITLE:
     "By using our content management system (CMS), you agree to accept and abide by the following terms of use:",
+  	PROJECT_IN_PROGRESS: "Project in progress",
   	PROJECTS: "Projects",
 		PUBLIC_CLIENT: "Public client",
   RETURN_HOME: "Return to your home page",

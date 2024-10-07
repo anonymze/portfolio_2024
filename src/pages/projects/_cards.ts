@@ -1,8 +1,8 @@
 import Billaudot from "@assets/images/billaudot/card.png";
 import Zig from "@assets/images/zig.png";
-import RescueOcean from "@assets/images/rescue-ocean.png";
-import Gemme from "@assets/images/gemme.png";
-import Aurora from "@assets/images/aurora.png";
+import RescueOcean from "@assets/images/rescue-ocean/rescue-ocean-dark.png";
+import Gemme from "@assets/images/gemme/header.png";
+import Aurora from "@assets/images/aurora/home.png";
 import Rfid from "@assets/images/rfid.png";
 import ReactNative from "@assets/images/react-native.png";
 import { i18n } from "@/i18n/translations";
@@ -28,7 +28,7 @@ const cards: (locale: I18n) => Array<[string, Array<ProjectCardI>]> = (
         fading_from: "left",
         image: Gemme,
         image_width: 380,
-        title:     i18n[locale]("TITLE_CARD_GEMME"),
+        title: i18n[locale]("TITLE_CARD_GEMME"),
         url_project: "/projects/gemme",
       },
       {
@@ -68,7 +68,7 @@ const cards: (locale: I18n) => Array<[string, Array<ProjectCardI>]> = (
         fading_order: 3,
         image: Aurora,
         image_width: 500,
-        title: "Aurora • Thelia - Symfony - React",
+        title: "Aurora • Symfony - React",
         url_project: "/projects/aurora",
       },
 

@@ -1,0 +1,25 @@
+---
+import ProjectDetailedCard from "@/components/ProjectDetailedCard.astro";
+import Layout from "@components/layouts/Layout.astro";
+---
+
+<Layout title="Parser transport video">
+	<ProjectDetailedCard
+		title="Parser transport video (.ts)"
+		url="https://github.com/anonymze/zig_parser_m3u8"
+		badges={[
+			{
+				message: "Script",
+			},
+			{
+				message: "Zig",
+			},
+			{
+				message: "FFMPEG",
+			},
+		]}
+		messages={[
+			"Mon premier projet personnel en Zig. Le but étant simple, lui donner un fichier de lecture .m3u8 (c'est un type de fichier qui est utilisé pour stocker des urls de streaming) et derrière il va télécharger toutes les videos de streaming associés et en sortir une video complète au format mp4 grâce au plugin FFMPEG.",
+		]}
+	/>
+</Layout>
