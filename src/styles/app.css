@@ -28,6 +28,8 @@ body {
   color: var(--text-primary);
   background-color: var(--bg-primary);
 
+
+
   main {
     position: relative;
   }
@@ -54,4 +56,43 @@ h3 {
 
 p {
   font-size: var(--text-base);
+}
+
+.background-dotted {
+  position: relative;
+
+  --dark-dotted: #363636;
+  --light-dotted: #cecece;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+
+
+    background-image: radial-gradient(light-dark(var(--light-dotted), var(--dark-dotted)) 1px, transparent 0);
+    background-size: 7px 7px;
+    background-position: -8.5px -8.5px;
+
+    mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1), transparent 75%);
+  }
+}
+
+[data-theme="dark"] {
+  .background-dotted::after {
+    background-image: radial-gradient(var(--dark-dotted) 1px, transparent 0);
+
+  }
+}
+
+
+[data-theme="light"] {
+  .background-dotted::after {
+    background-image: radial-gradient(var(--light-dotted) 1px, transparent 0);
+
+  }
 }
