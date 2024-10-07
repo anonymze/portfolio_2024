@@ -12,6 +12,7 @@
       "@i18n/*": ["src/i18n/*"],
       "@types/*": ["src/types/*"],
       "@styles/*": ["src/styles/*"],
+      "@layouts/*": ["src/layouts/*"],
     }
   }
 }

@@ -1,14 +1,14 @@
 ---
 import ProjectCard from "@/components/ProjectCard.astro";
-import Layout from "@components/layouts/Layout.astro";
+import Layout from "@layouts/Layout.astro";
 import cards from "./_cards";
-import type { I18n } from "@/types/i18n";
 import { getRelativeLocaleUrl } from "astro:i18n";
+import type { I18n } from "@/types/i18n";
 
 const locale = Astro.currentLocale as I18n;
 ---
 
-<Layout title="Projets">
+<Layout title="Projets" view_transition_active>
 	<h1>Ingénierie, <span class="text-secondary">Conception</span>, Design</h1>
 
 	{
