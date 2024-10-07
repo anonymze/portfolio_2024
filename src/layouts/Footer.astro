@@ -1,6 +1,7 @@
 ---
 import MailSVG from "@assets/icons/mail.svg?raw";
 import LinkedinSVG from "@assets/icons/linkedin.svg?raw";
+import GithubSVG from "@assets/icons/github.svg?raw";
 import ArrowMailRightSVG from "@assets/icons/arrow-right-mail.svg?raw";
 import { i18n } from "@/i18n/translations";
 import PopoverCard from "@components/PopoverCard.astro";
@@ -18,10 +19,10 @@ const locale = Astro.currentLocale as I18n;
 		{i18n[locale]("MAIL_ME")}
 		<span
 			class:list={[
-				"hidden absolute translate-full [&>svg]:max-w-[25rem]",
-				"sm:inline sm:[&>svg]:w-[calc(50vw-9rem)] sm:-right-1 sm:bottom-8 sm:rotate-18",
-				"md:[&>svg]:w-[calc(40vw-5rem)] md:bottom-[calc(2rem+2vw)] md:rotate-6",
-				"lg:inline lg:[&>svg]:w-[calc(20vw+9rem)] lg:-right-6 lg:bottom-12 lg:-rotate-2",
+				"hidden absolute translate-full [&>svg]:max-w-[23rem]",
+				"sm:inline sm:[&>svg]:w-[calc(40vw-8.5rem)] sm:-right-1 sm:bottom-8 sm:rotate-22",
+				"md:[&>svg]:w-[calc(40vw-9rem)] md:bottom-[calc(1rem+2vw)] md:rotate-8",
+				"lg:inline lg:[&>svg]:w-[calc(20vw+6rem)] lg:-right-2 lg:bottom-12 lg:-rotate-2",
 			]}
 			set:html={ArrowMailRightSVG}
 		/>
@@ -32,7 +33,7 @@ const locale = Astro.currentLocale as I18n;
 		{i18n[locale]("ALL_RIGHTS_RESERVED")} Yann Metier.
 	</p>
 
-	<p class="col-span-6 flex gap-x-5 sm:col-span-4">
+	<p class="col-span-6 flex gap-x-4 sm:col-span-4">
 		<a class="page" href={getRelativeLocaleUrl(Astro.currentLocale!, "/terms-of-use")}
 			>{i18n[locale]("TERMS_CONDITIONS")}</a
 		><a class="page" href={getRelativeLocaleUrl(Astro.currentLocale!, "/privacy-policy")}
@@ -44,6 +45,7 @@ const locale = Astro.currentLocale as I18n;
 		class="col-start-1 col-span-2 flex justify-start items-start gap-x-4 sm:col-start-5 sm:justify-end fading-in"
 	>
 		<PopoverCard toTop message={i18n[locale]("EMAIL_COPIED")} set:html={MailSVG} />
+		<a target="_blank" href={import.meta.env.PUBLIC_GITHUB_URL} set:html={GithubSVG} />
 		<a target="_blank" href={import.meta.env.PUBLIC_LINKEDIN_URL} set:html={LinkedinSVG} />
 	</div>
 </footer>
