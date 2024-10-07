@@ -154,7 +154,7 @@ export default {
     "By using our content management system (CMS), you agree to accept and abide by the following terms of use:",
   TITLE: "Title",
   TITLE_ARTICLE: "Title of the article",
-  TITLE_CARD_FRONT_END: "Front end <span class='text-secondary'>-</span> Mobile",
+  TITLE_CARD_FRONT_END: "Front-end <span class='text-secondary'>-</span> Mobile",
   TITLE_CARD_FULLS_TACK: "Full<span class='text-secondary'>-</span>stack",
   TITLE_CARD_GEMME: "Hiking trails • Ionic - React",
   TITLE_CARD_RESCUE: "Waste collection • Ionic - Angular",

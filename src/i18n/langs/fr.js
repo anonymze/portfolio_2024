@@ -157,7 +157,7 @@ export default {
   TITLE: "Titre",
   TITLE_ARTICLE: "Titre de l'article",
   TITLE_CARD_FRONT_END:
-    "Front end <span class='text-secondary'>-</span> Mobile",
+    "Front-end <span class='text-secondary'>-</span> Mobile",
   TITLE_CARD_FULLS_TACK: "Full<span class='text-secondary'>-</span>stack",
   TITLE_CARD_GEMME: "Parcours randonnées • Ionic - React",
   TITLE_CARD_RESCUE: "Ramassage de déchets • Ionic - Angular",
