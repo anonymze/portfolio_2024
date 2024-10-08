@@ -53,25 +53,6 @@ import LocationSVG from "@assets/icons/location.svg?raw";
 </Layout>
 
 <style>
-	.presentation::after {
-		content: "";
-		position: absolute;
-		right: 0;
-		top: -2.5rem;
-		background-image: url("../assets/images/me.png");
-		background-repeat: no-repeat;
-		background-size: contain;
-		width: 22rem;
-		height: 40rem;
-		filter: drop-shadow(5px 5px 5px #000)
-	}
-
-	@media screen and (max-width: 1024px) {
-		.presentation::after {
-			content: none;
-		}
-	}
-
 	.presentation {
 		position: relative;
 		width: 100%;
@@ -87,6 +68,25 @@ import LocationSVG from "@assets/icons/location.svg?raw";
 			margin-bottom: 1.25rem;
 			font-size: var(--text-md);
 			max-width: calc(var(--max-width-layout) * 0.55);
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			right: 0;
+			top: -2.5rem;
+			background-image: url("../assets/images/me.png");
+			background-repeat: no-repeat;
+			background-size: contain;
+			width: 21rem;
+			height: 40rem;
+			filter: drop-shadow(5px 5px 5px #000);
+		}
+
+		@media screen and (max-width: 1024px) {
+			&::after {
+				content: none;
+			}
 		}
 	}
 
