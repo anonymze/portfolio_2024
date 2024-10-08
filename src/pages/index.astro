@@ -13,8 +13,8 @@ import LocationSVG from "@assets/icons/location.svg?raw";
 		</p>
 		<p>
 			Ici, je vais essayer de me décrire, d'expliquer ce qui me motive et pourquoi je veux devenir un très bon
-			concepteur développeur. La route n'est pas courte mais je vais vite et en toute sécurité (bien sûr).
-			Je vais donc vous présenter quelques-uns de mes <span class="text-tertiary font-bold">projets</span> et quelles
+			concepteur développeur. La route n'est pas courte mais je vais vite et en toute sécurité (bien sûr). Je
+			vais donc vous présenter quelques-uns de mes <span class="text-tertiary font-bold">projets</span> et quelles
 			sont mes principales <span class="text-tertiary font-bold">compétences</span>.<br />
 		</p>
 
@@ -53,7 +53,27 @@ import LocationSVG from "@assets/icons/location.svg?raw";
 </Layout>
 
 <style>
+	.presentation::after {
+		content: "";
+		position: absolute;
+		right: 0;
+		top: -2.5rem;
+		background-image: url("../assets/images/me.png");
+		background-repeat: no-repeat;
+		background-size: contain;
+		width: 22rem;
+		height: 40rem;
+		filter: drop-shadow(5px 5px 5px #000)
+	}
+
+	@media screen and (max-width: 1024px) {
+		.presentation::after {
+			content: none;
+		}
+	}
+
 	.presentation {
+		position: relative;
 		width: 100%;
 		max-width: calc(var(--max-width-layout) * 0.9);
 		margin-inline: auto;
