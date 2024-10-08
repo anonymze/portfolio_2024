@@ -73,7 +73,6 @@ p {
     width: 100%;
     height: 100%;
 
-
     background-image: radial-gradient(light-dark(var(--light-dotted), var(--dark-dotted)) 1px, transparent 0);
     background-size: 7px 7px;
     background-position: -8.5px -8.5px;
@@ -93,6 +92,5 @@ p {
 [data-theme="light"] {
   .background-dotted::after {
     background-image: radial-gradient(var(--light-dotted) 1px, transparent 0);
-
   }
 }

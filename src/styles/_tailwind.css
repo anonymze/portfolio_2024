@@ -40,3 +40,9 @@
   --transition-spring: cubic-bezier(0, 0.78, 0.19, 1.05);
   --tw-ease: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+@media screen and (max-width: 640px) {
+  :root {
+    --viewport-padding: 1.4rem
+  }
+}

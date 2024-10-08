@@ -13,22 +13,22 @@ const route_switch_locale = switchRouteLocale(Astro.url.pathname, Astro.currentL
 ---
 
 <!-- z-index because svgs can be hover the li on certain timing -->
-<li class="fading-in z-1" style="--transition-delay-count: 0;">
+<div class="fading-in z-1" style="--transition-delay-count: 0;">
 	<PopoverCard toBottom message={i18n[locale]("EMAIL_COPIED")} set:html={MailSVG} />
-</li>
+</div>
 
-<li class="fading-in" style="--transition-delay-count: 1;">
+<div class="fading-in" style="--transition-delay-count: 1;">
 	<button aria-label="Switch theme" id="theme-toggle" set:html={DarkIcon} />
-</li>
+</div>
 
-<li class="fading-in" style="--transition-delay-count: 2;">
+<div class="fading-in" style="--transition-delay-count: 2;">
 	<a
 		aria-label="Switch language"
 		href={route_switch_locale}
 		href-lang={locale}
 		set:html={locale === I18n["FR"] ? FlagEnSVG : FlagFrSVG}
 	/>
-</li>
+</div>
 
 <script>
 	import { getPreferredTheme, setPreferredTheme } from "@/utils/client/theme";
@@ -46,3 +46,11 @@ const route_switch_locale = switchRouteLocale(Astro.url.pathname, Astro.currentL
 
 	button_theme_toggle.addEventListener("click", toggleTheme);
 </script>
+
+<style>
+	button,
+	a {
+		display: block;
+		padding: 0.7rem;
+	}
+</style>

@@ -10,4 +10,4 @@ I use Tailwind for 3 use cases :
 
 ### TODO
 
-photo,  home bottom
+photo,  home bottom, menu
