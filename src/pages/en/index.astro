@@ -1,6 +1,10 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import LocationSVG from "@assets/icons/location.svg?raw";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import type { I18n } from "@/types/i18n";
+
+const locale = Astro.currentLocale as I18n;
 ---
 
 <Layout title="Welcome home">
@@ -32,7 +36,7 @@ import LocationSVG from "@assets/icons/location.svg?raw";
 		</p>
 	</section>
 
-	<section class="frameworks background-dotted gap-8 mt-0 lg:mt-36 lg:gap-20 md:gap-16 sm:gap-12">
+	<article class="frameworks background-dotted gap-8 mt-0 lg:mt-36 lg:gap-20 md:gap-16 sm:gap-12">
 		<div aria-label="Angular" class="fading-in" style="--transition-delay-count: 1">
 			<span id="angular-icon"></span>
 		</div>
@@ -51,7 +55,43 @@ import LocationSVG from "@assets/icons/location.svg?raw";
 		<div aria-label="Zig" class="fading-in" style="--transition-delay-count: 6">
 			<span id="zig-icon"></span>
 		</div>
-	</section>
+	</article>
+
+	<article class="max-w-[var(--max-width-layout)] mx-auto my-6 sm:my-10">
+		<p class="mb-5">
+			I prefer <span class="text-tertiary">web</span> and <span class="text-tertiary">front-end</span> for two
+			reasons. The first is the simplicity of displaying a simple visual interface. And the second is that seeing
+			what you're coding is a great satisfaction that I never thought I'd get. But without the <span
+				class="text-tertiary">back-end</span
+			>, you can't move forward either, and when you're in total <span class="text-tertiary">autonomy</span>,
+			you have to know how to deliver routes, secure your app, pre-render its content, control your cookies,
+			set up a database, authenticate your user, manage CORS problems... in short, one without the other
+			doesn't work!
+		</p>
+
+		<p class="mb-5">
+			I often seek to go further than the simple road indicated, passionate I believe is the term. For
+			example, you'll find some of my personal <a
+				target="_blank"
+				class="underline decoration-secondary"
+				href={getRelativeLocaleUrl(locale, "projects")}
+				title="Go to projects page">projects</a
+			> in Zig, and it's thanks to this technology that I was able to discover what a <span
+				class="text-tertiary">system language</span
+			> was, and I can assure you that playing with machine memory is a whole other thing.
+		</p>
+		<p>
+			Most of my front-end projects use <span class="text-tertiary">Tailwind</span>. It's a tool that works
+			very well with the ecosystem of <span class="text-tertiary">Javascript</span> frameworks for encapsulating
+			content. So you'll often find a <code>w-full</code> or a <code>text-secondary</code> hanging around on my
+			<a
+				target="_blank"
+				class="underline decoration-secondary"
+				href={import.meta.env.PUBLIC_GITHUB_URL}
+				title="Go to my github">Github</a
+			>.
+		</p>
+	</article>
 </Layout>
 
 <style>

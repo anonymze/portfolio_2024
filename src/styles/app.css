@@ -33,6 +33,10 @@ body {
   }
 }
 
+code {
+  font-style: italic;
+}
+
 h1 {
   margin-bottom: 3rem;
   line-height: var(--text-xl);

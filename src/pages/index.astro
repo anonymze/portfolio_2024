@@ -1,6 +1,10 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import LocationSVG from "@assets/icons/location.svg?raw";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import type { I18n } from "@/types/i18n";
+
+const locale = Astro.currentLocale as I18n;
 ---
 
 <Layout title="Welcome home">
@@ -30,7 +34,7 @@ import LocationSVG from "@assets/icons/location.svg?raw";
 		</p>
 	</section>
 
-	<section class="frameworks background-dotted gap-8 lg:gap-20 md:gap-16 sm:gap-12">
+	<article class="frameworks background-dotted gap-8 lg:gap-20 md:gap-16 sm:gap-12">
 		<div aria-label="Angular" class="fading-in" style="--transition-delay-count: 1">
 			<span id="angular-icon"></span>
 		</div>
@@ -49,7 +53,46 @@ import LocationSVG from "@assets/icons/location.svg?raw";
 		<div aria-label="Zig" class="fading-in" style="--transition-delay-count: 6">
 			<span id="zig-icon"></span>
 		</div>
-	</section>
+	</article>
+
+	<article class="max-w-[var(--max-width-layout)] mx-auto my-6 sm:my-10">
+		<p class="mb-5">
+			Je préfère le <span class="text-tertiary">web</span> et le <span class="text-tertiary">front</span> pour
+			deux raisons. La première étant la simplicité d'afficher une simple interface visuelle. Et la deuxième parce
+			que voir ce que l'on code est une grande satisfaction que je ne pensais pas imaginer. Mais sans le <span
+				class="text-tertiary">back</span
+			> on n'avance pas non plus, et quand on est en totale
+			<span class="text-tertiary">autonomie</span> il faut savoir délivrer des routes, sécuriser son app, pre-render
+			son contenu, contrôler ses cookies, établir une base de données, authentifier son utilisateur, gérer les
+			problèmes de CORS... bref l'un sans l'autre ne fonctionne pas !
+		</p>
+
+		<p class="mb-5">
+			Je cherche souvent à aller plus loin que la simple route indiquée, passioné je crois que c'est le terme.
+			Par exemple vous trouverez certains de mes <a
+				target="_blank"
+				class="underline decoration-secondary"
+				href={getRelativeLocaleUrl(locale, "projects")}
+				title="Va vers la page projets">projets</a
+			>
+			personnels en Zig, et c'est grâce à cette technologie que j'ai pu découvrir ce qu'était un <span
+				class="text-tertiary">langage système</span
+			>, et je vous assure que de jouer avec la mémoire machine c'est une autre paire de manches.
+		</p>
+		<p>
+			La plupart de mes projets front sont accompagnés de <span class="text-tertiary">Tailwind</span>. C'est
+			un outil qui fonctionne très bien avec l'écosystème des frameworks <span class="text-tertiary"
+				>Javascript</span
+			> pour encapsuler un contenu. Donc vous retrouverez souvent un <code>w-full</code> ou un <code
+				>text-secondary</code
+			> qui traîne sur mon <a
+				target="_blank"
+				class="underline decoration-secondary"
+				href={import.meta.env.PUBLIC_GITHUB_URL}
+				title="Ouvre mon Github">Github</a
+			>.
+		</p>
+	</article>
 </Layout>
 
 <style>
