@@ -49,7 +49,7 @@ export default {
   DROP_FILE: "Déposer un fichier",
   EDIT: "Modifier",
   EMAIL: "Email",
-  EMAIL_COPIED: "Email copied to clipboard !",
+  EMAIL_COPIED: "Email copié dans le clipboard !",
   ENABLE: "Activer",
   ENTER_EMAIL_PASSWORD: "Entrer un email et un mot de passe",
   ENTER_VERIFICATION_CODE: "Entrer le code de vérification reçu",
@@ -67,6 +67,7 @@ export default {
   GUEST: "Invité",
   IMAGES_CONFIDENTIAL:
     "Je n'ai pas d'images à vous montrer car soit le contenu de l'application est confidentiel soit il n' y en a pas.",
+  IN_PROGRESS: "En cours",
   IS_ACTIVE: "Est actif",
   KEY: "Clé",
   LANG: "Langage",
