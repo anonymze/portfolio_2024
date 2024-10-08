@@ -18,7 +18,7 @@ const route_switch_locale = switchRouteLocale(Astro.url.pathname, Astro.currentL
 </div>
 
 <div class="fading-in" style="--transition-delay-count: 1;">
-	<button aria-label="Switch theme" id="theme-toggle" set:html={DarkIcon} />
+	<button aria-label="Switch theme" class="theme-toggle" set:html={DarkIcon} />
 </div>
 
 <div class="fading-in" style="--transition-delay-count: 2;">
@@ -35,16 +35,17 @@ const route_switch_locale = switchRouteLocale(Astro.url.pathname, Astro.currentL
 	import DarkIcon from "@assets/icons/dark.svg?raw";
 	import LightIcon from "@assets/icons/light.svg?raw";
 
-	const button_theme_toggle = document.getElementById("theme-toggle")!;
+	const button_theme_toggle = document.querySelectorAll(".theme-toggle")!;
 
-	button_theme_toggle.innerHTML = getPreferredTheme("data-theme") === "dark" ? LightIcon : DarkIcon;
+	button_theme_toggle.forEach((btn) => {
+		btn.innerHTML = getPreferredTheme("data-theme") === "dark" ? LightIcon : DarkIcon;
 
-	const toggleTheme = () => {
-		const theme = setPreferredTheme("data-theme");
-		button_theme_toggle.innerHTML = theme === "dark" ? LightIcon : DarkIcon;
-	};
-
-	button_theme_toggle.addEventListener("click", toggleTheme);
+		const toggleTheme = () => {
+			const theme = setPreferredTheme("data-theme");
+			btn.innerHTML = theme === "dark" ? LightIcon : DarkIcon;
+		};
+		btn.addEventListener("click", toggleTheme);
+	});
 </script>
 
 <style>

@@ -1,0 +1,95 @@
+---
+import nav_links_mobile from "./_nav_mobile_links";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { i18n } from "@/i18n/translations";
+import type { I18n } from "@/types/i18n";
+import IconBurgerMenu from "./IconBurgerMenu.astro";
+import Accessories from "@/layouts/Header/_components/Accessories.astro";
+
+const locale = Astro.currentLocale as I18n;
+---
+
+<button popovertarget="menu-mobile" class="block sm:hidden"><IconBurgerMenu /></button>
+
+<div popover id="menu-mobile" class="perfect-shadow">
+	<menu>
+		<div class="flex flex-row justify-end items-center gap-x-8 w-full mb-4 pr-[0.75rem]">
+			<Accessories />
+		</div>
+		{
+			nav_links_mobile(locale).map((nav_link_mobile) => {
+				return (
+					<li>
+						<a
+							href={getRelativeLocaleUrl(locale, nav_link_mobile.url)}
+							title={`Go to ${nav_link_mobile.label} page`}
+						>
+							<span class="inline-block align-bottom mr-2" set:html={nav_link_mobile.icon} />{" "}
+							{nav_link_mobile.label}
+						</a>
+					</li>
+				);
+			})
+		}
+	</menu>
+</div>
+
+<style>
+	[popovertarget] {
+		padding-right: 0;
+	}
+
+	[popover] {
+		--margin-bottom: 2rem;
+		
+		position: relative;
+		bottom: var(--margin-bottom);
+		width: 92vw;
+		height: calc(100dvh - calc(var(--viewport-padding) + var(--header-height) + var(--margin-bottom)));
+		margin-inline: auto;
+		margin-top: auto;
+		padding: 1rem;
+		border-radius: 6px;
+		
+		color: var(--text-primary);
+		background-color: var(--bg-primary);
+
+		transition:
+			opacity 0.2s var(--transition-spring),
+			transform 0.2s var(--transition-spring),
+			background-color var(--default-transition-duration);
+
+		@starting-style {
+			opacity: 0;
+			transform: translateX(50%);
+		}
+
+		menu {
+			flex-direction: column;
+			align-items: start;
+			column-gap: 2rem;
+
+			li {
+				width: 100%;
+				padding-bottom: 1rem;
+				padding-left: 0.5rem;
+
+				&:not(:first-of-type) {
+					padding-top: 1rem;
+				}
+				&:not(:last-of-type) {
+					border-bottom: 1px solid var(--text-primary);
+				}
+			}
+		}
+	}
+</style>
+
+<style is:global>
+	@media screen and (max-width: 640px) {
+		body:has(#menu-mobile:popover-open) {
+			overflow: hidden;
+			border-right: 4vw solid var(--color-secondary);
+		}
+	}
+</style>

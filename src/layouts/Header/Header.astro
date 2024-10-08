@@ -3,7 +3,7 @@ import { navs } from "./_nav_links";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import Accessories from "./_components/Accessories.astro";
 import MagicSVG from "@assets/icons/magic.svg?raw";
-import BurgerMobile from "@/components/BurgerMobile.astro";
+import BurgerMobile from "@/components/BurgerMobile/BurgerMobile.astro";
 import type { I18n } from "@/types/i18n";
 
 const locale = Astro.currentLocale as I18n;
@@ -13,7 +13,7 @@ const locale = Astro.currentLocale as I18n;
 	<nav class="flex items center justify-between">
 		<menu>
 			<li class="mr-6">
-				<a href={getRelativeLocaleUrl(Astro.currentLocale!, "")}
+				<a title={`Go to home page`} href={getRelativeLocaleUrl(Astro.currentLocale!, "")}
 					><span class="text-secondary font-extrabold text-lg whitespace-nowrap"
 						>Yann Metier <Fragment set:html={MagicSVG} />
 					</span></a
@@ -23,7 +23,7 @@ const locale = Astro.currentLocale as I18n;
 				navs(locale).map((nav) => {
 					return (
 						<li class="hidden sm:block">
-							<a href={getRelativeLocaleUrl(Astro.currentLocale!, nav.url)}>{nav.label}</a>
+							<a title={`Go to ${nav.label} page`} href={getRelativeLocaleUrl(Astro.currentLocale!, nav.url)}>{nav.label}</a>
 						</li>
 					);
 				})
@@ -34,14 +34,15 @@ const locale = Astro.currentLocale as I18n;
 			<Accessories />
 		</div>
 
-		<BurgerMobile client:media="(max-width: 10em)" />
+		<BurgerMobile />
 	</nav>
 </header>
 
 <style>
 	header {
 		nav {
-			height: 5rem;
+			--header-height: 5rem;
+			height: var(--header-height);
 			width: 100%;
 			max-width: var(--max-width-layout);
 			margin-inline: auto;
@@ -68,10 +69,6 @@ const locale = Astro.currentLocale as I18n;
 	nav {
 		[popovertarget] {
 			padding: 0.7rem;
-
-			@media screen and (max-width: 640px) {
-				padding: 0;
-			}
 		}
 	}
 </style>

@@ -1,0 +1,165 @@
+---
+import iconBurgerMenuSVG from "@assets/icons/burger-menu.svg?raw";
+---
+
+<Fragment set:html={iconBurgerMenuSVG} />
+
+<style is:global>
+	.ham {
+		height: 100%;
+		cursor: pointer;
+		transition: transform 400ms;
+		user-select: none;
+		-webkit-tap-highlight-color: transparent;
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+	}
+	body:has(#menu-mobile:popover-open) .hamRotate {
+		transform: rotate(45deg);
+	}
+	body:has(#menu-mobile:popover-open) .hamRotate180 {
+		transform: rotate(180deg);
+	}
+	.line {
+		fill: none;
+		transition:
+			stroke-dasharray 400ms,
+			stroke-dashoffset 400ms;
+		stroke: var(--text-primary);
+		stroke-width: 5.5;
+		stroke-linecap: round;
+	}
+	.ham1 .top {
+		stroke-dasharray: 40 139;
+	}
+	.ham1 .bottom {
+		stroke-dasharray: 40 180;
+	}
+	body:has(#menu-mobile:popover-open) .ham1 .top {
+		stroke-dashoffset: -98px;
+	}
+	body:has(#menu-mobile:popover-open) .ham1 .bottom {
+		stroke-dashoffset: -138px;
+	}
+	.ham2 .top {
+		stroke-dasharray: 40 121;
+	}
+	.ham2 .bottom {
+		stroke-dasharray: 40 121;
+	}
+	.ham2.active .top {
+		stroke-dashoffset: -102px;
+	}
+	body:has(#menu-mobile:popover-open) .ham2 .bottom {
+		stroke-dashoffset: -102px;
+	}
+	.ham3 .top {
+		stroke-dasharray: 40 130;
+	}
+	.ham3 .middle {
+		stroke-dasharray: 40 140;
+	}
+	.ham3 .bottom {
+		stroke-dasharray: 40 205;
+	}
+	body:has(#menu-mobile:popover-open) .ham3 .top {
+		stroke-dasharray: 75 130;
+		stroke-dashoffset: -63px;
+	}
+	body:has(#menu-mobile:popover-open) .ham3 .middle {
+		stroke-dashoffset: -102px;
+	}
+	body:has(#menu-mobile:popover-open) .ham3 .bottom {
+		stroke-dasharray: 110 205;
+		stroke-dashoffset: -86px;
+	}
+	.ham4 .top {
+		stroke-dasharray: 40 121;
+	}
+	.ham4 .bottom {
+		stroke-dasharray: 40 121;
+	}
+	body:has(#menu-mobile:popover-open) .ham4 .top {
+		stroke-dashoffset: -68px;
+	}
+	body:has(#menu-mobile:popover-open) .ham4 .bottom {
+		stroke-dashoffset: -68px;
+	}
+	.ham5 .top {
+		stroke-dasharray: 40 82;
+	}
+	.ham5 .bottom {
+		stroke-dasharray: 40 82;
+	}
+	body:has(#menu-mobile:popover-open) .ham5 .top {
+		stroke-dasharray: 14 82;
+		stroke-dashoffset: -72px;
+	}
+	body:has(#menu-mobile:popover-open) .ham5 .bottom {
+		stroke-dasharray: 14 82;
+		stroke-dashoffset: -72px;
+	}
+	.ham6 .top {
+		stroke-dasharray: 40 172;
+	}
+	.ham6 .middle {
+		stroke-dasharray: 40 111;
+	}
+	.ham6 .bottom {
+		stroke-dasharray: 40 172;
+	}
+	body:has(#menu-mobile:popover-open) .ham6 .top {
+		stroke-dashoffset: -132px;
+	}
+	body:has(#menu-mobile:popover-open) .ham6 .middle {
+		stroke-dashoffset: -71px;
+	}
+	body:has(#menu-mobile:popover-open) .ham6 .bottom {
+		stroke-dashoffset: -132px;
+	}
+	.ham7 .top {
+		stroke-dasharray: 40 82;
+	}
+	.ham7 .middle {
+		stroke-dasharray: 40 111;
+	}
+	.ham7 .bottom {
+		stroke-dasharray: 40 161;
+	}
+	body:has(#menu-mobile:popover-open) .ham7 .top {
+		stroke-dasharray: 17 82;
+		stroke-dashoffset: -62px;
+	}
+	body:has(#menu-mobile:popover-open) .ham7 .middle {
+		stroke-dashoffset: 23px;
+	}
+	body:has(#menu-mobile:popover-open) .ham7 .bottom {
+		stroke-dashoffset: -83px;
+	}
+	.ham8 .top {
+		stroke-dasharray: 40 160;
+	}
+	.ham8 .middle {
+		stroke-dasharray: 40 142;
+		transform-origin: 50%;
+		transition: transform 400ms;
+	}
+	.ham8 .bottom {
+		stroke-dasharray: 40 85;
+		transform-origin: 50%;
+		transition:
+			transform 400ms,
+			stroke-dashoffset 400ms;
+	}
+	body:has(#menu-mobile:popover-open) .ham8 .top {
+		stroke-dashoffset: -64px;
+	}
+	body:has(#menu-mobile:popover-open) .ham8 .middle {
+		//stroke-dashoffset: -20px;
+		transform: rotate(90deg);
+	}
+	body:has(#menu-mobile:popover-open) .ham8 .bottom {
+		stroke-dashoffset: -64px;
+	}
+</style>

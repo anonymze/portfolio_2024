@@ -34,9 +34,9 @@ const locale = Astro.currentLocale as I18n;
 	</p>
 
 	<p class="col-span-6 flex gap-x-4 sm:col-span-4">
-		<a class="page" href={getRelativeLocaleUrl(Astro.currentLocale!, "/terms-of-use")}
+		<a title={`Go to ${i18n[locale]("TERMS_CONDITIONS")} page`} class="page" href={getRelativeLocaleUrl(locale, "/terms-of-use")}
 			>{i18n[locale]("TERMS_CONDITIONS")}</a
-		><a class="page" href={getRelativeLocaleUrl(Astro.currentLocale!, "/privacy-policy")}
+		><a title={`Go to ${i18n[locale]("PRIVACY_POLICY")} page`} class="page" href={getRelativeLocaleUrl(locale, "/privacy-policy")}
 			>{i18n[locale]("PRIVACY_POLICY")}</a
 		>
 	</p>
@@ -45,8 +45,8 @@ const locale = Astro.currentLocale as I18n;
 		class="col-start-1 col-span-2 flex justify-start items-start gap-x-8 my-3 fading-in sm:gap-x-4 sm:col-start-5 sm:justify-end sm:my-0"
 	>
 		<PopoverCard toTop message={i18n[locale]("EMAIL_COPIED")} set:html={MailSVG} />
-		<a target="_blank" href={import.meta.env.PUBLIC_GITHUB_URL} set:html={GithubSVG} />
-		<a target="_blank" href={import.meta.env.PUBLIC_LINKEDIN_URL} set:html={LinkedinSVG} />
+		<a title={`Open Github`} target="_blank" href={import.meta.env.PUBLIC_GITHUB_URL} set:html={GithubSVG} />
+		<a title={`Open linkedin`} target="_blank" href={import.meta.env.PUBLIC_LINKEDIN_URL} set:html={LinkedinSVG} />
 	</div>
 </footer>
 
