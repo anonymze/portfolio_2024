@@ -3,6 +3,7 @@ import { navs } from "./_nav_links";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import Accessories from "./_components/Accessories.astro";
 import MagicSVG from "@assets/icons/magic.svg?raw";
+import BurgerMobile from "@/components/BurgerMobile.astro";
 import type { I18n } from "@/types/i18n";
 
 const locale = Astro.currentLocale as I18n;
@@ -33,13 +34,7 @@ const locale = Astro.currentLocale as I18n;
 			<Accessories />
 		</div>
 
-		<button popovertarget="burger-mobile" class="block ml-auto sm:hidden">hello</button>
-
-		<div popover id="burger-mobile">
-			<menu>
-				<li>hey</li>
-			</menu>
-		</div>
+		<BurgerMobile client:media="(max-width: 10em)" />
 	</nav>
 </header>
 
