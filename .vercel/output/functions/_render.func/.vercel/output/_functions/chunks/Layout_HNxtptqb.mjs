@@ -1,6 +1,6 @@
-import { c as createComponent, r as renderTemplate, g as defineScriptVars, u as unescapeHTML, a as addAttribute, h as renderSlot, m as maybeRenderHead, b as createAstro, d as renderComponent, F as Fragment, i as renderHead } from './astro/server_CH8WW7kO.mjs';
+import { c as createComponent, r as renderTemplate, g as defineScriptVars, u as unescapeHTML, a as addAttribute, h as renderSlot, m as maybeRenderHead, b as createAstro, d as renderComponent, F as Fragment, i as renderHead } from './astro/server_bQrO92AX.mjs';
 import 'kleur/colors';
-import { t as toRoutingStrategy, a as toFallbackType, g as getLocaleRelativeUrl } from './utils_KuN308-a.mjs';
+import { t as toRoutingStrategy, a as toFallbackType, g as getLocaleRelativeUrl } from './utils_DOFbK31k.mjs';
 import 'clsx';
 /* empty css                         */
 import { jsx } from 'react/jsx-runtime';

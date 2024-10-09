@@ -1,7 +1,7 @@
-import { c as createComponent, r as renderTemplate, d as renderComponent } from '../../../chunks/astro/server_CH8WW7kO.mjs';
+import { c as createComponent, r as renderTemplate, d as renderComponent } from '../../../chunks/astro/server_bQrO92AX.mjs';
 import 'kleur/colors';
-import { $ as $$ProjectDetailedCard } from '../../../chunks/ProjectDetailedCard_Bffld1w7.mjs';
-import { $ as $$Layout } from '../../../chunks/Layout_CzViFf57.mjs';
+import { $ as $$ProjectDetailedCard } from '../../../chunks/ProjectDetailedCard_BGy5MuGE.mjs';
+import { $ as $$Layout } from '../../../chunks/Layout_HNxtptqb.mjs';
 import { G as GemmePresentation, a as GemmeCourses, b as GemmeRegister, c as GemmeMap } from '../../../chunks/courses_OYuGjQLI.mjs';
 export { renderers } from '../../../renderers.mjs';
 

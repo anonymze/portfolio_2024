@@ -1,9 +1,9 @@
-import { j as ROUTE_TYPE_HEADER, k as decryptString, l as createSlotValueFromString, r as renderTemplate, d as renderComponent, D as DEFAULT_404_COMPONENT, n as renderSlotToString, o as renderJSX, p as chunkToString, q as isRenderInstruction, t as clientLocalsSymbol, v as clientAddressSymbol$1, A as ASTRO_VERSION, w as responseSentSymbol$1, x as renderPage, R as REROUTE_DIRECTIVE_HEADER, y as REWRITE_DIRECTIVE_HEADER_KEY, z as REWRITE_DIRECTIVE_HEADER_VALUE, B as renderEndpoint, C as REROUTABLE_STATUS_CODES } from './astro/server_CH8WW7kO.mjs';
-import { r as requestHasLocale, b as requestIs404Or500, n as notFound, c as redirectToFallback, d as normalizeTheLocale, e as redirectToDefaultLocale, f as computeCurrentLocale, h as computePreferredLocale, i as computePreferredLocaleList, s as shouldAppendForwardSlash } from './utils_KuN308-a.mjs';
+import { j as ROUTE_TYPE_HEADER, k as decryptString, l as createSlotValueFromString, r as renderTemplate, d as renderComponent, D as DEFAULT_404_COMPONENT, n as renderSlotToString, o as renderJSX, p as chunkToString, q as isRenderInstruction, t as clientLocalsSymbol, v as clientAddressSymbol$1, A as ASTRO_VERSION, w as responseSentSymbol$1, x as renderPage, R as REROUTE_DIRECTIVE_HEADER, y as REWRITE_DIRECTIVE_HEADER_KEY, z as REWRITE_DIRECTIVE_HEADER_VALUE, B as renderEndpoint, C as REROUTABLE_STATUS_CODES } from './astro/server_bQrO92AX.mjs';
+import { r as requestHasLocale, b as requestIs404Or500, n as notFound, c as redirectToFallback, d as normalizeTheLocale, e as redirectToDefaultLocale, f as computeCurrentLocale, h as computePreferredLocale, i as computePreferredLocaleList, s as shouldAppendForwardSlash } from './utils_DOFbK31k.mjs';
 import { serialize, parse } from 'cookie';
-import { A as AstroError, R as ResponseSentError, v as MiddlewareNoDataOrNextCalled, w as MiddlewareNotAResponse, G as GetStaticPathsRequired, x as InvalidGetStaticPathsReturn, y as InvalidGetStaticPathsEntry, z as GetStaticPathsExpectedParams, B as GetStaticPathsInvalidRouteParam, C as trimSlashes, P as PageNumberParamNotFound, H as NoMatchingStaticPathFound, J as PrerenderDynamicEndpointPathCollide, K as ReservedSlotName, L as LocalsNotAnObject, Q as PrerenderClientAddressNotAvailable, S as ClientAddressNotAvailable, T as StaticClientAddressNotAvailable, U as RewriteWithBodyUsed, V as AstroResponseHeadersReassigned, W as fileExtension, j as joinPaths, X as slash, Y as prependForwardSlash, h as appendForwardSlash, Z as removeTrailingForwardSlash } from './astro/assets-service_Bdqx5vIr.mjs';
+import { A as AstroError, R as ResponseSentError, v as MiddlewareNoDataOrNextCalled, w as MiddlewareNotAResponse, G as GetStaticPathsRequired, x as InvalidGetStaticPathsReturn, y as InvalidGetStaticPathsEntry, z as GetStaticPathsExpectedParams, B as GetStaticPathsInvalidRouteParam, C as trimSlashes, P as PageNumberParamNotFound, H as NoMatchingStaticPathFound, J as PrerenderDynamicEndpointPathCollide, K as ReservedSlotName, L as LocalsNotAnObject, Q as PrerenderClientAddressNotAvailable, S as ClientAddressNotAvailable, T as StaticClientAddressNotAvailable, U as RewriteWithBodyUsed, V as AstroResponseHeadersReassigned, W as fileExtension, j as joinPaths, X as slash, Y as prependForwardSlash, h as appendForwardSlash, Z as removeTrailingForwardSlash } from './astro/assets-service_CGJ78vEv.mjs';
 import { bold, red, yellow, dim, blue } from 'kleur/colors';
-import { g as getActionQueryString, d as deserializeActionResult, e as ensure404Route, a as default404Instance, D as DEFAULT_404_ROUTE, N as NOOP_MIDDLEWARE_FN } from './astro-designed-error-pages_LioWkDXH.mjs';
+import { g as getActionQueryString, d as deserializeActionResult, e as ensure404Route, a as default404Instance, D as DEFAULT_404_ROUTE, N as NOOP_MIDDLEWARE_FN } from './astro-designed-error-pages_DF-MUgG6.mjs';
 import 'es-module-lexer';
 import 'clsx';
 import 'fast-glob';
@@ -929,7 +929,7 @@ class Pipeline {
   async getMiddleware() {
     if (this.resolvedMiddleware) {
       return this.resolvedMiddleware;
-    } else {
+    } else if (this.middleware) {
       const middlewareInstance = await this.middleware();
       const onRequest = middlewareInstance.onRequest ?? NOOP_MIDDLEWARE_FN;
       if (this.manifest.checkOrigin) {
@@ -937,6 +937,9 @@ class Pipeline {
       } else {
         this.resolvedMiddleware = onRequest;
       }
+      return this.resolvedMiddleware;
+    } else {
+      this.resolvedMiddleware = NOOP_MIDDLEWARE_FN;
       return this.resolvedMiddleware;
     }
   }
@@ -2285,7 +2288,8 @@ class NodeApp extends App {
    * @param destination NodeJS ServerResponse
    */
   static async writeResponse(source, destination) {
-    const { status, headers, body } = source;
+    const { status, headers, body, statusText } = source;
+    destination.statusMessage = statusText;
     destination.writeHead(status, createOutgoingHttpHeaders(headers));
     if (!body) return destination.end();
     try {

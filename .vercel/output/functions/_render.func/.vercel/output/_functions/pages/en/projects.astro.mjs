@@ -1,7 +1,7 @@
-import { c as createComponent, r as renderTemplate, d as renderComponent, b as createAstro, m as maybeRenderHead, u as unescapeHTML } from '../../chunks/astro/server_CH8WW7kO.mjs';
+import { c as createComponent, r as renderTemplate, d as renderComponent, b as createAstro, m as maybeRenderHead, u as unescapeHTML } from '../../chunks/astro/server_bQrO92AX.mjs';
 import 'kleur/colors';
-import { c as cards, $ as $$ProjectCard } from '../../chunks/_cards_BaU4YPMn.mjs';
-import { g as getRelativeLocaleUrl, $ as $$Layout } from '../../chunks/Layout_CzViFf57.mjs';
+import { c as cards, $ as $$ProjectCard } from '../../chunks/_cards_Cio6MjL-.mjs';
+import { g as getRelativeLocaleUrl, $ as $$Layout } from '../../chunks/Layout_HNxtptqb.mjs';
 /* empty css                                    */
 export { renderers } from '../../renderers.mjs';
 

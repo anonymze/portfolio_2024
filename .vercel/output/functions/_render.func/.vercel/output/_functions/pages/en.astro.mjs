@@ -1,6 +1,6 @@
-import { c as createComponent, r as renderTemplate, d as renderComponent, b as createAstro, m as maybeRenderHead, a as addAttribute, u as unescapeHTML } from '../chunks/astro/server_CH8WW7kO.mjs';
+import { c as createComponent, r as renderTemplate, d as renderComponent, b as createAstro, m as maybeRenderHead, a as addAttribute, u as unescapeHTML } from '../chunks/astro/server_bQrO92AX.mjs';
 import 'kleur/colors';
-import { g as getRelativeLocaleUrl, $ as $$Layout } from '../chunks/Layout_CzViFf57.mjs';
+import { g as getRelativeLocaleUrl, $ as $$Layout } from '../chunks/Layout_HNxtptqb.mjs';
 import { L as LocationSVG } from '../chunks/location_BakCcQlM.mjs';
 /* empty css                                 */
 export { renderers } from '../renderers.mjs';

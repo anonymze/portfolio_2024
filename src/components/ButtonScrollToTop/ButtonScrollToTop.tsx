@@ -1,3 +1,4 @@
+// @ts-ignore
 import ArrowUpSVG from "@assets/icons/arrow-up.svg?react";
 
 import "./ButtonScrollToTop.css";

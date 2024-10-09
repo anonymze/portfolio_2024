@@ -1,5 +1,5 @@
-import { A as AstroError, g as MissingLocale, h as appendForwardSlash, j as joinPaths, k as i18nNoLocaleFoundInPath } from './astro/assets-service_Bdqx5vIr.mjs';
-import { R as REROUTE_DIRECTIVE_HEADER } from './astro/server_CH8WW7kO.mjs';
+import { A as AstroError, g as MissingLocale, h as appendForwardSlash, j as joinPaths, k as i18nNoLocaleFoundInPath } from './astro/assets-service_CGJ78vEv.mjs';
+import { R as REROUTE_DIRECTIVE_HEADER } from './astro/server_bQrO92AX.mjs';
 
 function shouldAppendForwardSlash(trailingSlash, buildFormat) {
   switch (trailingSlash) {
