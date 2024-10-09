@@ -1,7 +1,7 @@
 ---
 import Header from "./Header/Header.astro";
 import Footer from "./Footer.astro";
-// import ButtonScrollToTop from "@/components/ButtonScrollToTop/ButtonScrollToTop";
+import ButtonScrollToTop from "@/components/ButtonScrollToTop/ButtonScrollToTop";
 import { storage_theme_name_fix } from "@utils/client/theme";
 
 import "@/styles/app.css";
@@ -38,7 +38,7 @@ const locale = Astro.currentLocale as I18n;
 
 		<main>
 			<slot />
-			<!-- <ButtonScrollToTop client:idle /> -->
+			<ButtonScrollToTop client:idle />
 		</main>
 
 		<Footer />
