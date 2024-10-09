@@ -42,7 +42,7 @@ const email = import.meta.env.PUBLIC_EMAIL;
 		position: absolute;
 		left: 50%;
 		top: 3.4rem;
-		transform: translate(-50%);
+		transform: translateX(-50%);
 		z-index: 2;
 		display: none;
 		width: max-content;
@@ -62,7 +62,15 @@ const email = import.meta.env.PUBLIC_EMAIL;
 			opacity: 0;
 			transform: translate(-50%, -1rem);
 		}
+	}
 
+	[popover]:popover-open + div {
+		display: block;
+	}
+</style>
+
+<style is:global>
+	.email-fading {
 		svg {
 			position: absolute;
 			left: 50%;
@@ -75,31 +83,19 @@ const email = import.meta.env.PUBLIC_EMAIL;
 		}
 
 		&.to-top {
-		}
-	}
+			top: -3.5rem !important;
 
-	[popover] + .to-top {
-		top: -4rem;
-
-		@starting-style {
-			opacity: 0;
-			transform: translate(-50%, 1rem);
-		}
-	}
-
-	[popover] + .to-top svg {
-			top: 0.7rem;
-			transform: rotate(180deg) translate(50%);
-		}
-
-		@media screen and (max-width: 640px) {
-			transform: translateX(0%);
 			svg {
-				display: none;
+				top: 0.7rem;
+				transform: rotate(180deg) translateX(50%);
+			}
+
+			@media screen and (max-width: 640px) {
+				transform: translateX(0) !important;
+				svg {
+					display: none;
+				}
 			}
 		}
-
-	[popover]:popover-open + div {
-		display: block;
 	}
 </style>
