@@ -1,0 +1,29 @@
+---
+import ProjectDetailedCard from "@/components/ProjectDetailedCard.astro";
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout title="Détection de fraude">
+	<ProjectDetailedCard
+		title="Détection de fraude"
+		badges={[
+			{
+				message: "React Native",
+			},
+			{
+				message: "Expo",
+			},
+			{
+				message: "Algorythme",
+			},
+			{
+				message: "Skia",
+			},
+		]}
+		messages={[
+			"C'est une application mobile prototype et personnelle. Le but est de scanner un objet avec votre appareil photo et de vous informer si le produit est une contrefaçon.",
+			"Depuis ce projet, je ne crée que mes applications mobiles en React Native pour profiter du fonctionnement natif du téléphone (et des performances). Le comportement du téléphone est plus fluide et naturel qu'une application hybride qui doit 'imiter' les OS natifs. Je me suis également initié à Skia afin de maîtriser les dessins graphiques.",
+		]}
+		in_progress={true}
+	/>
+</Layout>

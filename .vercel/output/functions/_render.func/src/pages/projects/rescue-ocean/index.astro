@@ -1,0 +1,35 @@
+---
+import ProjectDetailedCard from "@/components/ProjectDetailedCard.astro";
+import Layout from "@layouts/Layout.astro";
+
+import RescueOcean from "@assets/images/rescue-ocean/rescue-ocean.png";
+---
+
+<Layout title="Ramassage de déchets">
+	<ProjectDetailedCard
+		title="Ramassage de déchets"
+		url="https://projectrescueocean.org/"
+		images={[RescueOcean]}
+		badges={[
+			{
+				message: "Angular",
+			},
+			{
+				message: "Ionic",
+			},
+			{
+				message: "Mobiles stores",
+			},
+			{
+				message: "Autonomie",
+			},
+			{
+				message: "Traductions",
+			},
+		]}
+		messages={[
+			"Ma première application mobile en autonomie. C'est une simple application permattant de déclarer vos déchets ramassés en bord de plage.",
+			"Pour ma première application mobile, la diffusion sur les stores Google et Apple fut le plus complexe à mes yeux, il y a tout une série d'étapes et de vérifications avant de voir votre projet mis en ligne. Outre ce point, voir votre première application utilisée par des centaines de personnes est plutôt cool."
+		]}
+	/>
+</Layout>

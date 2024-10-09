@@ -2,7 +2,9 @@
 import Layout from "@layouts/Layout.astro";
 import LocationSVG from "@assets/icons/location.svg?raw";
 import { getRelativeLocaleUrl } from "astro:i18n";
+import Test from "@assets/images/me.png";
 import type { I18n } from "@/types/i18n";
+import { Image } from "astro:assets";
 
 const locale = Astro.currentLocale as I18n;
 ---
@@ -10,6 +12,8 @@ const locale = Astro.currentLocale as I18n;
 <Layout title="Welcome home">
 	<section class="presentation sm:px-6 my-6 sm:my-12 lg:my-20">
 		<h1>Bonjour ! <span class="text-secondary font-bold">Je suis Yann</span>.</h1>
+
+		<Image src={Test} alt="" />
 
 		<p>
 			Bienvenue dans mon univers. Je suis <span class="text-tertiary font-bold">développeur web</span> depuis
@@ -122,7 +126,7 @@ const locale = Astro.currentLocale as I18n;
 			position: absolute;
 			right: 0;
 			top: -2.5rem;
-			background-image: url("/me.png");
+			background-image: url("../assets/images/me.png");
 			background-repeat: no-repeat;
 			background-size: contain;
 			width: 21rem;
