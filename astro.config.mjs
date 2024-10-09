@@ -9,6 +9,7 @@ import vercel from "@astrojs/vercel/serverless";
 export default defineConfig({
   // site: 'https://anonymze.github.io',
   // base: 'portfolio_2024',
+  outDir: "./dist",
   integrations: [react()],
 
   output: "server",
