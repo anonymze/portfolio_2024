@@ -46,14 +46,14 @@ const locale = Astro.currentLocale as I18n;
 		<div aria-label="Nextjs" class="fading-in" style="--transition-delay-count: 3">
 			<span id="nextjs-icon"></span>
 		</div>
+		<div aria-label="Node" class="fading-in" style="--transition-delay-count: 6">
+			<span id="node-icon"></span>
+		</div>
 		<div aria-label="React" class="fading-in" style="--transition-delay-count: 4">
 			<span id="react-icon"></span>
 		</div>
 		<div aria-label="Typescript" class="fading-in" style="--transition-delay-count: 5">
 			<span id="typescript-icon"></span>
-		</div>
-		<div aria-label="Zig" class="fading-in" style="--transition-delay-count: 6">
-			<span id="zig-icon"></span>
 		</div>
 	</article>
 
@@ -144,9 +144,9 @@ const locale = Astro.currentLocale as I18n;
 		& div span {
 			position: relative;
 			display: block;
-			width: 4rem;
+			width: 4.5rem;
 			aspect-ratio: 1/1;
-			background-size: 100%;
+			background-size: contain;
 			background-repeat: no-repeat;
 
 			&::after {
@@ -178,8 +178,8 @@ const locale = Astro.currentLocale as I18n;
 				background-image: url("../../assets/icons/typescript.svg");
 			}
 
-			&#zig-icon {
-				background-image: url("../../assets/icons/zig.svg");
+			&#node-icon {
+				background-image: url("../../assets/icons/node.svg");
 			}
 		}
 	}
