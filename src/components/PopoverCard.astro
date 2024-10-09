@@ -73,29 +73,32 @@ const email = import.meta.env.PUBLIC_EMAIL;
 			text-align: center;
 			color: var(--text-primary);
 		}
-
 		
 		&.to-top {
-			top: -4rem;
 
-			@starting-style {
-				opacity: 0;
-				transform: translate(-50%, 1rem);
-			}
-
-			svg {
-				top: 0.7rem;
-				transform: rotate(180deg) translate(50%);
-			}
-
-			@media screen and (max-width: 640px) {
-				transform: translateX(0%);
-				svg {
-					display: none;
-				}
-			}
 		}
 	}
+
+	[popover] + .to-top {
+		top: -4rem;
+
+@starting-style {
+	opacity: 0;
+	transform: translate(-50%, 1rem);
+}
+
+svg {
+	top: 0.7rem;
+	transform: rotate(180deg) translate(50%);
+}
+
+@media screen and (max-width: 640px) {
+	transform: translateX(0%);
+	svg {
+		display: none;
+	}
+}
+	} 
 
 	[popover]:popover-open + div {
 		display: block;
