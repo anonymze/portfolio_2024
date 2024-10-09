@@ -3,12 +3,11 @@ import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
 import svgr from "vite-plugin-svgr";
 
-import vercel from "@astrojs/vercel/serverless";
+import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [react()],
-
   output: "server",
 
   devToolbar: {
@@ -28,5 +27,5 @@ export default defineConfig({
     }
   },
 
-  adapter: vercel()
+  adapter: cloudflare(),
 });
