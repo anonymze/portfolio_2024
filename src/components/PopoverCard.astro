@@ -58,6 +58,11 @@ const email = import.meta.env.PUBLIC_EMAIL;
 			opacity var(--default-transition-duration) ease-out,
 			transform calc(var(--default-transition-duration) * 3) var(--transition-spring);
 
+		@starting-style {
+			opacity: 0;
+			transform: translate(-50%, -1rem);
+		}
+
 		svg {
 			position: absolute;
 			left: 50%;
@@ -69,11 +74,7 @@ const email = import.meta.env.PUBLIC_EMAIL;
 			color: var(--text-primary);
 		}
 
-		@starting-style {
-			opacity: 0;
-			transform: translate(-50%, -1rem);
-		}
-
+		
 		&.to-top {
 			top: -4rem;
 
@@ -98,39 +99,5 @@ const email = import.meta.env.PUBLIC_EMAIL;
 
 	[popover]:popover-open + div {
 		display: block;
-	}
-</style>
-
-<style is:global>
-	.email-fading.to-bottom {
-		svg {
-			position: absolute;
-			left: 50%;
-			transform: translate(-50%);
-			top: -0.9rem;
-			width: 2.4rem;
-			height: 2.4rem;
-			text-align: center;
-			color: var(--text-primary);
-		}
-	}
-
-	.email-fading.to-top {
-		top: -4rem !important;
-
-		@starting-style {
-			opacity: 0;
-			transform: translate(-50%, 1rem);
-		}
-		svg {
-			position: absolute;
-			left: 50%;
-			transform: rotate(180deg) translate(50%);
-			top: 0.7rem;
-			width: 2.4rem;
-			height: 2.4rem;
-			text-align: center;
-			color: var(--text-primary);
-		}
 	}
 </style>
