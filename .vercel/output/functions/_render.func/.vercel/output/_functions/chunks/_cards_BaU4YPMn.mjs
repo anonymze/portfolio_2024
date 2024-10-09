@@ -3,7 +3,7 @@ import { $ as $$Image } from './_astro_assets_BLstWCnG.mjs';
 import { $ as $$Badge } from './Badge_SW4joOHu.mjs';
 /* empty css                         */
 import { A as AuroraHome } from './home_DzxzMg6g.mjs';
-import { i as i18n } from './Layout_C-E739SR.mjs';
+import { i as i18n } from './Layout_CzViFf57.mjs';
 
 var __freeze = Object.freeze;
 var __defProp = Object.defineProperty;

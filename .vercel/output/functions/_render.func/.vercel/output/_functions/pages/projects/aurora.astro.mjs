@@ -1,7 +1,7 @@
 import { c as createComponent, r as renderTemplate, d as renderComponent } from '../../chunks/astro/server_CH8WW7kO.mjs';
 import 'kleur/colors';
-import { $ as $$ProjectDetailedCard } from '../../chunks/ProjectDetailedCard_CmgVP6wx.mjs';
-import { $ as $$Layout } from '../../chunks/Layout_C-E739SR.mjs';
+import { $ as $$ProjectDetailedCard } from '../../chunks/ProjectDetailedCard_Bffld1w7.mjs';
+import { $ as $$Layout } from '../../chunks/Layout_CzViFf57.mjs';
 import { A as AuroraHome } from '../../chunks/home_DzxzMg6g.mjs';
 import { A as AuroraProject, a as AuroraContact } from '../../chunks/contact_CGEAnVUm.mjs';
 export { renderers } from '../../renderers.mjs';

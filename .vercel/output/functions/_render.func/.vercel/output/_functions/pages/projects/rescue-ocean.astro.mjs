@@ -1,7 +1,7 @@
 import { c as createComponent, r as renderTemplate, d as renderComponent } from '../../chunks/astro/server_CH8WW7kO.mjs';
 import 'kleur/colors';
-import { $ as $$ProjectDetailedCard } from '../../chunks/ProjectDetailedCard_CmgVP6wx.mjs';
-import { $ as $$Layout } from '../../chunks/Layout_C-E739SR.mjs';
+import { $ as $$ProjectDetailedCard } from '../../chunks/ProjectDetailedCard_Bffld1w7.mjs';
+import { $ as $$Layout } from '../../chunks/Layout_CzViFf57.mjs';
 import { R as RescueOcean } from '../../chunks/rescue-ocean_C8ZVl_sp.mjs';
 export { renderers } from '../../renderers.mjs';
 

@@ -1,7 +1,7 @@
 import { c as createComponent, r as renderTemplate, m as maybeRenderHead, a as addAttribute, u as unescapeHTML, d as renderComponent, b as createAstro } from './astro/server_CH8WW7kO.mjs';
 import 'kleur/colors';
 import { $ as $$Badge } from './Badge_SW4joOHu.mjs';
-import { i as i18n } from './Layout_C-E739SR.mjs';
+import { i as i18n } from './Layout_CzViFf57.mjs';
 import { $ as $$Image } from './_astro_assets_BLstWCnG.mjs';
 /* empty css                         */
 

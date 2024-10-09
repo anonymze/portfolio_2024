@@ -1,30 +1,16 @@
 import { c as createComponent, r as renderTemplate, d as renderComponent, b as createAstro, m as maybeRenderHead, a as addAttribute, u as unescapeHTML } from '../chunks/astro/server_CH8WW7kO.mjs';
 import 'kleur/colors';
-import { g as getRelativeLocaleUrl, $ as $$Layout } from '../chunks/Layout_C-E739SR.mjs';
+import { g as getRelativeLocaleUrl, $ as $$Layout } from '../chunks/Layout_CzViFf57.mjs';
 import { L as LocationSVG } from '../chunks/location_BakCcQlM.mjs';
-import { $ as $$Image } from '../chunks/_astro_assets_BLstWCnG.mjs';
 /* empty css                                 */
 export { renderers } from '../renderers.mjs';
-
-const Test = new Proxy({"src":"/_astro/me.TAyrfMtK.png","width":770,"height":1218,"format":"png"}, {
-						get(target, name, receiver) {
-							if (name === 'clone') {
-								return structuredClone(target);
-							}
-							if (name === 'fsPath') {
-								return "/Users/ano/dev/perso/portfolio/src/assets/images/me.png";
-							}
-							
-							return target[name];
-						}
-					});
 
 const $$Astro = createAstro();
 const $$Index = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Index;
   const locale = Astro2.currentLocale;
-  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Welcome home", "data-astro-cid-j7pv25f6": true }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<section class="presentation sm:px-6 my-6 sm:my-12 lg:my-20" data-astro-cid-j7pv25f6> <h1 data-astro-cid-j7pv25f6>Bonjour ! <span class="text-secondary font-bold" data-astro-cid-j7pv25f6>Je suis Yann</span>.</h1> ${renderComponent($$result2, "Image", $$Image, { "src": Test, "alt": "", "data-astro-cid-j7pv25f6": true })} <p data-astro-cid-j7pv25f6>
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Welcome home", "data-astro-cid-j7pv25f6": true }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<section class="presentation sm:px-6 my-6 sm:my-12 lg:my-20" data-astro-cid-j7pv25f6> <h1 data-astro-cid-j7pv25f6>Bonjour ! <span class="text-secondary font-bold" data-astro-cid-j7pv25f6>Je suis Yann</span>.</h1> <p data-astro-cid-j7pv25f6>
 Bienvenue dans mon univers. Je suis <span class="text-tertiary font-bold" data-astro-cid-j7pv25f6>développeur web</span> depuis
 <span class="text-tertiary font-bold" data-astro-cid-j7pv25f6>2020</span>.
 </p> <p data-astro-cid-j7pv25f6>
