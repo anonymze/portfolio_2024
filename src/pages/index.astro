@@ -57,28 +57,17 @@ const locale = Astro.currentLocale as I18n;
 	<article class="max-w-[var(--max-width-layout)] mx-auto my-6 sm:my-10">
 		<p class="mb-5">
 			Je préfère le <span class="text-tertiary">web</span> et le <span class="text-tertiary">front</span> pour
-			deux raisons. La première étant la simplicité d'afficher une simple interface visuelle. Et la deuxième parce
+			deux raisons. La première étant la simplicité d'afficher une simple interface visuelle ett la deuxième parce
 			que voir ce que l'on code est une grande satisfaction que je ne pensais pas imaginer. Mais sans le <span
 				class="text-tertiary">back</span
 			> on n'avance pas non plus, et quand on est en totale
-			<span class="text-tertiary">autonomie</span> il faut savoir délivrer des routes, sécuriser son app, pre-render
+			<span class="text-tertiary">autonomie</span> il faut apprendre à faire du <span class="text-tertiary">Node</span> ou du <span class="text-tertiary">PHP</span>, oui il faut savoir délivrer des routes, sécuriser son app, pre-render
 			son contenu, contrôler ses cookies, établir une base de données, authentifier son utilisateur, gérer les
 			problèmes de CORS... bref l'un sans l'autre ne fonctionne pas !
 		</p>
 
+
 		<p class="mb-5">
-			Je cherche souvent à aller plus loin que la simple route indiquée, passioné je crois que c'est le terme.
-			Par exemple vous trouverez certains de mes <a
-				target="_blank"
-				class="underline decoration-secondary"
-				href={getRelativeLocaleUrl(locale, "projects")}
-				title="Va vers la page projets">projets</a
-			>
-			personnels en Zig, et c'est grâce à cette technologie que j'ai pu découvrir ce qu'était un <span
-				class="text-tertiary">langage système</span
-			>, et je vous assure que de jouer avec la mémoire machine c'est une autre paire de manches.
-		</p>
-		<p>
 			La plupart de mes projets front sont accompagnés de <span class="text-tertiary">Tailwind</span>. C'est
 			un outil qui fonctionne très bien avec l'écosystème des frameworks <span class="text-tertiary"
 				>Javascript</span
@@ -90,6 +79,19 @@ const locale = Astro.currentLocale as I18n;
 				href={import.meta.env.PUBLIC_GITHUB_URL}
 				title="Ouvre mon Github">Github</a
 			>.
+		</p>
+
+		<p>
+			Je cherche souvent à aller plus loin que la simple route indiquée, passioné je crois que c'est le terme.
+			Par exemple vous trouverez certains de mes <a
+				target="_blank"
+				class="underline decoration-secondary"
+				href={getRelativeLocaleUrl(locale, "projects")}
+				title="Va vers la page projets">projets</a
+			>
+			personnels en Zig, et c'est grâce à cette technologie que j'ai pu découvrir ce qu'était un <span
+				class="text-tertiary">langage système</span
+			>, et je vous assure que de jouer avec la mémoire machine c'est une autre paire de manches.
 		</p>
 	</article>
 </Layout>
@@ -144,7 +146,7 @@ const locale = Astro.currentLocale as I18n;
 			display: block;
 			width: 4rem;
 			aspect-ratio: 1/1;
-			background-size: 100%;
+			background-size: contain;
 			background-repeat: no-repeat;
 
 			&::after {
@@ -177,7 +179,7 @@ const locale = Astro.currentLocale as I18n;
 			}
 
 			&#zig-icon {
-				background-image: url("../assets/icons/zig.svg");
+				background-image: url("../assets/icons/node.svg");
 			}
 		}
 	}

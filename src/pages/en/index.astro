@@ -69,18 +69,8 @@ const locale = Astro.currentLocale as I18n;
 			doesn't work!
 		</p>
 
+
 		<p class="mb-5">
-			I often seek to go further than the simple road indicated, passionate I believe is the term. For
-			example, you'll find some of my personal <a
-				target="_blank"
-				class="underline decoration-secondary"
-				href={getRelativeLocaleUrl(locale, "projects")}
-				title="Go to projects page">projects</a
-			> in Zig, and it's thanks to this technology that I was able to discover what a <span
-				class="text-tertiary">system language</span
-			> was, and I can assure you that playing with machine memory is a whole other thing.
-		</p>
-		<p>
 			Most of my front-end projects use <span class="text-tertiary">Tailwind</span>. It's a tool that works
 			very well with the ecosystem of <span class="text-tertiary">Javascript</span> frameworks for encapsulating
 			content. So you'll often find a <code>w-full</code> or a <code>text-secondary</code> hanging around on my
@@ -90,6 +80,18 @@ const locale = Astro.currentLocale as I18n;
 				href={import.meta.env.PUBLIC_GITHUB_URL}
 				title="Go to my github">Github</a
 			>.
+		</p>
+
+		<p >
+			I often seek to go further than the simple road indicated, passionate I believe is the term. For
+			example, you'll find some of my personal <a
+				target="_blank"
+				class="underline decoration-secondary"
+				href={getRelativeLocaleUrl(locale, "projects")}
+				title="Go to projects page">projects</a
+			> in Zig, and it's thanks to this technology that I was able to discover what a <span
+				class="text-tertiary">system language</span
+			> was, and I can assure you that playing with machine memory is a whole other thing.
 		</p>
 	</article>
 </Layout>
