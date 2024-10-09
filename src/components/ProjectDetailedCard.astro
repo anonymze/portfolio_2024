@@ -118,8 +118,12 @@ const locale = Astro.currentLocale as I18n;
 	ul {
 		background-color: color-mix(in oklch, var(--bg-primary) 95%, #555555);
 
-		li:not(:last-of-type) {
+		li {
 			margin-bottom: 3rem;
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
 
 			img {
 				margin-inline: auto;
