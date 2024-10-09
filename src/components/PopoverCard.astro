@@ -63,17 +63,6 @@ const email = import.meta.env.PUBLIC_EMAIL;
 			transform: translate(-50%, -1rem);
 		}
 
-		svg {
-			position: absolute;
-			left: 50%;
-			transform: translate(-50%);
-			top: -0.9rem;
-			width: 2.4rem;
-			height: 2.4rem;
-			text-align: center;
-			color: var(--text-primary);
-		}
-
 		&.to-top {
 			top: -4rem;
 			@starting-style {
@@ -89,5 +78,21 @@ const email = import.meta.env.PUBLIC_EMAIL;
 
 	[popover]:popover-open + div {
 		display: block;
+	}
+</style>
+
+
+<style is:global>
+	.fading-in.to-bottom, .fading-in.to-top  {
+		svg {
+			position: absolute;
+			left: 50%;
+			transform: translate(-50%);
+			top: -0.9rem;
+			width: 2.4rem;
+			height: 2.4rem;
+			text-align: center;
+			color: var(--text-primary);
+		}
 	}
 </style>
