@@ -5,6 +5,8 @@ import svgr from "vite-plugin-svgr";
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://anonymze.github.io',
+  // base: 'portfolio_2024',
   integrations: [react()],
   output: "server",
   devToolbar: {
