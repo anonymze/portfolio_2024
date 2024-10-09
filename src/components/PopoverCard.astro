@@ -21,7 +21,7 @@ const email = import.meta.env.PUBLIC_EMAIL;
 <button popovertarget={unique_id}
 	><slot />
 	<div popover id={unique_id}></div>
-	<div class:list={["fading-in", toBottom ? "to-bottom" : "to-top"]} set:html={HatPopoverSVG}>
+	<div class:list={["email-fading", "fading-in", toBottom ? "to-bottom" : "to-top"]} set:html={HatPopoverSVG}>
 		{message}
 	</div>
 </button>
@@ -98,5 +98,32 @@ const email = import.meta.env.PUBLIC_EMAIL;
 
 	[popover]:popover-open + div {
 		display: block;
+	}
+</style>
+
+<style is:global>
+	.email-fading.to-bottom {
+		svg {
+			position: absolute;
+			left: 50%;
+			transform: translate(-50%);
+			top: -0.9rem;
+			width: 2.4rem;
+			height: 2.4rem;
+			text-align: center;
+			color: var(--text-primary);
+		}
+	}
+
+	.email-fading.to-top {
+		top: -4rem !important;
+		@starting-style {
+			opacity: 0;
+			transform: translate(-50%, 1rem);
+		}
+		svg {
+			top: 0.7rem;
+			transform: rotate(180deg) translate(50%);
+		}
 	}
 </style>
