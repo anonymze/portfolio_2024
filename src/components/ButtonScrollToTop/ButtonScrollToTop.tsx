@@ -1,4 +1,3 @@
-import React from "react";
 import ArrowUpSVG from "@assets/icons/arrow-up.svg?react";
 
 import "./ButtonScrollToTop.css";
