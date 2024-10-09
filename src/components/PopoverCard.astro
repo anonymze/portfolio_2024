@@ -117,13 +117,20 @@ const email = import.meta.env.PUBLIC_EMAIL;
 
 	.email-fading.to-top {
 		top: -4rem !important;
+
 		@starting-style {
 			opacity: 0;
 			transform: translate(-50%, 1rem);
 		}
 		svg {
-			top: 0.7rem !important;
-			transform: rotate(180deg) translate(50%) !important;
+			position: absolute;
+			left: 50%;
+			transform: rotate(180deg) translate(50%);
+			top: 0.7rem;
+			width: 2.4rem;
+			height: 2.4rem;
+			text-align: center;
+			color: var(--text-primary);
 		}
 	}
 </style>
