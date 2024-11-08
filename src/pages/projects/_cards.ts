@@ -36,7 +36,7 @@ const cards: (locale: I18n) => Array<[string, Array<ProjectCardI>]> = (
         fading_from: "left",
         image: RescueOcean,
         image_width: 450,
-        title:     i18n[locale]("TITLE_CARD_RESCUE"),
+        title: i18n[locale]("TITLE_CARD_RESCUE"),
         url_project: "projects/rescue-ocean",
       },
       {
@@ -87,7 +87,6 @@ const cards: (locale: I18n) => Array<[string, Array<ProjectCardI>]> = (
         image: Zig,
         image_width: 300,
         title: "Infer SVG types • Zig - Typescript",
-        message_badge: i18n[locale]("IN_PROGRESS"),
         url_project: "projects/infer-svg-types",
       },
     ],
