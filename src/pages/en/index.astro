@@ -25,7 +25,7 @@ const locale = Astro.currentLocale as I18n;
 		</p>
 
 		<p>
-			Oh, and I'm French and I live in Lourdes.
+			Oh, and I'm French and I live in Toulouse.
 			<a
 				href={import.meta.env.PUBLIC_PINNED_LOCATION}
 				aria-label="Open a paghtope with my pinned location"
@@ -37,11 +37,11 @@ const locale = Astro.currentLocale as I18n;
 	</section>
 
 	<article class="frameworks background-dotted gap-8 mt-0 lg:mt-36 lg:gap-20 md:gap-16 sm:gap-12">
-		<div aria-label="Angular" class="fading-in" style="--transition-delay-count: 1">
-			<span id="angular-icon"></span>
+		<div aria-label="Expo" class="fading-in" style="--transition-delay-count: 1">
+			<span id="expo-icon"></span>
 		</div>
-		<div aria-label="Ionic" class="fading-in" style="--transition-delay-count: 2">
-			<span id="ionic-icon"></span>
+		<div aria-label="Angular" class="fading-in" style="--transition-delay-count: 2">
+			<span id="angular-icon"></span>
 		</div>
 		<div aria-label="Nextjs" class="fading-in" style="--transition-delay-count: 3">
 			<span id="nextjs-icon"></span>
@@ -162,11 +162,11 @@ const locale = Astro.currentLocale as I18n;
 				filter: blur(0.8rem);
 			}
 
+			&#expo-icon {
+				background-image: url("../../assets/icons/expo.svg");
+			}
 			&#angular-icon {
 				background-image: url("../../assets/icons/angular.svg");
-			}
-			&#ionic-icon {
-				background-image: url("../../assets/icons/ionic.svg");
 			}
 			&#react-icon {
 				background-image: url("../../assets/icons/react.svg");
