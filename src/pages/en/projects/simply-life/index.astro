@@ -1,0 +1,36 @@
+---
+import ProjectDetailedCard from "@/components/ProjectDetailedCard.astro";
+import Layout from "@layouts/Layout.astro";
+
+import ChatImg from "@assets/images/simply-life/chat.png";
+import SupplierImg from "@assets/images/simply-life/supplier.png";
+import HomeImg from "@assets/images/simply-life/home.png";
+---
+
+<Layout title="Aurora">
+	<ProjectDetailedCard
+		title="Simply Life"
+		url="https://www.auvergnerhonealpes-entreprises.fr/"
+		images={[ChatImg, SupplierImg, HomeImg]}
+		badges={[
+			{
+				message: "Content Management",
+			},
+			{
+				message: "Admin Interface",
+			},
+			{
+				message: "IOS & Android",
+			},
+			{
+				message: "Data Security",
+			},
+		]}
+		messages={[
+			"This was my biggest project over a long period, involving the handling of sensitive data with strict security protocols.",
+			"I developed a complete mobile application as well as an administrative dashboard for data management by administrators.",
+			"The mobile app was built with React Native, while the back-office interface was in React TypeScript, designed for intensive daily use with a focus on UX. Every action was designed thinking of users who would perform it hundreds of times per day.",
+			"The system featured over 10 different forms with flexible and reusable components, using API Platform for endpoint management.",
+		]}
+	/>
+</Layout>

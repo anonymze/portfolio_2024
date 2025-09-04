@@ -1,6 +1,7 @@
 import Billaudot from "@assets/images/billaudot/card.png";
 import Zig from "@assets/images/zig.png";
 import RescueOcean from "@assets/images/rescue-ocean/rescue-ocean-dark.png";
+import SimplyLifeImg from "@assets/images/simply-life/logo.png";
 import Gemme from "@assets/images/gemme/header.png";
 import Aurora from "@assets/images/aurora/home.png";
 import Rfid from "@assets/images/rfid.png";
@@ -12,45 +13,6 @@ import type { I18n } from "@/types/i18n";
 const cards: (locale: I18n) => Array<[string, Array<ProjectCardI>]> = (
   locale,
 ) => [
-  [
-    i18n[locale]("TITLE_CARD_FRONT_END"),
-    [
-      {
-        fading_order: 3,
-        fading_from: "right",
-        image: Rfid,
-        image_width: 250,
-        title: "RFID • Ionic - Angular",
-        url_project: "projects/rfid",
-      },
-      {
-        fading_order: 2,
-        fading_from: "left",
-        image: Gemme,
-        image_width: 380,
-        title: i18n[locale]("TITLE_CARD_GEMME"),
-        url_project: "projects/gemme",
-      },
-      {
-        fading_order: 4,
-        fading_from: "left",
-        image: RescueOcean,
-        image_width: 450,
-        title: i18n[locale]("TITLE_CARD_RESCUE"),
-        url_project: "projects/rescue-ocean",
-      },
-      {
-        fading_order: 1,
-        fading_from: "right",
-        image: ReactNative,
-        image_width: 300,
-        title: i18n[locale]("TITLE_CARD_FRAUD"),
-        message_badge: i18n[locale]("IN_PROGRESS"),
-        url_project: "projects/fraud-detection",
-      },
-    ],
-  ],
-
   [
     i18n[locale]("TITLE_CARD_FULLS_TACK"),
     [
@@ -91,6 +53,55 @@ const cards: (locale: I18n) => Array<[string, Array<ProjectCardI>]> = (
       },
     ],
   ],
+  [
+    i18n[locale]("TITLE_CARD_FRONT_END"),
+    [
+      {
+        fading_order: 4,
+        fading_from: "left",
+        image: SimplyLifeImg,
+        image_width: 450,
+        title: i18n[locale]("TITLE_CARD_SIMPLY_LIFE"),
+        url_project: "projects/simply-life",
+      },
+      {
+        fading_order: 4,
+        fading_from: "left",
+        image: RescueOcean,
+        image_width: 450,
+        title: i18n[locale]("TITLE_CARD_RESCUE"),
+        url_project: "projects/rescue-ocean",
+      },
+      {
+        fading_order: 2,
+        fading_from: "left",
+        image: Gemme,
+        image_width: 380,
+        title: i18n[locale]("TITLE_CARD_GEMME"),
+        url_project: "projects/gemme",
+      },
+
+      {
+        fading_order: 1,
+        fading_from: "right",
+        image: ReactNative,
+        image_width: 300,
+        title: i18n[locale]("TITLE_CARD_FRAUD"),
+        message_badge: i18n[locale]("IN_PROGRESS"),
+        url_project: "projects/fraud-detection",
+      },
+      {
+        fading_order: 3,
+        fading_from: "right",
+        image: Rfid,
+        image_width: 250,
+        title: "RFID • Ionic - Angular",
+        url_project: "projects/rfid",
+      },
+    ],
+  ],
+
+
 ];
 
 export default cards;

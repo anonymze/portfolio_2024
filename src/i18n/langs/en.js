@@ -159,6 +159,7 @@ export default {
   TITLE_CARD_FULLS_TACK: "Full<span class='text-secondary'>-</span>stack",
   TITLE_CARD_GEMME: "Hiking trails • Ionic - React",
   TITLE_CARD_RESCUE: "Waste collection • Ionic - Angular",
+  TITLE_CARD_SIMPLY_LIFE: "Supplier Manager • Expo - React Native",
   TITLE_CARD_FRAUD: "Fraud detection • Expo - React native",
   TITLE_PAGE: "Title of the page",
   TRY_AGAIN: "Try again",
