@@ -23,7 +23,7 @@ const locale = Astro.currentLocale as I18n;
 				navs(locale).map((nav) => {
 					return (
 						<li class="hidden sm:block">
-							<a title={`Go to ${nav.label} page`} href={getRelativeLocaleUrl(Astro.currentLocale!, nav.url)}>{nav.label}</a>
+							<a class="hover:text-secondary" title={`Go to ${nav.label} page`} href={getRelativeLocaleUrl(Astro.currentLocale!, nav.url)}>{nav.label}</a>
 						</li>
 					);
 				})
