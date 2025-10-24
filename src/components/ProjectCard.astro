@@ -51,7 +51,7 @@ const figure_id = crypto.randomUUID();
     }
   >
     <Image
-      class={padding ? "h-36 sm:h-44 p-6" : "h-36 sm:h-44"}
+      class={padding ? "h-36 sm:h-44 p-4" : "h-36 sm:h-44"}
       src={image}
       format="webp"
       width={image_width}
@@ -94,10 +94,11 @@ const figure_id = crypto.randomUUID();
 
       img {
         object-fit: cover;
-        border-bottom: 2px solid var(--color-secondary);
+        margin: 0 auto;
       }
 
       figcaption {
+        border-top: 2px solid var(--color-secondary);
         padding: 1.2rem;
 
         h3 {
@@ -105,13 +106,13 @@ const figure_id = crypto.randomUUID();
         }
       }
     }
-
-    figure:hover {
-      background-color: var(--color-dark-gray);
-    }
   }
 
-  [data-theme="light"] .project-card figure:hover {
+  .project-card figure:hover {
     background-color: var(--color-light-gray);
+  }
+
+  [data-theme="dark"] .project-card figure:hover {
+    background-color: var(--color-dark-gray);
   }
 </style>

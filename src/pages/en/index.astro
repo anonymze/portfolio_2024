@@ -33,8 +33,8 @@ const locale = Astro.currentLocale as I18n;
 		<div aria-label="Expo" class="fading-in" style="--transition-delay-count: 1">
 			<span id="expo-icon"></span>
 		</div>
-		<div aria-label="Angular" class="fading-in" style="--transition-delay-count: 2">
-			<span id="angular-icon"></span>
+		<div aria-label="Bun" class="fading-in" style="--transition-delay-count: 2">
+			<span id="bun-icon"></span>
 		</div>
 		<div aria-label="Nextjs" class="fading-in" style="--transition-delay-count: 3">
 			<span id="nextjs-icon"></span>
@@ -115,7 +115,7 @@ const locale = Astro.currentLocale as I18n;
 			position: absolute;
 			right: 0;
 			top: -2.5rem;
-			background-image: url("/me.png");
+			background-image: url("/me.webp");
 			background-repeat: no-repeat;
 			background-size: contain;
 			width: 21rem;
@@ -158,9 +158,11 @@ const locale = Astro.currentLocale as I18n;
 
 			&#expo-icon {
 				background-image: url("../../assets/icons/expo.svg");
+				background-color: rgba(0,0,0, 0.8);
+				border-radius: 10px;
 			}
-			&#angular-icon {
-				background-image: url("../../assets/icons/angular.svg");
+			&#bun-icon {
+				background-image: url("../../assets/icons/bun.svg");
 			}
 			&#react-icon {
 				background-image: url("../../assets/icons/react.svg");

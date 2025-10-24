@@ -1,14 +1,14 @@
 import type { ProjectCardI } from "@/components/ProjectCard.astro";
 import { i18n } from "@/i18n/translations";
 import type { I18n } from "@/types/i18n";
-import Aurora from "@assets/images/aurora/home.png";
-import Billaudot from "@assets/images/billaudot/card.png";
-import Gemme from "@assets/images/gemme/header.png";
-import ReactNative from "@assets/images/react-native.png";
-import RescueOcean from "@assets/images/rescue-ocean/rescue-ocean-dark.png";
-import Rfid from "@assets/images/rfid.png";
-import SimplyLifeImg from "@assets/images/simply-life/logo.png";
-import Zig from "@assets/images/zig.png";
+import Aurora from "@assets/images/aurora/home.webp";
+import Billaudot from "@assets/images/billaudot/cart.webp";
+import Gemme from "@assets/images/gemme/header.webp";
+import ReactNative from "@assets/images/react-native.webp";
+import RescueOcean from "@assets/images/rescue-ocean/rescue-ocean-dark.webp";
+import Rfid from "@assets/images/rfid.webp";
+import SimplyLifeImg from "@assets/images/simply-life/logo.webp";
+import Zig from "@assets/images/zig.webp";
 
 const cards: (locale: I18n) => Array<[string, Array<ProjectCardI>]> = (
   locale,
@@ -20,7 +20,7 @@ const cards: (locale: I18n) => Array<[string, Array<ProjectCardI>]> = (
         fading_order: 4,
         fading_from: "left",
         image: SimplyLifeImg,
-        image_width: 200,
+        image_width: 190,
         width_container: 400,
         padding: true,
         title: i18n[locale]("TITLE_CARD_SIMPLY_LIFE"),
