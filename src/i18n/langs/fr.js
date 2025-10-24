@@ -158,8 +158,9 @@ export default {
   TITLE: "Titre",
   TITLE_ARTICLE: "Titre de l'article",
   TITLE_CARD_FRONT_END:
-    "Front-end <span class='text-secondary'>-</span> Mobile",
-  TITLE_CARD_FULLS_TACK: "Full<span class='text-secondary'>-</span>stack",
+    "Mes projets <span class='text-secondary'>Mobiles</span> ",
+  TITLE_CARD_FULLS_TACK:
+    "Mes projets <span class='text-secondary'>Full-stack</span> (front et back)",
   TITLE_CARD_GEMME: "Parcours randonnées • Ionic - React",
   TITLE_CARD_RESCUE: "Ramassage de déchets • Ionic - Angular",
   TITLE_CARD_SIMPLY_LIFE: "Gestionnaire de fournisseurs • Expo - React Native",
