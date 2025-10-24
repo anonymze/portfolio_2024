@@ -3,92 +3,115 @@ import { Image } from "astro:assets";
 import Badge from "./Badge.astro";
 
 interface Props {
-	title: string;
-	image: ImageMetadata;
-	image_width?: number;
-	url_project?: string;
-	message_badge?: string;
-	fading_order?: number;
-	fading_from?: "left" | "right";
+  title: string;
+  image: ImageMetadata;
+  image_width?: number;
+  padding?: boolean;
+  url_project?: string;
+  width_container?: number;
+  message_badge?: string;
+  fading_order?: number;
+  fading_from?: "left" | "right";
 }
 
 export interface ProjectCardI extends Props {}
 
-const { title, image, image_width, url_project, message_badge, fading_order, fading_from } = Astro.props;
+const {
+  title,
+  image,
+  image_width,
+  url_project,
+  message_badge,
+  padding,
+  fading_order,
+  width_container,
+  fading_from,
+} = Astro.props;
 const cursor = url_project ? "pointer" : "default";
 const figure_id = crypto.randomUUID();
 ---
 
 <article
-	class:list={[
-		"project-card",
-		{
-			"fading-in": fading_order ?? false,
-			"from-left": fading_from === "left",
-			"from-right": fading_from === "right",
-		},
-	]}
-	style={fading_order ? `--transition-delay-count: ${fading_order}` : undefined}
-	tabindex="0"
-	id={figure_id}
+  class:list={[
+    "project-card",
+    {
+      "fading-in": fading_order ?? false,
+      "from-left": fading_from === "left",
+      "from-right": fading_from === "right",
+    },
+  ]}
+  style={fading_order ? `--transition-delay-count: ${fading_order}` : undefined}
+  tabindex="0"
+  id={figure_id}
 >
-	<figure style={`max-width: ${image_width}px`}>
-		<Image
-			class="h-36 sm:h-44"
-			src={image}
-			format="webp"
-			width={image_width ?? image.width}
-			densities={[2, 4]}
-			alt="PROJECT"
-		/>
+  <figure
+    style={width_container
+      ? `max-width: ${width_container}px`
+      : `max-width: ${image_width}px`}
+    }
+  >
+    <Image
+      class={padding ? "h-36 sm:h-44 p-6" : "h-36 sm:h-44"}
+      src={image}
+      format="webp"
+      width={image_width}
+      densities={[2, 4]}
+      alt={`Projet ${title}`}
+    />
 
-		<figcaption>
-			<h3>
-				{title}
-				{message_badge ? <Badge class:list={"ml-2 mt-1 text-xs"} message={message_badge} /> : null}
-			</h3>
-		</figcaption>
-	</figure>
+    <figcaption>
+      <h3>
+        {title}
+        {
+          message_badge ? (
+            <Badge class:list={"ml-2 mt-1 text-xs"} message={message_badge} />
+          ) : null
+        }
+      </h3>
+    </figcaption>
+  </figure>
 </article>
 
 <script is:inline define:vars={{ url_project, figure_id }}>
-	if (url_project) {
-		document.getElementById(figure_id).addEventListener("click", () => location.href = url_project);
-	}
+  if (url_project) {
+    document
+      .getElementById(figure_id)
+      .addEventListener("click", () => (location.href = url_project));
+  }
 </script>
 
 <style is:global define:vars={{ cursor }}>
-	.project-card {
-		cursor: var(--cursor);
+  .project-card {
+    cursor: var(--cursor);
 
-		figure {
-			/* --border-radius: 20px; */
+    figure {
+      /* --border-radius: 20px; */
 
-			width: fit-content;
-			/* border-radius: var(--border-radius); */
-			border: 2px solid var(--color-dark-gray);
-			transition: background-color calc(var(--default-transition-duration) / 2);
+      width: fit-content;
+      /* border-radius: var(--border-radius); */
+      border: 2px solid var(--color-dark-gray);
+      transition: background-color calc(var(--default-transition-duration) / 2);
 
-			img {
-				object-fit: cover;
-				border-bottom: 2px solid var(--color-secondary);
-			}
+      img {
+        object-fit: cover;
+        border-bottom: 2px solid var(--color-secondary);
+      }
 
-			figcaption {
-				padding: 1.2rem;
+      figcaption {
+        padding: 1.2rem;
 
-				h3 {
-					display: inline-block;
-				}
-			}
+        h3 {
+          display: inline-block;
+        }
+      }
+    }
 
-			&:hover {
-				background-color: var(--color-dark-gray);
-			}
-		}
-	}
+    figure:hover {
+      background-color: var(--color-dark-gray);
+    }
+  }
 
-	[data-theme="light"] .project-card figure:hover {
-		background-color: var(--color-light-gray);
-	}
+  [data-theme="light"] .project-card figure:hover {
+    background-color: var(--color-light-gray);
+  }
 </style>
