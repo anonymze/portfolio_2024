@@ -16,9 +16,10 @@ interface Props {
 	images?: Array<ImageMetadata>;
 	url?: string;
 	in_progress?: boolean;
+	mobile?: boolean
 }
 
-const { title, messages, badges, url, images, in_progress } = Astro.props;
+const { title, messages, badges, url, images, in_progress, mobile } = Astro.props;
 const locale = Astro.currentLocale as I18n;
 ---
 
@@ -70,11 +71,16 @@ const locale = Astro.currentLocale as I18n;
 	!images?.length ? (
 		<p class="text-center italic font-bold">{i18n[locale]("IMAGES_CONFIDENTIAL")}</p>
 	) : (
-		<ul class="Zp-0 sm:p-12 lg:p-16">
+		<ul class:list={[
+			"p-0 sm:p-8 lg:p-10",
+			"grid gap-4",
+			"grid-cols-1 md:grid-cols-2",
+			mobile && "md:grid-cols-3"
+		]}>
 			{images.map((image) => {
 				return (
 					<li>
-						<Image src={image} alt="Website" />
+						<Image src={image} alt="Images projet" class="object-cover w-full h-auto" />
 					</li>
 				);
 			})}
@@ -85,7 +91,7 @@ const locale = Astro.currentLocale as I18n;
 <style>
 	section {
 		max-width: var(--max-md-width-layout);
-		margin: 4rem auto;
+		margin: 4rem auto 3rem auto;
 		background-color: color-mix(in oklch, var(--bg-primary) 95%, #555555);
 
 		h1 {
@@ -116,17 +122,13 @@ const locale = Astro.currentLocale as I18n;
 	}
 
 	ul {
-		background-color: color-mix(in oklch, var(--bg-primary) 95%, #555555);
+		background-color: var(--color-secondary);
 
 		li {
-			margin-bottom: 3rem;
-
-			&:last-of-type {
-				margin-bottom: 0;
-			}
+			list-style: none;
 
 			img {
-				margin-inline: auto;
+				display: block;
 			}
 		}
 	}

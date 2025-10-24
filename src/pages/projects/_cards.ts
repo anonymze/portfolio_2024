@@ -8,6 +8,7 @@ import ReactNative from "@assets/images/react-native.webp";
 import RescueOcean from "@assets/images/rescue-ocean/rescue-ocean-dark.webp";
 import Rfid from "@assets/images/rfid.webp";
 import SimplyLifeImg from "@assets/images/simply-life/logo.webp";
+import FridgyImg from "@assets/images/fridgy/logo.webp";
 import Zig from "@assets/images/zig.webp";
 
 const cards: (locale: I18n) => Array<[string, Array<ProjectCardI>]> = (
@@ -21,11 +22,21 @@ const cards: (locale: I18n) => Array<[string, Array<ProjectCardI>]> = (
         fading_from: "left",
         image: SimplyLifeImg,
         image_width: 190,
-        width_container: 400,
+        width_container: 350,
         padding: true,
         title: i18n[locale]("TITLE_CARD_SIMPLY_LIFE"),
         message_badge: i18n[locale]("IN_PROGRESS"),
         url_project: "projects/simply-life",
+      },
+      {
+        fading_order: 4,
+        fading_from: "left",
+        image: FridgyImg,
+        image_width: 135,
+        width_container: 350,
+        padding: true,
+        title: i18n[locale]("TITLE_CARD_Fridgy"),
+        url_project: "projects/fridgy",
       },
       {
         fading_order: 4,

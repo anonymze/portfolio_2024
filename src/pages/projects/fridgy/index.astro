@@ -1,0 +1,38 @@
+---
+import ProjectDetailedCard from "@/components/ProjectDetailedCard.astro";
+import Layout from "@layouts/Layout.astro";
+
+import OneImg from "@assets/images/fridgy/1.webp";
+import TwoImg from "@assets/images/fridgy/2.webp";
+import ThreeImg from "@assets/images/fridgy/3.webp";
+import FourImg from "@assets/images/fridgy/4.webp";
+import FiveImg from "@assets/images/fridgy/5.webp";
+---
+
+<Layout title="Fridgy">
+  <ProjectDetailedCard
+    title="Fridgy"
+    mobile
+    images={[OneImg, TwoImg, ThreeImg, FourImg, FiveImg]}
+    badges={[
+			{
+				message: "Animations",
+			},
+			{
+				message: "UI",
+			},
+			{
+				message: "iOs & Android",
+			},
+			{
+				message: "IA",
+			},
+		]}
+		url="https://apps.apple.com/app/id6742506424"
+		messages={[
+			"Un projet personnel pour m'entraîner sur la génération de contenu par IA.",
+			"C'est une application mobile pour générer des recettes selon ce qui reste dans votre frigo.",
+			"J'ai soigné les animations et j'ai apporté un design ludique pour l'utilisateur.",
+		]}
+	/>
+</Layout>

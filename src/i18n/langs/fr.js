@@ -164,6 +164,7 @@ export default {
   TITLE_CARD_GEMME: "Parcours randonnées • Ionic - React",
   TITLE_CARD_RESCUE: "Ramassage de déchets • Ionic - Angular",
   TITLE_CARD_SIMPLY_LIFE: "Gestionnaire de patrimoine • Expo - React Native",
+    TITLE_CARD_Fridgy: "Générateur de recettes de cuisine • Expo - React Native",
   TITLE_CARD_FRAUD: "Détection de fraude • Expo - React native",
   TITLE_PAGE: "Titre de la page",
   TRY_AGAIN: "Essayer encore",
